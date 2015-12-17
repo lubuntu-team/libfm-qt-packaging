@@ -1,0 +1,7 @@
+libfm-qt (0.10.0+20151214-1) experimental; urgency=medium
+
+  * forked pcmanfm-qt debian/$foo 
+  * Imported upstream version 0.10.0+20151214.
+  * Initial release (Closes: #808192)
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 05 Nov 2015 00:28:39 +0100
