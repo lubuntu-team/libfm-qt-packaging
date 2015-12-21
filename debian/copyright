@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: pcmanfm-qt
-Source: https://github.com/lxde/pcmanfm-qt
+Upstream-Name: libfm-qt
+Source: https://github.com/lxde/libfm-qt
 
 Files: *
 Copyright: 2013-2015 LXQt team
