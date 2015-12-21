@@ -408,7 +408,6 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  (c++)"Fm::MountOperation::onMountFileFinished(_GFile*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onMountVolumeFinished(_GVolume*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onShowProcesses(_GMountOperation*, char*, _GArray*, char**, Fm::MountOperation*)@Base" 0.10.0
- (c++)"Fm::MountOperation::onShowUnmountProgress(_GMountOperation*, char*, long, long, Fm::MountOperation*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onUnmountMountFinished(_GMount*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::prepareUnmount(_GMount*)@Base" 0.10.0
  (c++)"Fm::MountOperation::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
@@ -569,7 +568,6 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  (c++)"Fm::ThumbnailLoader::localFilesOnly_@Base" 0.10.0
  (c++)"Fm::ThumbnailLoader::maxThumbnailFileSize_@Base" 0.10.0
  (c++)"Fm::ThumbnailLoader::readImageFromFile(char const*)@Base" 0.10.0
- (c++)"Fm::ThumbnailLoader::readImageFromStream(_GInputStream*, unsigned long, _GCancellable*)@Base" 0.10.0
  (c++)"Fm::ThumbnailLoader::rotateImage(_GObject*, int)@Base" 0.10.0
  (c++)"Fm::ThumbnailLoader::scaleImage(_GObject*, int, int)@Base" 0.10.0
  (c++)"Fm::ThumbnailLoader::setImageText(_GObject*, char const*, char const*)@Base" 0.10.0
@@ -742,3 +740,13 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  fm_search_set_name_regex@Base 0.10.0
  fm_search_set_recursive@Base 0.10.0
  fm_search_set_show_hidden@Base 0.10.0
+
+
+# arch-bits=64
+ (arch-bits=64|c++)"Fm::MountOperation::onShowUnmountProgress(_GMountOperation*, char*, long, long, Fm::MountOperation*)@Base" 0.10.0
+ (arch-bits=64|c++)"Fm::ThumbnailLoader::readImageFromStream(_GInputStream*, unsigned long, _GCancellable*)@Base" 0.10.0
+
+
+# arch-bits=32
+ (arch-bits=32|c++)"Fm::MountOperation::onShowUnmountProgress(_GMountOperation*, char*, long long, long long, Fm::MountOperation*)@Base" 0.10.0
+ (arch-bits=32|c++)"Fm::ThumbnailLoader::readImageFromStream(_GInputStream*, unsigned long long, _GCancellable*)@Base" 0.10.0

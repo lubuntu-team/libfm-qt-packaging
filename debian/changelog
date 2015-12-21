@@ -1,3 +1,10 @@
+libfm-qt (0.10.0+20151214-2) unstable; urgency=medium
+
+  * Dropped debug package, using the new -dbgsym
+  * Added initial arch-bits 32/64 in symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 21 Dec 2015 22:38:31 +0100
+
 libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
 
   [ Alf Gaida ]
