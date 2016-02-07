@@ -19,8 +19,8 @@ Build-Depends: cmake (>= 3.0.2),
                qttools5-dev,
                qttools5-dev-tools
 Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt
-Vcs-Git: git://anonscm.debian.org/pkg-lxqt/libfm-qt.git -b debian/unstable
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt
+Vcs-Git: https://anonscm.debian.org/pkg-lxqt/libfm-qt.git -b debian/sid
 Homepage: https://github.com/lxde/libfm-qt
 
 Package: libfm-qt2
