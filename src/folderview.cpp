@@ -37,6 +37,10 @@
 #include <QApplication>
 #include <QScrollBar>
 #include <QMetaType>
+#include <QX11Info> // for XDS support
+#include <xcb/xcb.h> // for XDS support
+#include "xdndworkaround.h" // for XDS support
+#include "path.h"
 #include "folderview_p.h"
 
 Q_DECLARE_OPAQUE_POINTER(FmFileInfo*)
@@ -389,7 +393,8 @@ FolderView::FolderView(ViewMode _mode, QWidget* parent):
   autoSelectionTimer_(nullptr),
   selChangedTimer_(nullptr),
   fileLauncher_(nullptr),
-  model_(nullptr) {
+  model_(nullptr),
+  itemDelegateMargins_(QSize(3, 3)) {
 
   iconSize_[IconMode - FirstViewMode] = QSize(48, 48);
   iconSize_[CompactMode - FirstViewMode] = QSize(24, 24);
@@ -577,7 +582,7 @@ void FolderView::updateGridSize() {
       ; // do not use grid size
   }
   if(mode == IconMode || mode == ThumbnailMode)
-    listView->setGridSize(grid + QSize(6, 6)); // a margin of 6 px for every cell
+    listView->setGridSize(grid + 2 * itemDelegateMargins_); // the default spacing is 6(=2x3) px
   else
     listView->setGridSize(grid);
   FolderItemDelegate* delegate = static_cast<FolderItemDelegate*>(listView->itemDelegateForColumn(FolderModel::ColumnFileName));
@@ -598,6 +603,13 @@ void FolderView::setIconSize(ViewMode mode, QSize size) {
 QSize FolderView::iconSize(ViewMode mode) const {
   Q_ASSERT(mode >= FirstViewMode && mode <= LastViewMode);
   return iconSize_[mode - FirstViewMode];
+}
+
+void FolderView::setMargins(QSize size) {
+  if (itemDelegateMargins_ != size.expandedTo(QSize(0, 0))) {
+    itemDelegateMargins_ = size.expandedTo(QSize(0, 0));
+    updateGridSize();
+  }
 }
 
 FolderView::ViewMode FolderView::viewMode() const {
@@ -800,7 +812,41 @@ void FolderView::childDragMoveEvent(QDragMoveEvent* e) {
 }
 
 void FolderView::childDropEvent(QDropEvent* e) {
-  qDebug("drop");
+  // qDebug("drop");
+  // Try to support XDS
+  // NOTE: in theory, it's not possible to implement XDS with pure Qt.
+  // We achieved this with some dirty XCB/XDND workarounds.
+  // Please refer to XdndWorkaround::clientMessage() in xdndworkaround.cpp for details.
+  if(QX11Info::isPlatformX11() && e->mimeData()->hasFormat("XdndDirectSave0")) {
+    e->setDropAction(Qt::CopyAction);
+    const QWidget* targetWidget = childView()->viewport();
+    // these are dynamic QObject property set by our XDND workarounds in xworkaround.cpp.
+    xcb_window_t dndSource = xcb_window_t(targetWidget->property("xdnd::lastDragSource").toUInt());
+    xcb_timestamp_t dropTimestamp = (xcb_timestamp_t)targetWidget->property("xdnd::lastDropTime").toUInt();
+    // qDebug() << "XDS: source window" << dndSource << dropTimestamp;
+    if(dndSource != 0) {
+      xcb_connection_t* conn = QX11Info::connection();
+      xcb_atom_t XdndDirectSaveAtom = XdndWorkaround::internAtom("XdndDirectSave0", 15);
+      xcb_atom_t textAtom = XdndWorkaround::internAtom("text/plain", 10);
+
+      // 1. get the filename from XdndDirectSave property of the source window
+      QByteArray basename = XdndWorkaround::windowProperty(dndSource, XdndDirectSaveAtom, textAtom, 1024);
+
+      // 2. construct the fill URI for the file, and update the source window property.
+      Path filePath = Path(path()).child(basename);
+      QByteArray fileUri = filePath.toUri();
+      XdndWorkaround::setWindowProperty(dndSource,  XdndDirectSaveAtom, textAtom, (void*)fileUri.constData(), fileUri.length());
+
+      // 3. send to XDS selection data request with type "XdndDirectSave" to the source window and
+      //    receive result from the source window. (S: success, E: error, or F: failure)
+      QByteArray result = e->mimeData()->data("XdndDirectSave0");
+      // NOTE: there seems to be some bugs in file-roller so it always replies with "E" even if the
+      //       file extraction is finished successfully. Anyways, we ignore any error at the moment.
+    }
+    e->accept(); // yeah! we've done with XDS so stop Qt from further event propagation.
+    return;
+  }
+
   if(e->keyboardModifiers() == Qt::NoModifier) {
     // if no key modifiers are used, popup a menu
     // to ask the user for the action he/she wants to perform.
