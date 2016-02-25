@@ -1,3 +1,13 @@
+libfm-qt (0.10.0+20151214-3) unstable; urgency=medium
+
+  * Add hardening=+all
+  * Bump Standards to 3.9.7
+  * Fix LXQtTranlateDesktop - just in case
+  * Fix year in copyrights
+  * fix grep usage in cmake/LXQtTranslateDesktop.cmake - just in case
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 25 Feb 2016 22:16:17 +0100
+
 libfm-qt (0.10.0+20151214-2) unstable; urgency=medium
 
   [ Alf Gaida ]
