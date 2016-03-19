@@ -1,8 +1,9 @@
-libfm-qt (0.11.0-1) UNRELEASED; urgency=medium
+libfm-qt (0.11.0-1) experimental; urgency=medium
 
   * New upstream release.
+  * Bump soversion to 3.
 
- -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 19 Mar 2016 14:05:15 +0800
+ -- ChangZhuo Chen (陳昌倬) <czchen@debian.org>  Sat, 19 Mar 2016 15:51:15 +0800
 
 libfm-qt (0.10.0+20151214-3) unstable; urgency=medium
 
