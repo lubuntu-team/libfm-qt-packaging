@@ -25,8 +25,12 @@ Vcs-Git: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt -b debian/sid
 Homepage: https://github.com/lxde/libfm-qt
 
 Package: libfm-qt3
-Replaces: libfm-qt5-2
-Breaks: libfm-qt5-2
+Provides: libfm-qt
+Conflicts: libfm-qt
+Replaces: libfm-qt5-2,
+          libfm-qt2
+Breaks: libfm-qt5-2,
+        libfm-qt2
 Architecture: any
 Multi-Arch: same
 Section: libs
