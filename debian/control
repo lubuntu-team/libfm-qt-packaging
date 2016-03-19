@@ -51,4 +51,7 @@ Section: libdevel
 Depends: ${misc:Depends},
          libfm-qt3 (= ${binary:Version})
 Description: file management support library for pcmanfm-qt (development files)
+ Libfm-Qt is a companion library providing components to build desktop file
+ managers.
+ .
  This package contains development files for helper library libfm-qt.
