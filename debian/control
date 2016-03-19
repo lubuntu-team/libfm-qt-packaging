@@ -23,7 +23,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt
 Vcs-Git: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt -b debian/sid
 Homepage: https://github.com/lxde/libfm-qt
 
-Package: libfm-qt2
+Package: libfm-qt3
 Replaces: libfm-qt5-2
 Breaks: libfm-qt5-2
 Architecture: any
@@ -44,6 +44,6 @@ Breaks: libfm-qt5-dev
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends},
-         libfm-qt2 (= ${binary:Version})
+         libfm-qt3 (= ${binary:Version})
 Description: file management support library for pcmanfm-qt (development files)
  This package contains development files for helper library libfm-qt.
