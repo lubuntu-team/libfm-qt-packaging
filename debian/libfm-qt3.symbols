@@ -1,4 +1,4 @@
-libfm-qt.so.2 libfm-qt2 #MINVER#
+libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::AppChooserComboBox::~AppChooserComboBox()@Base" 0.10.0
  (c++)"Fm::AppChooserComboBox::AppChooserComboBox(QWidget*)@Base" 0.10.0
  (c++)"Fm::AppChooserComboBox::isChanged()@Base" 0.10.0
@@ -264,12 +264,14 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  (c++)"Fm::FolderItemDelegate::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::FolderItemDelegate::sizeHint(QStyleOptionViewItem const&, QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::FolderItemDelegate::staticMetaObject@Base" 0.10.0
+ (c++)"Fm::FolderMenu::addCustomActionItem(QMenu*, _FmFileActionItem*)@Base" 0.11.0
  (c++)"Fm::FolderMenu::addSortMenuItem(QString, int)@Base" 0.10.0
  (c++)"Fm::FolderMenu::createSortMenu()@Base" 0.10.0
  (c++)"Fm::FolderMenu::~FolderMenu()@Base" 0.10.0
  (c++)"Fm::FolderMenu::FolderMenu(Fm::FolderView*, QWidget*)@Base" 0.10.0
  (c++)"Fm::FolderMenu::metaObject() const@Base" 0.10.0
  (c++)"Fm::FolderMenu::onCaseSensitiveActionTriggered(bool)@Base" 0.10.0
+ (c++)"Fm::FolderMenu::onCustomActionTrigerred()@Base" 0.11.0
  (c++)"Fm::FolderMenu::onFolderFirstActionTriggered(bool)@Base" 0.10.0
  (c++)"Fm::FolderMenu::onInvertSelectionActionTriggered()@Base" 0.10.0
  (c++)"Fm::FolderMenu::onPasteActionTriggered()@Base" 0.10.0
@@ -360,6 +362,7 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  (c++)"Fm::FolderView::selectionModel() const@Base" 0.10.0
  (c++)"Fm::FolderView::setAutoSelectionDelay(int)@Base" 0.10.0
  (c++)"Fm::FolderView::setIconSize(Fm::FolderView::ViewMode, QSize)@Base" 0.10.0
+ (c++)"Fm::FolderView::setMargins(QSize)@Base" 0.11.0
  (c++)"Fm::FolderView::setModel(Fm::ProxyFolderModel*)@Base" 0.10.0
  (c++)"Fm::FolderView::setViewMode(Fm::FolderView::ViewMode)@Base" 0.10.0
  (c++)"Fm::FolderView::sortChanged()@Base" 0.10.0
@@ -415,6 +418,8 @@ libfm-qt.so.2 libfm-qt2 #MINVER#
  (c++)"Fm::MountOperation::staticMetaObject@Base" 0.10.0
  (c++)"Fm::MountOperation::wait()@Base" 0.10.0
  (c++)"Fm::pasteFilesFromClipboard(_FmPath*, QWidget*)@Base" 0.10.0
+ (c++)"Fm::PathEdit::autoComplete()@Base" 0.11.0
+ (c++)"Fm::PathEdit::event(QEvent*)@Base" 0.11.0
  (c++)"Fm::PathEdit::focusInEvent(QFocusEvent*)@Base" 0.10.0
  (c++)"Fm::PathEdit::focusOutEvent(QFocusEvent*)@Base" 0.10.0
  (c++)"Fm::PathEdit::freeCompleter()@Base" 0.10.0
