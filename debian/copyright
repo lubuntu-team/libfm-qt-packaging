@@ -17,6 +17,10 @@ Files: cmake/Qt5PatchedLinguistToolsMacros.cmake
 Copyright: 2005-2011 Kitware, Inc.
 License: BSD-3-Clause
 
+Files: src/xdndworkaround.*
+Copyright: 2016 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
+License: LGPL-2.1+
+
 Files: debian/*
 Copyright: 2014-2015 Wen Liao <wen.cf83@gmail.com>
            2014-2016 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
