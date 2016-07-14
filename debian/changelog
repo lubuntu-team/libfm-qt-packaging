@@ -1,3 +1,18 @@
+libfm-qt (0.11.1~13-g4aa2bb6-1) experimental; urgency=medium
+
+  * Cherry-picking upstream version 0.11.1~13-g4aa2bb6.
+  * Switch to experimental
+  * Hard override translation control
+  * Use DCMAKE_BUILD_TYPE=RelWithDebInfo
+  * Added build dependency liblxqt0-dev
+  * Bumped Standards to 3.9.8, no changes needed
+  * Fixed Vcs-Fields for experimental
+  * Added Recommends libfm-qt-l10n
+  * Fixed copyrights, removed obsolete files
+  * Fixed libfm-qt3.install, don't install translations
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 14 Jul 2016 17:38:59 +0200
+
 libfm-qt (0.11.0-2) unstable; urgency=medium
 
   * Merged changes into unstable
