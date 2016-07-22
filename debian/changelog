@@ -1,13 +1,20 @@
+libfm-qt (0.11.1~13-g4aa2bb6-4) experimental; urgency=medium
+
+  * Fixed two typos in changelog
+  * Fixed copyright Format field, using https
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 22 Jul 2016 23:00:34 +0200
+
 libfm-qt (0.11.1~13-g4aa2bb6-3) experimental; urgency=medium
 
-  * Set additional minumum versions (libqtxdg, liblxqt)
+  * Set additional miniumum versions (libqtxdg, liblxqt)
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 17 Jul 2016 11:27:49 +0200
 
 libfm-qt (0.11.1~13-g4aa2bb6-2) experimental; urgency=medium
 
   * Added build dependencies gcc (>= 4:6), g++ (>= 4:6)
-  * Exported LC_ALL=C.UTF-8 - define language settings for reproducable
+  * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
     builds 
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 17 Jul 2016 01:58:02 +0200
