@@ -3,6 +3,7 @@ include_directories(
     "${LIBFM_INCLUDEDIR}/libfm" # to workaround incorrect #include in fm-actions.
     "${LIBMENUCACHE_INCLUDE_DIRS}"
     "${SYSTEM_LIBS_INCLUDE_DIRS}"
+    "${XCB_INCLUDE_DIRS}"
 )
 
 link_directories(
@@ -49,7 +50,6 @@ set(libfm_SRCS
     dndactionmenu.cpp
     editbookmarksdialog.cpp
     thumbnailloader.cpp
-    path.cpp
     execfiledialog.cpp
     appchoosercombobox.cpp
     appmenuview.cpp
@@ -112,6 +112,7 @@ target_link_libraries(${LIBFM_QT_LIBRARY_NAME}
     ${LIBFM_LIBRARIES}
     ${LIBMENUCACHE_LIBRARIES}
     ${SYSTEM_LIBS_LIBRARIES}
+    ${XCB_LIBRARIES}
 )
 
 # set libtool soname

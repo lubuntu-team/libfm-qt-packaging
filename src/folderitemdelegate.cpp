@@ -22,7 +22,7 @@
 #include "foldermodel.h"
 #include <QPainter>
 #include <QModelIndex>
-#include <QStyleOptionViewItemV4>
+#include <QStyleOptionViewItem>
 #include <QApplication>
 #include <QIcon>
 #include <QTextLayout>
@@ -34,8 +34,8 @@ namespace Fm {
 
 FolderItemDelegate::FolderItemDelegate(QAbstractItemView* view, QObject* parent):
   QStyledItemDelegate(parent ? parent : view),
-  symlinkIcon_(QIcon::fromTheme("emblem-symbolic-link")),
-  view_(view) {
+  view_(view),
+  symlinkIcon_(QIcon::fromTheme("emblem-symbolic-link")) {
 }
 
 FolderItemDelegate::~FolderItemDelegate() {
@@ -49,16 +49,19 @@ QSize FolderItemDelegate::sizeHint(const QStyleOptionViewItem& option, const QMo
   if(option.decorationPosition == QStyleOptionViewItem::Top ||
     option.decorationPosition == QStyleOptionViewItem::Bottom) {
 
-    QStyleOptionViewItemV4 opt = option;
+    QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
     opt.decorationAlignment = Qt::AlignHCenter|Qt::AlignTop;
     opt.displayAlignment = Qt::AlignTop|Qt::AlignHCenter;
 
+    // "opt.decorationSize" may be smaller than the requested size because
+    // "QStyledItemDelegate::initStyleOption()" uses "QIcon::actualSize()" to set it
+    // (see Qt -> qstyleditemdelegate.cpp). So, we always get decorationSize from "option".
     Q_ASSERT(gridSize_ != QSize());
-    QRectF textRect(0, 0, gridSize_.width(), gridSize_.height() - opt.decorationSize.height());
+    QRectF textRect(0, 0, gridSize_.width(), gridSize_.height() - option.decorationSize.height());
     drawText(nullptr, opt, textRect); // passing NULL for painter will calculate the bounding rect only.
-    int width = qMax((int)textRect.width(), opt.decorationSize.width());
-    int height = opt.decorationSize.height() + textRect.height();
+    int width = qMax((int)textRect.width(), option.decorationSize.width());
+    int height = option.decorationSize.height() + textRect.height();
     return QSize(width, height);
   }
   return QStyledItemDelegate::sizeHint(option, index);
@@ -83,28 +86,30 @@ void FolderItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& op
     painter->save();
     painter->setClipRect(option.rect);
 
-    QStyleOptionViewItemV4 opt = option;
+    QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
     opt.decorationAlignment = Qt::AlignHCenter|Qt::AlignTop;
     opt.displayAlignment = Qt::AlignTop|Qt::AlignHCenter;
 
     // draw the icon
     QIcon::Mode iconMode = iconModeFromState(opt.state);
-    QPoint iconPos(opt.rect.x() + (opt.rect.width() - opt.decorationSize.width()) / 2, opt.rect.y());
-    QPixmap pixmap = opt.icon.pixmap(opt.decorationSize, iconMode);
-    painter->drawPixmap(iconPos, pixmap);
+    QPoint iconPos(opt.rect.x() + (opt.rect.width() - option.decorationSize.width()) / 2, opt.rect.y());
+    QPixmap pixmap = opt.icon.pixmap(option.decorationSize, iconMode);
+    // in case the pixmap is smaller than the requested size
+    QSize margin = ((option.decorationSize - pixmap.size()) / 2).expandedTo(QSize(0, 0));
+    painter->drawPixmap(iconPos + QPoint(margin.width(), margin.height()), pixmap);
 
     // draw some emblems for the item if needed
     // we only support symlink emblem at the moment
     if(isSymlink)
-      painter->drawPixmap(iconPos, symlinkIcon_.pixmap(opt.decorationSize / 2, iconMode));
+      painter->drawPixmap(iconPos, symlinkIcon_.pixmap(option.decorationSize / 2, iconMode));
 
     // draw the text
     // The text rect dimensions should be exactly as they were in sizeHint()
     QRectF textRect(opt.rect.x() - (gridSize_.width() - opt.rect.width()) / 2,
-                    opt.rect.y() + opt.decorationSize.height(),
+                    opt.rect.y() + option.decorationSize.height(),
                     gridSize_.width(),
-                    gridSize_.height() - opt.decorationSize.height());
+                    gridSize_.height() - option.decorationSize.height());
     drawText(painter, opt, textRect);
     painter->restore();
   }
@@ -114,24 +119,27 @@ void FolderItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& op
 
     // draw emblems if needed
     if(isSymlink) {
-      QStyleOptionViewItemV4 opt = option;
+      QStyleOptionViewItem opt = option;
       initStyleOption(&opt, index);
       QIcon::Mode iconMode = iconModeFromState(opt.state);
-      QPoint iconPos(opt.rect.x(), opt.rect.y() + (opt.rect.height() - opt.decorationSize.height()) / 2);
+      QPoint iconPos(opt.rect.x(), opt.rect.y() + (opt.rect.height() - option.decorationSize.height()) / 2);
       // draw some emblems for the item if needed
       // we only support symlink emblem at the moment
-      painter->drawPixmap(iconPos, symlinkIcon_.pixmap(opt.decorationSize / 2, iconMode));
+      painter->drawPixmap(iconPos, symlinkIcon_.pixmap(option.decorationSize / 2, iconMode));
     }
   }
 }
 
 // if painter is nullptr, the method calculate the bounding rectangle of the text and save it to textRect
-void FolderItemDelegate::drawText(QPainter* painter, QStyleOptionViewItemV4& opt, QRectF& textRect) const {
+void FolderItemDelegate::drawText(QPainter* painter, QStyleOptionViewItem& opt, QRectF& textRect) const {
   QTextLayout layout(opt.text, opt.font);
   QTextOption textOption;
   textOption.setAlignment(opt.displayAlignment);
   textOption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
-  textOption.setTextDirection(opt.direction);
+  if (opt.text.isRightToLeft())
+    textOption.setTextDirection(Qt::RightToLeft);
+  else
+    textOption.setTextDirection(Qt::LeftToRight);
   layout.setTextOption(textOption);
   qreal height = 0;
   qreal width = 0;
@@ -188,7 +196,7 @@ void FolderItemDelegate::drawText(QPainter* painter, QStyleOptionViewItemV4& opt
   if (opt.state & QStyle::State_Selected || opt.state & QStyle::State_MouseOver) {
     if (const QWidget* widget = opt.widget) { // let the style engine do it
       QStyle* style = widget->style() ? widget->style() : qApp->style();
-      QStyleOptionViewItemV4 o(opt);
+      QStyleOptionViewItem o(opt);
       o.text = QString();
       o.rect = selRect.toAlignedRect().intersected(opt.rect); // due to clipping and rounding, we might lose 1px
       o.showDecorationSelected = true;

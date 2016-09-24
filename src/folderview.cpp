@@ -181,8 +181,8 @@ void FolderViewListView::activation(const QModelIndex &index) {
 
 FolderViewTreeView::FolderViewTreeView(QWidget* parent):
   QTreeView(parent),
-  layoutTimer_(nullptr),
   doingLayout_(false),
+  layoutTimer_(nullptr),
   activationAllowed_(true) {
 
   header()->setStretchLastSection(true);
@@ -388,12 +388,12 @@ void FolderViewTreeView::onSortFilterChanged() {
 FolderView::FolderView(ViewMode _mode, QWidget* parent):
   QWidget(parent),
   view(nullptr),
+  model_(nullptr),
   mode((ViewMode)0),
+  fileLauncher_(nullptr),
   autoSelectionDelay_(600),
   autoSelectionTimer_(nullptr),
   selChangedTimer_(nullptr),
-  fileLauncher_(nullptr),
-  model_(nullptr),
   itemDelegateMargins_(QSize(3, 3)) {
 
   iconSize_[IconMode - FirstViewMode] = QSize(48, 48);
@@ -656,7 +656,8 @@ bool FolderView::event(QEvent* event) {
     case QEvent::FontChange:
       updateGridSize();
       break;
-  };
+    default: break;
+  }
   return QWidget::event(event);
 }
 
@@ -720,15 +721,15 @@ QItemSelectionModel* FolderView::selectionModel() const {
   return view ? view->selectionModel() : nullptr;
 }
 
-FmPathList* FolderView::selectedFilePaths() const {
+Fm::PathList FolderView::selectedFilePaths() const {
   if(model_) {
     QModelIndexList selIndexes = mode == DetailedListMode ? selectedRows() : selectedIndexes();
     if(!selIndexes.isEmpty()) {
-      FmPathList* paths = fm_path_list_new();
+      PathList paths;
       QModelIndexList::const_iterator it;
       for(it = selIndexes.begin(); it != selIndexes.end(); ++it) {
         FmFileInfo* file = model_->fileInfoFromIndex(*it);
-        fm_path_list_push_tail(paths, fm_file_info_get_path(file));
+        paths.pushTail(fm_file_info_get_path(file));
       }
       return paths;
     }
@@ -749,15 +750,15 @@ QModelIndex FolderView::indexFromFolderPath(FmPath* folderPath) const {
   return QModelIndex();
 }
 
-FmFileInfoList* FolderView::selectedFiles() const {
+Fm::FileInfoList FolderView::selectedFiles() const {
   if(model_) {
     QModelIndexList selIndexes = mode == DetailedListMode ? selectedRows() : selectedIndexes();
     if(!selIndexes.isEmpty()) {
-      FmFileInfoList* files = fm_file_info_list_new();
+      FileInfoList files;
       QModelIndexList::const_iterator it;
       for(it = selIndexes.constBegin(); it != selIndexes.constEnd(); ++it) {
         FmFileInfo* file = model_->fileInfoFromIndex(*it);
-        fm_file_info_list_push_tail(files, file);
+        files.pushTail(file);
       }
       return files;
     }
@@ -830,10 +831,9 @@ void FolderView::childDropEvent(QDropEvent* e) {
     const QWidget* targetWidget = childView()->viewport();
     // these are dynamic QObject property set by our XDND workarounds in xworkaround.cpp.
     xcb_window_t dndSource = xcb_window_t(targetWidget->property("xdnd::lastDragSource").toUInt());
-    xcb_timestamp_t dropTimestamp = (xcb_timestamp_t)targetWidget->property("xdnd::lastDropTime").toUInt();
+    //xcb_timestamp_t dropTimestamp = (xcb_timestamp_t)targetWidget->property("xdnd::lastDropTime").toUInt();
     // qDebug() << "XDS: source window" << dndSource << dropTimestamp;
     if(dndSource != 0) {
-      xcb_connection_t* conn = QX11Info::connection();
       xcb_atom_t XdndDirectSaveAtom = XdndWorkaround::internAtom("XdndDirectSave0", 15);
       xcb_atom_t textAtom = XdndWorkaround::internAtom("text/plain", 10);
 
@@ -841,7 +841,7 @@ void FolderView::childDropEvent(QDropEvent* e) {
       QByteArray basename = XdndWorkaround::windowProperty(dndSource, XdndDirectSaveAtom, textAtom, 1024);
 
       // 2. construct the fill URI for the file, and update the source window property.
-      Path filePath = Path(path()).child(basename);
+      Path filePath = Path(path()).newChild(basename);
       QByteArray fileUri = filePath.toUri();
       XdndWorkaround::setWindowProperty(dndSource,  XdndDirectSaveAtom, textAtom, (void*)fileUri.constData(), fileUri.length());
 
@@ -923,6 +923,7 @@ bool FolderView::eventFilter(QObject* watched, QEvent* event) {
         }
       }
       break;
+    default: break;
     }
   }
   return QObject::eventFilter(watched, event);
@@ -999,22 +1000,22 @@ void FolderView::onFileClicked(int type, FmFileInfo* fileInfo) {
   }
   else if(type == ContextMenuClick) {
     FmPath* folderPath = nullptr;
-    if (FmFileInfoList* files = selectedFiles()) {
-      FmFileInfo* first = fm_file_info_list_peek_head(files);
-      if (fm_file_info_list_get_length(files) == 1 && fm_file_info_is_dir(first))
+    FileInfoList files = selectedFiles();
+    if (!files.isNull()) {
+      FmFileInfo* first = files.peekHead();
+      if (files.getLength() == 1 && fm_file_info_is_dir(first))
         folderPath = fm_file_info_get_path(first);
-      fm_file_info_list_unref(files);
     }
     if (!folderPath)
       folderPath = path();
     QMenu* menu = nullptr;
     if(fileInfo) {
       // show context menu
-      if (FmFileInfoList* files = selectedFiles()) {
-        Fm::FileMenu* fileMenu = new Fm::FileMenu(files, fileInfo, folderPath);
+      FileInfoList files = selectedFiles();
+      if (!files.isNull()) {
+        Fm::FileMenu* fileMenu = new Fm::FileMenu(files.dataPtr(), fileInfo, folderPath);
         fileMenu->setFileLauncher(fileLauncher_);
         prepareFileMenu(fileMenu);
-        fm_file_info_list_unref(files);
         menu = fileMenu;
       }
     }

@@ -23,6 +23,7 @@
 #include "ui_filesearch.h"
 #include <limits>
 #include <QFileDialog>
+#include <utility>
 
 namespace Fm {
 
@@ -54,8 +55,7 @@ void FileSearchDialog::accept() {
   int n = ui->listView->count();
   if(n > 0) {
     FmSearch* search = fm_search_new();
-    int i;
-    for(i = 0; i < n; ++i) { // add directories
+    for(int i = 0; i < n; ++i) { // add directories
       QListWidgetItem* item = ui->listView->item(i);
       fm_search_add_dir(search, item->text().toLocal8Bit().constData());
     }
@@ -90,7 +90,7 @@ void FileSearchDialog::accept() {
         "application/msword;application/vnd.ms-word",
         "application/msexcel;application/vnd.ms-excel"
       };
-      for(i = 0; i < sizeof(doc_types)/sizeof(char*); ++i)
+      for(unsigned int i = 0; i < sizeof(doc_types)/sizeof(char*); ++i)
         fm_search_add_mime_type(search, doc_types[i]);
     }
 
@@ -114,7 +114,7 @@ void FileSearchDialog::accept() {
       fm_search_set_min_mtime(search, ui->minTime->date().toString(QStringLiteral("yyyy-MM-dd")).toUtf8().constData());
     }
 
-    searchUri_.take(fm_search_dup_path(search));
+    searchUri_ = std::move(Path::wrapPtr(fm_search_dup_path(search)));
 
     fm_search_free(search);
   }
