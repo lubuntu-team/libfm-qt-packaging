@@ -6,10 +6,8 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
 Section: x11
 Priority: optional
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                cmake (>= 3.0.2),
-               gcc (>= 4:6),
-               g++ (>= 4:6),
                libfm-dev (>= 1.2.0),
                libglib2.0-dev,
                libkf5windowsystem-dev,
