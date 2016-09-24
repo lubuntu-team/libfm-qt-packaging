@@ -1,0 +1,10 @@
+build*/
+src/translations/libfm-qt
+
+# Vim.gitignore
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
