@@ -3,8 +3,8 @@
 /*.substvars
 /files
 /mangled
+/debhelper-build-stamp
 
-/libfm-qt5-2/
-/libfm-qt5-dev/
-/libfm-qt5-dbg/
+/libfm-qt3/
+/libfm-qt-dev/
 /tmp

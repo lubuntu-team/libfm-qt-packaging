@@ -1,10 +1,9 @@
-set(libfm_TRANSLATION_TEMPLATE ${PROJECT_NAME})
-
 include_directories(
     "${LIBFM_INCLUDE_DIRS}"
     "${LIBFM_INCLUDEDIR}/libfm" # to workaround incorrect #include in fm-actions.
     "${LIBMENUCACHE_INCLUDE_DIRS}"
     "${SYSTEM_LIBS_INCLUDE_DIRS}"
+    "${XCB_INCLUDE_DIRS}"
 )
 
 link_directories(
@@ -51,7 +50,6 @@ set(libfm_SRCS
     dndactionmenu.cpp
     editbookmarksdialog.cpp
     thumbnailloader.cpp
-    path.cpp
     execfiledialog.cpp
     appchoosercombobox.cpp
     appmenuview.cpp
@@ -78,7 +76,11 @@ qt5_wrap_ui(libfm_UIS_H ${libfm_UIS})
 lxqt_translate_ts(QM_FILES
     UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
     SOURCES ${libfm_SRCS} ${libfm_UIS}
-    TEMPLATE ${libfm_TRANSLATION_TEMPLATE}
+    INSTALL_DIR "${CMAKE_INSTALL_DATADIR}/libfm-qt/translations"
+    PULL_TRANSLATIONS ${PULL_TRANSLATIONS}
+    CLEAN_TRANSLATIONS ${CLEAN_TRANSLATIONS}
+    TRANSLATIONS_REPO ${TRANSLATIONS_REPO}
+    TRANSLATIONS_REFSPEC ${TRANSLATIONS_REFSPEC}
 )
 
 add_library(${LIBFM_QT_LIBRARY_NAME} SHARED
@@ -110,6 +112,7 @@ target_link_libraries(${LIBFM_QT_LIBRARY_NAME}
     ${LIBFM_LIBRARIES}
     ${LIBMENUCACHE_LIBRARIES}
     ${SYSTEM_LIBS_LIBRARIES}
+    ${XCB_LIBRARIES}
 )
 
 # set libtool soname
@@ -130,11 +133,11 @@ install(FILES
     COMPONENT Devel
 )
 
+file(GLOB libfm_HS "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
 # install include header files (FIXME: can we make this cleaner? should dir name be versioned?)
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/"
+install(FILES ${libfm_HS}
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/libfm-qt"
     COMPONENT Devel
-    FILES_MATCHING PATTERN "*.h"
 )
 
 generate_export_header(${LIBFM_QT_LIBRARY_NAME}
@@ -187,12 +190,6 @@ else()
         COMPONENT Devel
     )
 endif()
-
-install(FILES
-    ${QM_FILES}
-    DESTINATION "${CMAKE_INSTALL_DATADIR}/libfm-qt/translations"
-    COMPONENT Runtime
-)
 
 # prevent the generated files from being deleted during make cleaner
 set_directory_properties(PROPERTIES CLEAN_NO_CUSTOM true)

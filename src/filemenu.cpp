@@ -44,8 +44,8 @@ FileMenu::FileMenu(FmFileInfoList* files, FmFileInfo* info, FmPath* cwd, QWidget
 
 FileMenu::FileMenu(FmFileInfoList* files, FmFileInfo* info, FmPath* cwd, const QString& title, QWidget* parent):
   QMenu(title, parent),
-  fileLauncher_(NULL),
-  unTrashAction_(NULL) {
+  unTrashAction_(NULL),
+  fileLauncher_(NULL) {
   createMenu(files, info, cwd);
 }
 
@@ -99,7 +99,7 @@ void FileMenu::createMenu(FmFileInfoList* files, FmFileInfo* info, FmPath* cwd) 
   openWithMenuAction_ = new QAction(tr("Open With..."), this);
   addAction(openWithMenuAction_);
   // create the "Open with..." sub menu
-  QMenu* menu = new QMenu();
+  QMenu* menu = new QMenu(this);
   openWithMenuAction_->setMenu(menu);
 
   if(sameType_) { /* add specific menu items for this mime type */
@@ -116,11 +116,13 @@ void FileMenu::createMenu(FmFileInfoList* files, FmFileInfo* info, FmPath* cwd) 
         g_free(program_path);
 
         // create a QAction for the application.
-        AppInfoAction* action = new AppInfoAction(app);
+        AppInfoAction* action = new AppInfoAction(app, menu);
         connect(action, &QAction::triggered, this, &FileMenu::onApplicationTriggered);
         menu->addAction(action);
       }
-      g_list_free(apps); /* don't unref GAppInfos now */
+      // unref GAppInfos here, they are still ref'ed in the AppInfoActions above
+      g_list_foreach(apps, (GFunc)g_object_unref, NULL);
+      g_list_free(apps);
     }
   }
   menu->addSeparator();
@@ -245,10 +247,12 @@ void FileMenu::addCustomActionItem(QMenu* menu, FmFileActionItem* item) {
   menu->addAction(action);
   if(fm_file_action_item_is_menu(item)) {
     GList* subitems = fm_file_action_item_get_sub_items(item);
-    for(GList* l = subitems; l; l = l->next) {
-      FmFileActionItem* subitem = FM_FILE_ACTION_ITEM(l->data);
+    if (subitems != NULL) {
       QMenu* submenu = new QMenu(menu);
-      addCustomActionItem(submenu, subitem);
+      for(GList* l = subitems; l; l = l->next) {
+        FmFileActionItem* subitem = FM_FILE_ACTION_ITEM(l->data);
+        addCustomActionItem(submenu, subitem);
+      }
       action->setMenu(submenu);
     }
   }
@@ -350,6 +354,7 @@ void FileMenu::onDeleteTriggered() {
 void FileMenu::onUnTrashTriggered() {
   FmPathList* paths = fm_path_list_new_from_file_info_list(files_);
   FileOperation::unTrashFiles(paths);
+  fm_path_list_unref(paths);
 }
 
 void FileMenu::onPasteTriggered() {

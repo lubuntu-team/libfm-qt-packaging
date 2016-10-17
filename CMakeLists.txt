@@ -5,7 +5,7 @@ set(LIBFM_QT_LIBRARY_NAME "fm-qt" CACHE STRING "fm-qt")
 
 set(LIBFM_QT_VERSION_MAJOR 0)
 set(LIBFM_QT_VERSION_MINOR 11)
-set(LIBFM_QT_VERSION_PATCH 0)
+set(LIBFM_QT_VERSION_PATCH 1)
 set(LIBFM_QT_VERSION ${LIBFM_QT_VERSION_MAJOR}.${LIBFM_QT_VERSION_MINOR}.${LIBFM_QT_VERSION_PATCH})
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
@@ -32,13 +32,16 @@ endif()
 find_package(Qt5Widgets "${REQUIRED_QT_VERSION}" REQUIRED)
 find_package(Qt5LinguistTools "${REQUIRED_QT_VERSION}" REQUIRED)
 find_package(Qt5X11Extras "${REQUIRED_QT_VERSION}" REQUIRED)
+find_package(XCB REQUIRED)
+
+#Note: no run-time dependency on liblxqt, just a build dependency for lxqt_translate_ts/desktop
+find_package(lxqt REQUIRED)
 
 find_package(PkgConfig)
 pkg_check_modules(SYSTEM_LIBS REQUIRED
     glib-2.0
     gio-2.0
     gio-unix-2.0
-    xcb
 )
 
 pkg_check_modules(LIBFM REQUIRED libfm>="${REQUIRED_LIBFM_VERSION}")
@@ -50,6 +53,7 @@ include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
+include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 add_definitions(-DQT_NO_KEYWORDS)
 
@@ -57,27 +61,6 @@ add_definitions(-DQT_NO_KEYWORDS)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
-if (CMAKE_VERSION VERSION_LESS "3.1")
-    include(CheckCXXCompilerFlag)
-    CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-    if(COMPILER_SUPPORTS_CXX11)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-    else()
-        CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-        # -std=c++0x is deprecated but some tools e.g. qmake or older gcc are still using it
-        if(COMPILER_SUPPORTS_CXX0X)
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-        else()
-            message(FATAL_ERROR "Compiler ${CMAKE_CXX_COMPILER} does not support c++11/c++0x")
-        endif()
-    endif()
-else()
-  set(CMAKE_CXX_STANDARD 11)
-endif()
-
-if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    set(CMAKE_CXX_FLAGS "-fno-exceptions ${CMAKE_CXX_FLAGS}")
-endif()
 
 set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

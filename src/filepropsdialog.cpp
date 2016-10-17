@@ -46,9 +46,9 @@ enum {
 FilePropsDialog::FilePropsDialog(FmFileInfoList* files, QWidget* parent, Qt::WindowFlags f):
   QDialog(parent, f),
   fileInfos_(fm_file_info_list_ref(files)),
+  fileInfo(fm_file_info_list_peek_head(files)),
   singleType(fm_file_info_list_is_same_type(files)),
   singleFile(fm_file_info_list_get_length(files) == 1 ? true:false),
-  fileInfo(fm_file_info_list_peek_head(files)),
   mimeType(NULL) {
 
   setAttribute(Qt::WA_DeleteOnClose);
@@ -69,17 +69,26 @@ FilePropsDialog::FilePropsDialog(FmFileInfoList* files, QWidget* parent, Qt::Win
 }
 
 FilePropsDialog::~FilePropsDialog() {
-  delete ui;
-
   if(fileInfos_)
     fm_file_info_list_unref(fileInfos_);
-  if(deepCountJob)
-    g_object_unref(deepCountJob);
+
+  // Stop the timer if it's still running
   if(fileSizeTimer) {
     fileSizeTimer->stop();
     delete fileSizeTimer;
     fileSizeTimer = NULL;
   }
+
+  // Cancel the indexing job if it hasn't finished
+  if(deepCountJob) {
+    g_signal_handlers_disconnect_by_func(deepCountJob, (gpointer)G_CALLBACK(onDeepCountJobFinished), this);
+    fm_job_cancel(FM_JOB(deepCountJob));
+    g_object_unref(deepCountJob);
+    deepCountJob = NULL;
+  }
+
+  // And finally delete the dialog's UI
+  delete ui;
 }
 
 void FilePropsDialog::initApplications() {
@@ -295,7 +304,7 @@ void FilePropsDialog::initGeneralPage() {
   connect(fileSizeTimer, &QTimer::timeout, this, &FilePropsDialog::onFileSizeTimerTimeout);
   fileSizeTimer->start(600);
   g_signal_connect(deepCountJob, "finished", G_CALLBACK(onDeepCountJobFinished), this);
-  gboolean ret = fm_job_run_async(FM_JOB(deepCountJob));
+  fm_job_run_async(FM_JOB(deepCountJob));
 }
 
 /*static */ void FilePropsDialog::onDeepCountJobFinished(FmDeepCountJob* job, FilePropsDialog* pThis) {
@@ -421,6 +430,29 @@ void FilePropsDialog::accept() {
     }
     op->setAutoDestroy(true);
     op->run();
+  }
+
+  // Renaming
+  if(singleFile) {
+    QString new_name = ui->fileName->text();
+    if(QString::fromUtf8(fm_file_info_get_disp_name(fileInfo)) != new_name) {
+      FmPath* path = fm_file_info_get_path(fileInfo);
+      GFile* gf = fm_path_to_gfile(path);
+      GFile* parent_gf = g_file_get_parent(gf);
+      GFile* dest = g_file_get_child(G_FILE(parent_gf), new_name.toLocal8Bit().data());
+      g_object_unref(parent_gf);
+      GError* err = NULL;
+      if(!g_file_move(gf, dest,
+                      GFileCopyFlags(G_FILE_COPY_ALL_METADATA |
+                                     G_FILE_COPY_NO_FALLBACK_FOR_MOVE |
+                                     G_FILE_COPY_NOFOLLOW_SYMLINKS),
+                      NULL, NULL, NULL, &err)) {
+        QMessageBox::critical(this, QObject::tr("Error"), err->message);
+        g_error_free(err);
+      }
+      g_object_unref(dest);
+      g_object_unref(gf);
+    }
   }
 
   QDialog::accept();
