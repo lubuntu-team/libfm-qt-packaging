@@ -382,7 +382,10 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::gidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::IconTheme::changed()@Base" 0.10.0
  (c++)"Fm::IconTheme::checkChanged()@Base" 0.10.0
- (c++)"Fm::IconTheme::convertFromGIcon(_GIcon*)@Base" 0.10.0
+ (c++)"Fm::IconTheme::convertFromGIconWithoutEmblems(_GIcon*)@Base" 0.11.1
+ (c++)"Fm::IconTheme::emblems(_FmIcon*)@Base" 0.11.1
+ (c++)"Fm::IconTheme::emblems(_GIcon*)@Base" 0.11.1
+ (c++)"Fm::IconTheme::ensureCacheData(_FmIcon*)@Base" 0.11.1
  (c++)"Fm::IconTheme::eventFilter(QObject*, QEvent*)@Base" 0.10.0
  (c++)"Fm::IconTheme::icon(_FmIcon*)@Base" 0.10.0
  (c++)"Fm::IconTheme::iconFromNames(char const* const*)@Base" 0.10.0
@@ -435,6 +438,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::pathListFromQUrls(QList<QUrl>)@Base" 0.10.0
  (c++)"Fm::PlacesModelBookmarkItem::PlacesModelBookmarkItem(_FmBookmarkItem*)@Base" 0.10.0
  (c++)"Fm::PlacesModel::createTrashItem()@Base" 0.10.0
+ (c++)"Fm::PlacesModel::data(QModelIndex const&, int) const@Base" 0.11.1
  (c++)"Fm::PlacesModel::dropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::PlacesModel::flags(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::PlacesModelItem::data(int) const@Base" 0.10.0
