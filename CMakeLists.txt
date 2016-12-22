@@ -5,7 +5,7 @@ set(LIBFM_QT_LIBRARY_NAME "fm-qt" CACHE STRING "fm-qt")
 
 set(LIBFM_QT_VERSION_MAJOR 0)
 set(LIBFM_QT_VERSION_MINOR 11)
-set(LIBFM_QT_VERSION_PATCH 1)
+set(LIBFM_QT_VERSION_PATCH 2)
 set(LIBFM_QT_VERSION ${LIBFM_QT_VERSION_MAJOR}.${LIBFM_QT_VERSION_MINOR}.${LIBFM_QT_VERSION_PATCH})
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
@@ -17,13 +17,14 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 # Actually, libtool uses different ways on different operating systems. So there is no
 # universal way to translate a libtool version-info to a cmake version.
 # We use "(current-age).age.revision" as the cmake version.
-# current: 3, revision: 0, age: 0 => version: 3.0.0
-set(LIBFM_QT_LIB_VERSION "3.0.0")
+# current: 4, revision: 0, age: 1 => version: 3.1.0
+set(LIBFM_QT_LIB_VERSION "3.1.0")
 set(LIBFM_QT_LIB_SOVERSION "3")
 
 set(REQUIRED_QT_VERSION "5.2")
 set(REQUIRED_LIBFM_VERSION "1.2.0")
 set(REQUIRED_LIBMENUCACHE_VERSION "0.4.0")
+set(REQUIRED_LXQT_BUILD_TOOLS_VERSION "0.3.0")
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -32,20 +33,13 @@ endif()
 find_package(Qt5Widgets "${REQUIRED_QT_VERSION}" REQUIRED)
 find_package(Qt5LinguistTools "${REQUIRED_QT_VERSION}" REQUIRED)
 find_package(Qt5X11Extras "${REQUIRED_QT_VERSION}" REQUIRED)
+
+find_package(lxqt-build-tools "${REQUIRED_LXQT_BUILD_TOOLS_VERSION}" REQUIRED)
+find_package(Fm "${REQUIRED_LIBFM_VERSION}" REQUIRED)
+find_package(MenuCache "${REQUIRED_LIBMENUCACHE_VERSION}" REQUIRED)
 find_package(XCB REQUIRED)
 
-#Note: no run-time dependency on liblxqt, just a build dependency for lxqt_translate_ts/desktop
-find_package(lxqt REQUIRED)
-
-find_package(PkgConfig)
-pkg_check_modules(SYSTEM_LIBS REQUIRED
-    glib-2.0
-    gio-2.0
-    gio-unix-2.0
-)
-
-pkg_check_modules(LIBFM REQUIRED libfm>="${REQUIRED_LIBFM_VERSION}")
-pkg_check_modules(LIBMENUCACHE REQUIRED libmenu-cache>="${REQUIRED_LIBMENUCACHE_VERSION}")
+message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION_STRING}")
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 include(GNUInstallDirs)
@@ -54,13 +48,6 @@ include(CMakePackageConfigHelpers)
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
-
-add_definitions(-DQT_NO_KEYWORDS)
-
-# set visibility to hidden to hide symbols, unless they're exported manually in the code
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
-
 
 set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -98,18 +85,3 @@ if(BUILD_DOCUMENTATION)
         COMPONENT Devel
     )
 endif()
-
-# building tarball with CPack -------------------------------------------------
-# To create a source distribution, type:
-# make package_source
-include(InstallRequiredSystemLibraries)
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
-set(CPACK_PACKAGE_VENDOR "")
-set(CPACK_PACKAGE_VERSION_MAJOR ${LIBFM_QT_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${LIBFM_QT_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${LIBFM_QT_VERSION_PATCH})
-set(CPACK_GENERATOR TBZ2)
-set(CPACK_SOURCE_GENERATOR TBZ2)
-set(CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
-include(CPack)
