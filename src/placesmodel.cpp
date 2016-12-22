@@ -35,7 +35,6 @@ PlacesModel::PlacesModel(QObject* parent):
   showApplications_(true),
   showDesktop_(true),
   ejectIcon_(QIcon::fromTheme("media-eject")) {
-
   setColumnCount(2);
 
   placesRoot = new QStandardItem(tr("Places"));
@@ -503,6 +502,23 @@ Qt::ItemFlags PlacesModel::flags(const QModelIndex& index) const {
   }
   return QStandardItemModel::flags(index);
 }
+
+
+QVariant PlacesModel::data(const QModelIndex &index, int role) const {
+  if(index.column() == 0 && index.parent().isValid()) {
+    PlacesModelItem* item = static_cast<PlacesModelItem*>(QStandardItemModel::itemFromIndex(index));
+    if(item != nullptr) {
+      switch(role) {
+      case FileInfoRole:
+        return QVariant::fromValue<void*>(item->fileInfo());
+      case FmIconRole:
+        return QVariant::fromValue<void*>(item->icon());
+      }
+    }
+  }
+  return QStandardItemModel::data(index, role);
+}
+
 
 bool PlacesModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent) {
   QStandardItem* item = itemFromIndex(parent);

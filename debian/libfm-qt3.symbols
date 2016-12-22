@@ -421,6 +421,28 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::MountOperation::staticMetaObject@Base" 0.10.0
  (c++)"Fm::MountOperation::wait()@Base" 0.10.0
  (c++)"Fm::pasteFilesFromClipboard(_FmPath*, QWidget*)@Base" 0.10.0
+ (c++)"Fm::PathBar::chdir(_FmPath*)@Base" 0.11.2
+ (c++)"Fm::PathBar::closeEditor()@Base" 0.11.2
+ (c++)"Fm::PathBar::contextMenuEvent(QContextMenuEvent*)@Base" 0.11.2
+ (c++)"Fm::PathBar::copyPath()@Base" 0.11.2
+ (c++)"Fm::PathBar::editingFinished()@Base" 0.11.2
+ (c++)"Fm::PathBar::metaObject() const@Base" 0.11.2
+ (c++)"Fm::PathBar::middleClickChdir(_FmPath*)@Base" 0.11.2
+ (c++)"Fm::PathBar::mousePressEvent(QMouseEvent*)@Base" 0.11.2
+ (c++)"Fm::PathBar::onButtonToggled(bool)@Base" 0.11.2
+ (c++)"Fm::PathBar::onReturnPressed()@Base" 0.11.2
+ (c++)"Fm::PathBar::onScrollButtonClicked()@Base" 0.11.2
+ (c++)"Fm::PathBar::openEditor()@Base" 0.11.2
+ (c++)"Fm::PathBar::PathBar(QWidget*)@Base" 0.11.2
+ (c++)"Fm::PathBar::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.11.2
+ (c++)"Fm::PathBar::qt_metacast(char const*)@Base" 0.11.2
+ (c++)"Fm::PathBar::resizeEvent(QResizeEvent*)@Base" 0.11.2
+ (c++)"Fm::PathBar::setArrowEnabledState(int)@Base" 0.11.2
+ (c++)"Fm::PathBar::setPath(Fm::Path)@Base" 0.11.2
+ (c++)"Fm::PathBar::setScrollButtonVisibility()@Base" 0.11.2
+ (c++)"Fm::PathBar::staticMetaObject@Base" 0.11.2
+ (c++)"Fm::PathBar::updateScrollButtonVisibility()@Base" 0.11.2
+ (c++)"Fm::PathBar::wheelEvent(QWheelEvent*)@Base" 0.11.2
  (c++)"Fm::PathEdit::autoComplete()@Base" 0.11.0
  (c++)"Fm::PathEdit::event(QEvent*)@Base" 0.11.0
  (c++)"Fm::PathEdit::focusInEvent(QFocusEvent*)@Base" 0.10.0
@@ -630,6 +652,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo for Fm::FontButton@Base" 0.10.0
  (c++)"typeinfo for Fm::IconTheme@Base" 0.10.0
  (c++)"typeinfo for Fm::MountOperation@Base" 0.10.0
+ (c++)"typeinfo for Fm::PathBar@Base" 0.11.2
  (c++)"typeinfo for Fm::PathEdit@Base" 0.10.0
  (c++)"typeinfo for Fm::PlacesModel@Base" 0.10.0
  (c++)"typeinfo for Fm::PlacesModelBookmarkItem@Base" 0.10.0
@@ -667,6 +690,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo name for Fm::FontButton@Base" 0.10.0
  (c++)"typeinfo name for Fm::IconTheme@Base" 0.10.0
  (c++)"typeinfo name for Fm::MountOperation@Base" 0.10.0
+ (c++)"typeinfo name for Fm::PathBar@Base" 0.11.2
  (c++)"typeinfo name for Fm::PathEdit@Base" 0.10.0
  (c++)"typeinfo name for Fm::PlacesModel@Base" 0.10.0
  (c++)"typeinfo name for Fm::PlacesModelBookmarkItem@Base" 0.10.0
@@ -704,6 +728,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"vtable for Fm::FontButton@Base" 0.10.0
  (c++)"vtable for Fm::IconTheme@Base" 0.10.0
  (c++)"vtable for Fm::MountOperation@Base" 0.10.0
+ (c++)"vtable for Fm::PathBar@Base" 0.11.2
  (c++)"vtable for Fm::PathEdit@Base" 0.10.0
  (c++)"vtable for Fm::PlacesModel@Base" 0.10.0
  (c++)"vtable for Fm::PlacesModelBookmarkItem@Base" 0.10.0

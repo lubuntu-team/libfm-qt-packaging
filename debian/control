@@ -7,20 +7,15 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
 Section: x11
 Priority: optional
 Build-Depends: debhelper (>= 10),
-               cmake (>= 3.0.2),
                libfm-dev (>= 1.2.0),
                libglib2.0-dev,
                libkf5windowsystem-dev,
-               liblxqt0-dev ( >= 0.11.0),
                libmenu-cache-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
-               libqt5xdg-dev (>= 2.0.0),
                libx11-dev,
-               pkg-config,
-               qtbase5-private-dev,
-               qttools5-dev,
-               qttools5-dev-tools
+               lxqt-build-tools (>= 0.3.0),
+               qtbase5-private-dev
 Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt.git/?h=debian/sid
 Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/libfm-qt.git -b debian/sid
@@ -52,6 +47,7 @@ Breaks: libfm-qt5-dev
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends},
+         libfm-dev (>= 1.2.0),
          libfm-qt3 (= ${binary:Version})
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file

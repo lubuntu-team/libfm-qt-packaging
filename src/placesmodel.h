@@ -40,6 +40,11 @@ Q_OBJECT
 friend class PlacesView;
 public:
 
+  enum {
+    FileInfoRole = Qt::UserRole,
+    FmIconRole
+  };
+
   // QAction used for popup menus
   class ItemAction : public QAction {
   public:
@@ -73,6 +78,8 @@ public:
     return showDesktop_;
   }
   void setShowDesktop(bool show);
+
+  QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
 
 public Q_SLOTS:
   void updateIcons();

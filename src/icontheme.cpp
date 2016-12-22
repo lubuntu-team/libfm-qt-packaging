@@ -28,12 +28,18 @@
 
 namespace Fm {
 
+class IconCacheData {
+public:
+    QIcon qicon;
+    QList<Icon> emblems;
+};
+
 static IconTheme* theIconTheme = NULL; // the global single instance of IconTheme.
 static const char* fallbackNames[] = {"unknown", "application-octet-stream", NULL};
 
-static void fmIconDataDestroy(gpointer data) {
-  QIcon* picon = reinterpret_cast<QIcon*>(data);
-  delete picon;
+static void fmIconDataDestroy(gpointer user_data) {
+  IconCacheData* data = reinterpret_cast<IconCacheData*>(user_data);
+  delete data;
 }
 
 IconTheme::IconTheme():
@@ -88,7 +94,7 @@ QIcon IconTheme::iconFromNames(const char* const* names) {
   return QIcon();
 }
 
-QIcon IconTheme::convertFromGIcon(GIcon* gicon) {
+QIcon IconTheme::convertFromGIconWithoutEmblems(GIcon* gicon) {
   if(G_IS_THEMED_ICON(gicon)) {
     const gchar * const * names = g_themed_icon_get_names(G_THEMED_ICON(gicon));
     QIcon icon = iconFromNames(names);
@@ -106,20 +112,36 @@ QIcon IconTheme::convertFromGIcon(GIcon* gicon) {
 }
 
 
+// static
+IconCacheData* IconTheme::ensureCacheData(FmIcon* fmicon) {
+  IconCacheData* data = reinterpret_cast<IconCacheData*>(fm_icon_get_user_data(fmicon));
+  if(!data) { // we don't have a cache yet
+    data = new IconCacheData();
+    GIcon* gicon = G_ICON(fmicon);
+    if(G_IS_EMBLEMED_ICON(gicon)) { // special handling for emblemed icon
+      GList* emblems = g_emblemed_icon_get_emblems(G_EMBLEMED_ICON(gicon));
+      for(GList* l = emblems; l; l = l->next) {
+        GIcon* emblem_gicon = g_emblem_get_icon(G_EMBLEM(l->data));
+        data->emblems.append(Icon::fromGicon(emblem_gicon));
+      }
+      gicon = g_emblemed_icon_get_icon(G_EMBLEMED_ICON(gicon));  // get an emblemless GIcon
+    }
+    data->qicon = convertFromGIconWithoutEmblems(gicon);
+    fm_icon_set_user_data(fmicon, data); // store it in FmIcon
+  }
+  return data;
+}
+
 //static
 QIcon IconTheme::icon(FmIcon* fmicon) {
-  // check if we have a cached version
-  QIcon* picon = reinterpret_cast<QIcon*>(fm_icon_get_user_data(fmicon));
-  if(!picon) { // we don't have a cache yet
-    picon = new QIcon(); // what a waste!
-    *picon = convertFromGIcon(G_ICON(fmicon));
-    fm_icon_set_user_data(fmicon, picon); // store it in FmIcon
-  }
-  return *picon;
+  IconCacheData* data = ensureCacheData(fmicon);
+  return data->qicon;
 }
 
 //static
 QIcon IconTheme::icon(GIcon* gicon) {
+  if(G_IS_EMBLEMED_ICON(gicon)) // get an emblemless GIcon
+    gicon = g_emblemed_icon_get_icon(G_EMBLEMED_ICON(gicon));
   if(G_IS_THEMED_ICON(gicon)) {
     FmIcon* fmicon = fm_icon_from_gicon(gicon);
     QIcon qicon = icon(fmicon);
@@ -128,9 +150,24 @@ QIcon IconTheme::icon(GIcon* gicon) {
   }
   else if(G_IS_FILE_ICON(gicon)) {
     // we do not map GFileIcon to FmIcon deliberately.
-    return convertFromGIcon(gicon);
+    return convertFromGIconWithoutEmblems(gicon);
   }
   return theIconTheme->fallbackIcon_;
+}
+
+// static
+QList<Icon> IconTheme::emblems(FmIcon* fmicon) {
+  IconCacheData* data = ensureCacheData(fmicon);
+  return data->emblems;
+}
+
+//static
+QList<Icon> IconTheme::emblems(GIcon* gicon) {
+  if(G_IS_EMBLEMED_ICON(gicon)) {  // if this gicon contains emblems
+    Icon fmicon = Icon::fromGicon(gicon);
+    return emblems(fmicon.dataPtr());
+  }
+  return QList<Icon>();
 }
 
 // this method is called whenever there is an event on the QDesktopWidget object.

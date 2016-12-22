@@ -1,3 +1,20 @@
+libfm-qt (0.11.2-1) unstable; urgency=medium
+
+  * Cherry-picking upstream release 0.11.2
+  * Added new symbols
+  * Removed build dependencies:
+    - cmake
+    - liblxqt0-dev
+    - libqt5xdg-dev
+    - pkg-config
+    - qttools5-dev
+    - qttools5-dev-tools
+  * Added build dependency lxqt-build-tools
+  * Added build dependency libfm-dev to libfm-qt-dev
+  * Removed models.patch, applied upstream
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 22 Dec 2016 01:32:58 +0100
+
 libfm-qt (0.11.1-3) unstable; urgency=medium
 
   * Backported a upstream fix for Icon Emblem Support.

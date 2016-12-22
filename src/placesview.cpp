@@ -28,6 +28,7 @@
 #include <QHeaderView>
 #include <QDebug>
 #include <QGuiApplication>
+#include "folderitemdelegate.h"
 
 namespace Fm {
 
@@ -42,6 +43,11 @@ PlacesView::PlacesView(QWidget* parent):
   connect(this, &QTreeView::pressed, this, &PlacesView::onPressed);
 
   setIconSize(QSize(24, 24));
+
+  FolderItemDelegate* delegate = new FolderItemDelegate(this, this);
+  delegate->setFileInfoRole(PlacesModel::FileInfoRole);
+  delegate->setFmIconRole(PlacesModel::FmIconRole);
+  setItemDelegateForColumn(0, delegate);
 
   // FIXME: we may share this model amont all views
   model_ = new PlacesModel(this);
