@@ -1,3 +1,10 @@
+libfm-qt (0.11.2-2) unstable; urgency=medium
+
+  * Bumped Standards to 4.0.0
+  * Added dependency shared-mime-info (Closes: #866901)
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 02 Jul 2017 23:01:43 +0200
+
 libfm-qt (0.11.2-1) unstable; urgency=medium
 
   * Cherry-picking upstream release 0.11.2

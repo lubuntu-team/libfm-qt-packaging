@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 10),
                libx11-dev,
                lxqt-build-tools (>= 0.3.0),
                qtbase5-private-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/libfm-qt.git/?h=debian/sid
 Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/libfm-qt.git -b debian/sid
 Homepage: https://github.com/lxde/libfm-qt
@@ -32,7 +32,8 @@ Architecture: any
 Multi-Arch: same
 Section: libs
 Depends: ${misc:Depends},
-         ${shlibs:Depends}
+         ${shlibs:Depends},
+         shared-mime-info
 Recommends: libfm-qt-l10n
 Pre-Depends: ${misc:Pre-Depends}
 Description: file management support for pcmanfm-qt
