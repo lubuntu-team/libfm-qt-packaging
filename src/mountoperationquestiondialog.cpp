@@ -25,47 +25,44 @@
 namespace Fm {
 
 MountOperationQuestionDialog::MountOperationQuestionDialog(MountOperation* op, gchar* message, GStrv choices):
-  QMessageBox(),
-  mountOperation(op) {
+    QMessageBox(),
+    mountOperation(op) {
 
-  setIcon(QMessageBox::Question);
-  setText(QString::fromUtf8(message));
+    setIcon(QMessageBox::Question);
+    setText(QString::fromUtf8(message));
 
-  choiceCount = g_strv_length(choices);
-  choiceButtons = new QAbstractButton*[choiceCount];
-  for(int i = 0; i < choiceCount; ++i) {
-    // It's not allowed to add custom buttons without standard roles
-    // to QMessageBox. So we set role of all buttons to AcceptRole and
-    // handle their clicked() signals in our own slots.
-    // When anyone of the buttons is clicked, exec() always returns "accept".
-    QPushButton* button = new QPushButton(QString::fromUtf8(choices[i]));
-    addButton(button, QMessageBox::AcceptRole);
-    choiceButtons[i] = button;
-  }
-  connect(this, &MountOperationQuestionDialog::buttonClicked, this, &MountOperationQuestionDialog::onButtonClicked);
+    choiceCount = g_strv_length(choices);
+    choiceButtons = new QAbstractButton*[choiceCount];
+    for(int i = 0; i < choiceCount; ++i) {
+        // It's not allowed to add custom buttons without standard roles
+        // to QMessageBox. So we set role of all buttons to AcceptRole.
+        // When any of the set buttons is clicked, exec() always returns "accept".
+        QPushButton* button = new QPushButton(QString::fromUtf8(choices[i]));
+        addButton(button, QMessageBox::AcceptRole);
+        choiceButtons[i] = button;
+    }
 }
 
 MountOperationQuestionDialog::~MountOperationQuestionDialog() {
-  delete []choiceButtons;
+    delete []choiceButtons;
 }
 
 void MountOperationQuestionDialog::done(int r) {
-  if(r != QDialog::Accepted) {
     GMountOperation* op = mountOperation->mountOperation();
-    g_mount_operation_reply(op, G_MOUNT_OPERATION_ABORTED);
-  }
-  QDialog::done(r);
+
+    g_mount_operation_set_choice(op, r);
+    g_mount_operation_reply(op, G_MOUNT_OPERATION_HANDLED);
+
+    QDialog::done(r);
 }
 
-void MountOperationQuestionDialog::onButtonClicked(QAbstractButton* button) {
-  GMountOperation* op = mountOperation->mountOperation();
-  for(int i = 0; i < choiceCount; ++i) {
-    if(choiceButtons[i] == button) {
-      g_mount_operation_set_choice(op, i);
-      g_mount_operation_reply(op, G_MOUNT_OPERATION_HANDLED);
-      break;
-    }
-  }
+void MountOperationQuestionDialog::closeEvent(QCloseEvent *event)
+{
+    GMountOperation* op = mountOperation->mountOperation();
+
+    g_mount_operation_reply(op, G_MOUNT_OPERATION_ABORTED);
+
+    event->accept();
 }
 
 } // namespace Fm

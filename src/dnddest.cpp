@@ -41,7 +41,7 @@ bool DndDest::dropMimeData(const QMimeData* data, Qt::DropAction action) {
   // FIXME: should we put this in dropEvent handler of FolderView instead?
   if(data->hasUrls()) {
     qDebug("drop action: %d", action);
-    FmPathList* srcPaths = pathListFromQUrls(data->urls());
+    auto srcPaths = pathListFromQUrls(data->urls());
     switch(action) {
       case Qt::CopyAction:
         FileOperation::copyFiles(srcPaths, destPath_);
@@ -52,20 +52,18 @@ bool DndDest::dropMimeData(const QMimeData* data, Qt::DropAction action) {
       case Qt::LinkAction:
         FileOperation::symlinkFiles(srcPaths, destPath_);
       default:
-        fm_path_list_unref(srcPaths);
         return false;
     }
-    fm_path_list_unref(srcPaths);
     return true;
   }
   return false;
 }
 
-bool DndDest::isSupported(const QMimeData* data) {
+bool DndDest::isSupported(const QMimeData* /*data*/) {
   return false;
 }
 
-bool DndDest::isSupported(QString mimeType) {
+bool DndDest::isSupported(QString /*mimeType*/) {
   return false;
 }
 
