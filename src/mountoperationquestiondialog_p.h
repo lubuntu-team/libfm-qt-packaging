@@ -22,6 +22,7 @@
 #define FM_MOUNTOPERATIONQUESTIONDIALOG_H
 
 #include "libfmqtglobals.h"
+#include <QCloseEvent>
 #include <QMessageBox>
 #include <gio/gio.h>
 
@@ -30,20 +31,18 @@ namespace Fm {
 class MountOperation;
 
 class MountOperationQuestionDialog : public QMessageBox {
-Q_OBJECT
+    Q_OBJECT
 public:
-  MountOperationQuestionDialog(MountOperation* op, gchar* message, GStrv choices);
-  virtual ~MountOperationQuestionDialog();
+    MountOperationQuestionDialog(MountOperation* op, gchar* message, GStrv choices);
+    virtual ~MountOperationQuestionDialog();
 
-  virtual void done(int r);
-
-private Q_SLOTS:
-  void onButtonClicked(QAbstractButton* button);
+    virtual void done(int r);
+    virtual void closeEvent(QCloseEvent *event);
 
 private:
-  MountOperation* mountOperation;
-  QAbstractButton** choiceButtons;
-  int choiceCount;
+    MountOperation* mountOperation;
+    QAbstractButton** choiceButtons;
+    int choiceCount;
 };
 
 }

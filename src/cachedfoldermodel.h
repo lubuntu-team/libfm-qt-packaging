@@ -24,25 +24,29 @@
 #include "libfmqtglobals.h"
 #include "foldermodel.h"
 
+#include "core/folder.h"
+
 namespace Fm {
 
+// FIXME: deprecate CachedFolderModel later (ugly API design with manual ref()/unref())
 class LIBFM_QT_API CachedFolderModel : public FolderModel {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  CachedFolderModel(FmFolder* folder);
-  void ref() {
-    ++refCount;
-  }
-  void unref();
+    explicit CachedFolderModel(const std::shared_ptr<Fm::Folder>& folder);
+    void ref() {
+        ++refCount;
+    }
+    void unref();
 
-  static CachedFolderModel* modelFromFolder(FmFolder* folder);
-  static CachedFolderModel* modelFromPath(FmPath* path);
+    static CachedFolderModel* modelFromFolder(const std::shared_ptr<Fm::Folder>& folder);
+    static CachedFolderModel* modelFromPath(const Fm::FilePath& path);
 
 private:
-  virtual ~CachedFolderModel();
-  void setFolder(FmFolder* folder);
+    virtual ~CachedFolderModel();
+    void setFolder(FmFolder* folder);
 private:
-  int refCount;
+    int refCount;
+    constexpr static const char* cacheKey = "CachedFolderModel";
 };
 
 

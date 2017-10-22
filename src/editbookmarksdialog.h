@@ -27,25 +27,25 @@
 
 namespace Ui {
 class EditBookmarksDialog;
-};
+}
 
 namespace Fm {
 
 class LIBFM_QT_API EditBookmarksDialog : public QDialog {
-Q_OBJECT
+    Q_OBJECT
 public:
-  explicit EditBookmarksDialog(FmBookmarks* bookmarks, QWidget* parent = 0, Qt::WindowFlags f = 0);
-  virtual ~EditBookmarksDialog();
+    explicit EditBookmarksDialog(FmBookmarks* bookmarks, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~EditBookmarksDialog();
 
-  virtual void accept();
+    virtual void accept();
 
 private Q_SLOTS:
-  void onAddItem();
-  void onRemoveItem();
+    void onAddItem();
+    void onRemoveItem();
 
 private:
-  Ui::EditBookmarksDialog* ui;
-  FmBookmarks* bookmarks_;
+    Ui::EditBookmarksDialog* ui;
+    FmBookmarks* bookmarks_;
 };
 
 }

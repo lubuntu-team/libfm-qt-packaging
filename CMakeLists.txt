@@ -4,8 +4,8 @@ project(libfm-qt)
 set(LIBFM_QT_LIBRARY_NAME "fm-qt" CACHE STRING "fm-qt")
 
 set(LIBFM_QT_VERSION_MAJOR 0)
-set(LIBFM_QT_VERSION_MINOR 11)
-set(LIBFM_QT_VERSION_PATCH 2)
+set(LIBFM_QT_VERSION_MINOR 12)
+set(LIBFM_QT_VERSION_PATCH 0)
 set(LIBFM_QT_VERSION ${LIBFM_QT_VERSION_MAJOR}.${LIBFM_QT_VERSION_MINOR}.${LIBFM_QT_VERSION_PATCH})
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
@@ -24,7 +24,7 @@ set(LIBFM_QT_LIB_SOVERSION "3")
 set(REQUIRED_QT_VERSION "5.2")
 set(REQUIRED_LIBFM_VERSION "1.2.0")
 set(REQUIRED_LIBMENUCACHE_VERSION "0.4.0")
-set(REQUIRED_LXQT_BUILD_TOOLS_VERSION "0.3.0")
+set(REQUIRED_LXQT_BUILD_TOOLS_VERSION "0.4.0")
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -37,9 +37,10 @@ find_package(Qt5X11Extras "${REQUIRED_QT_VERSION}" REQUIRED)
 find_package(lxqt-build-tools "${REQUIRED_LXQT_BUILD_TOOLS_VERSION}" REQUIRED)
 find_package(Fm "${REQUIRED_LIBFM_VERSION}" REQUIRED)
 find_package(MenuCache "${REQUIRED_LIBMENUCACHE_VERSION}" REQUIRED)
+find_package(Exif REQUIRED)
 find_package(XCB REQUIRED)
 
-message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION_STRING}")
+message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 include(GNUInstallDirs)
@@ -65,6 +66,7 @@ install(FILES
 )
 
 add_subdirectory(src)
+add_subdirectory(data)
 
 # add Doxygen support to generate API docs
 # References:

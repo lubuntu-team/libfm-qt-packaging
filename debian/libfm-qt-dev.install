@@ -3,3 +3,6 @@ usr/lib/*/*.so
 usr/lib/*/pkgconfig/*
 
 usr/share/cmake/fm-qt/*.cmake
+
+usr/include/libfm-qt/customactions/*.h
+usr/include/libfm-qt/core/*.h

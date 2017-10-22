@@ -22,11 +22,11 @@
 
 namespace Fm {
 
-BookmarkAction::BookmarkAction(FmBookmarkItem* item, QObject* parent):
-  QAction(parent),
-  item_(fm_bookmark_item_ref(item)) {
+BookmarkAction::BookmarkAction(std::shared_ptr<const Fm::BookmarkItem> item, QObject* parent):
+    QAction(parent),
+    item_(std::move(item)) {
 
-  setText(QString::fromUtf8(item->name));
+    setText(item_->name());
 }
 
 } // namespace Fm
