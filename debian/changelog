@@ -1,3 +1,10 @@
+libfm-qt (0.12.0-7) experimental; urgency=medium
+
+  * Some more symbol fixes for armel, armhf, mips, mipsel. hppa, m68k,
+    ppc64 and sh4 
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 16:30:32 +0200
+
 libfm-qt (0.12.0-6) experimental; urgency=medium
 
   * Fixed symbols for arm64, ppc64el, s390x, hppa, powerpc, ppc64 and sparc64
