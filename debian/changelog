@@ -1,7 +1,14 @@
+libfm-qt (0.12.0-8) experimental; urgency=medium
+
+  * introduced two optional symbols
+  * fixed sh4 symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 28 Oct 2017 17:45:54 +0200
+
 libfm-qt (0.12.0-7) experimental; urgency=medium
 
   * Some more symbol fixes for armel, armhf, mips, mipsel. hppa, m68k,
-    ppc64 and sh4 
+    ppc64 and sh4
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 16:30:32 +0200
 
@@ -13,14 +20,14 @@ libfm-qt (0.12.0-6) experimental; urgency=medium
 
 libfm-qt (0.12.0-5) experimental; urgency=medium
 
-  * Symbol fixes for i386 - this will introduce regressions for other 
+  * Symbol fixes for i386 - this will introduce regressions for other
     architectures
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 00:57:28 +0200
 
 libfm-qt (0.12.0-4) experimental; urgency=medium
 
-  * Symbol fixes for armel, mipsel, hurd-i386, x32 
+  * Symbol fixes for armel, mipsel, hurd-i386, x32
 
  -- Alf Gaida <agaida@siduction.org>  Tue, 24 Oct 2017 23:49:03 +0200
 
@@ -76,7 +83,7 @@ libfm-qt (0.11.2-1) unstable; urgency=medium
 libfm-qt (0.11.1-3) unstable; urgency=medium
 
   * Backported a upstream fix for Icon Emblem Support.
-  * Added needed Symbols 
+  * Added needed Symbols
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 20 Oct 2016 18:00:38 +0200
 
@@ -93,7 +100,7 @@ libfm-qt (0.11.1-2) unstable; urgency=medium
   * Added build dependency libqt5svg5-dev
   * Added Recommends libfm-qt-l10n
   * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
-    builds 
+    builds
   * Hard override translation control
   * Use DCMAKE_BUILD_TYPE=RelWithDebInfo
   * Fixed copyright Format field, using https
@@ -144,7 +151,7 @@ libfm-qt (0.10.0+20151214-2) unstable; urgency=medium
 libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
 
   [ Alf Gaida ]
-  * forked pcmanfm-qt debian/$foo 
+  * forked pcmanfm-qt debian/$foo
   * Imported upstream version 0.10.0+20151214.
   * Initial release (Closes: #808192)
 
