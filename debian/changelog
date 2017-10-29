@@ -1,3 +1,9 @@
+libfm-qt (0.12.0-9) experimental; urgency=medium
+
+  * next round of symbols 
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 29 Oct 2017 02:59:13 +0200
+
 libfm-qt (0.12.0-8) experimental; urgency=medium
 
   * introduced two optional symbols
