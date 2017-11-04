@@ -1,3 +1,10 @@
+libfm-qt (0.12.0-11) experimental; urgency=medium
+
+  * added new symbol to mips64el
+  * added and fixed a bunch of armel symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 05 Nov 2017 00:27:13 +0100
+
 libfm-qt (0.12.0-10) experimental; urgency=medium
 
   * fixed symbols for mips64el 
