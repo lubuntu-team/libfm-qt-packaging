@@ -1229,7 +1229,8 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch=  armel )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel )"typeinfo for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel )"typeinfo for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (optional|c++|arch= armel )"typeinfo name for __gnu_cxx::__mutex@Base" 0.12.0
+ (optional|c++|arch=armel )"typeinfo for __gnu_cxx::__mutex@Base" 0.12.0
+ (optional|c++|arch=armel )"typeinfo name for __gnu_cxx::__mutex@Base" 0.12.0
  (c++)"typeinfo for std::_Sp_make_shared_tag@Base" 0.12.0
  (c++)"typeinfo name for Fm::AppChooserComboBox@Base" 0.10.0
  (c++)"typeinfo name for Fm::AppChooserDialog@Base" 0.10.0
