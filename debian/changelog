@@ -1,3 +1,86 @@
+libfm-qt (0.12.0-12) experimental; urgency=medium
+
+  * finally fixed the symbols for the very most architectures
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 01 Dec 2017 20:51:49 +0100
+
+libfm-qt (0.12.0-11) experimental; urgency=medium
+
+  * added new symbol to mips64el
+  * added and fixed a bunch of armel symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 05 Nov 2017 00:27:13 +0100
+
+libfm-qt (0.12.0-10) experimental; urgency=medium
+
+  * fixed symbols for mips64el
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 04 Nov 2017 17:55:04 +0100
+
+libfm-qt (0.12.0-9) experimental; urgency=medium
+
+  * next round of symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 29 Oct 2017 02:59:13 +0200
+
+libfm-qt (0.12.0-8) experimental; urgency=medium
+
+  * introduced two optional symbols
+  * fixed sh4 symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 28 Oct 2017 17:45:54 +0200
+
+libfm-qt (0.12.0-7) experimental; urgency=medium
+
+  * Some more symbol fixes for armel, armhf, mips, mipsel. hppa, m68k,
+    ppc64 and sh4
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 16:30:32 +0200
+
+libfm-qt (0.12.0-6) experimental; urgency=medium
+
+  * Fixed symbols for arm64, ppc64el, s390x, hppa, powerpc, ppc64 and sparc64
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 02:56:20 +0200
+
+libfm-qt (0.12.0-5) experimental; urgency=medium
+
+  * Symbol fixes for i386 - this will introduce regressions for other
+    architectures
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 26 Oct 2017 00:57:28 +0200
+
+libfm-qt (0.12.0-4) experimental; urgency=medium
+
+  * Symbol fixes for armel, mipsel, hurd-i386, x32
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 24 Oct 2017 23:49:03 +0200
+
+libfm-qt (0.12.0-3) experimental; urgency=medium
+
+  * Next round of fixed symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 23 Oct 2017 01:29:24 +0200
+
+libfm-qt (0.12.0-2) experimental; urgency=medium
+
+  * Fixed symbols for arm64 armhf i386 mips ppc64el alpha powerpc ppc64 sparc64
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Oct 2017 20:42:08 +0200
+
+libfm-qt (0.12.0-1) experimental; urgency=medium
+
+  * Cherry-picking upstream release 0.12.0.
+  * Switched to experimental
+  * Bumped Standards to 4.1.1
+  * Fixed Symbols
+  * Added build dependency libexif-dev
+  * Added dependencies libexif-dev and libmenu-cache-dev to libfm-qt-dev
+  * Added override for dh_missing
+  * Bumped years in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Oct 2017 16:34:45 +0200
+
 libfm-qt (0.11.2-2) unstable; urgency=medium
 
   * Bumped Standards to 4.0.0
@@ -25,7 +108,7 @@ libfm-qt (0.11.2-1) unstable; urgency=medium
 libfm-qt (0.11.1-3) unstable; urgency=medium
 
   * Backported a upstream fix for Icon Emblem Support.
-  * Added needed Symbols 
+  * Added needed Symbols
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 20 Oct 2016 18:00:38 +0200
 
@@ -42,7 +125,7 @@ libfm-qt (0.11.1-2) unstable; urgency=medium
   * Added build dependency libqt5svg5-dev
   * Added Recommends libfm-qt-l10n
   * Exported LC_ALL=C.UTF-8 - define language settings for reproducible
-    builds 
+    builds
   * Hard override translation control
   * Use DCMAKE_BUILD_TYPE=RelWithDebInfo
   * Fixed copyright Format field, using https
@@ -93,7 +176,7 @@ libfm-qt (0.10.0+20151214-2) unstable; urgency=medium
 libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
 
   [ Alf Gaida ]
-  * forked pcmanfm-qt debian/$foo 
+  * forked pcmanfm-qt debian/$foo
   * Imported upstream version 0.10.0+20151214.
   * Initial release (Closes: #808192)
 

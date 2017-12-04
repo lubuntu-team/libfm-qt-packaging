@@ -22,40 +22,45 @@
 #define FM_FILEOPERATIONDIALOG_H
 
 #include "libfmqtglobals.h"
+#include <cstdint>
 #include <QDialog>
 #include <libfm/fm.h>
+#include "core/filepath.h"
+#include "core/fileinfo.h"
 
 namespace Ui {
-  class FileOperationDialog;
-};
+class FileOperationDialog;
+}
 
 namespace Fm {
 
 class FileOperation;
 
 class LIBFM_QT_API FileOperationDialog : public QDialog {
-Q_OBJECT
+    Q_OBJECT
 public:
-  explicit FileOperationDialog(FileOperation* _operation);
-  virtual ~FileOperationDialog();
+    explicit FileOperationDialog(FileOperation* _operation);
+    virtual ~FileOperationDialog();
 
-  void setSourceFiles(FmPathList* srcFiles);
-  void setDestPath(FmPath* dest);
+    void setSourceFiles(const Fm::FilePathList& srcFiles);
+    void setDestPath(const Fm::FilePath& dest);
 
-  int ask(QString question, char* const* options);
-  int askRename(FmFileInfo* src, FmFileInfo* dest, QString& new_name);
-  FmJobErrorAction error(GError* err, FmJobErrorSeverity severity);
-  void setPrepared();
-  void setCurFile(QString cur_file);
-  void setPercent(unsigned int percent);
-  void setRemainingTime(unsigned int sec);
+    int ask(QString question, char* const* options);
+    int askRename(FmFileInfo* src, FmFileInfo* dest, QString& new_name);
+    FmJobErrorAction error(GError* err, FmJobErrorSeverity severity);
+    void setPrepared();
+    void setCurFile(QString cur_file);
+    void setPercent(unsigned int percent);
+    void setDataTransferred(std::uint64_t finishedSize, std::uint64_t totalSize);
+    void setRemainingTime(unsigned int sec);
 
-  virtual void reject();
+    virtual void reject();
 
 private:
-  Ui::FileOperationDialog* ui;
-  FileOperation* operation;
-  int defaultOption;
+    Ui::FileOperationDialog* ui;
+    FileOperation* operation;
+    int defaultOption;
+    bool ignoreNonCriticalErrors_;
 };
 
 }

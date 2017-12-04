@@ -39,6 +39,7 @@ public:
   virtual ~FolderViewListView();
   virtual void startDrag(Qt::DropActions supportedActions);
   virtual void mousePressEvent(QMouseEvent* event);
+  virtual void mouseMoveEvent(QMouseEvent* event);
   virtual void mouseReleaseEvent(QMouseEvent* event);
   virtual void mouseDoubleClickEvent(QMouseEvent* event);
   virtual void dragEnterEvent(QDragEnterEvent* event);
@@ -63,6 +64,9 @@ public:
 Q_SIGNALS:
   void activatedFiltered(const QModelIndex &index);
 
+protected:
+  virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers);
+
 private Q_SLOTS:
   void activation(const QModelIndex &index);
 
@@ -78,6 +82,7 @@ public:
   virtual ~FolderViewTreeView();
   virtual void setModel(QAbstractItemModel* model);
   virtual void mousePressEvent(QMouseEvent* event);
+  virtual void mouseMoveEvent(QMouseEvent* event);
   virtual void mouseReleaseEvent(QMouseEvent* event);
   virtual void mouseDoubleClickEvent(QMouseEvent* event);
   virtual void dragEnterEvent(QDragEnterEvent* event);
@@ -87,7 +92,7 @@ public:
 
   virtual void rowsInserted(const QModelIndex& parent,int start, int end);
   virtual void rowsAboutToBeRemoved(const QModelIndex& parent,int start, int end);
-  virtual void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
+  virtual void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector<int>& roles = QVector<int>{});
   virtual void reset();
 
   virtual void resizeEvent(QResizeEvent* event);

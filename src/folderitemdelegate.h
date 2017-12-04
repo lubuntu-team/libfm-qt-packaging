@@ -23,53 +23,100 @@
 
 #include "libfmqtglobals.h"
 #include <QStyledItemDelegate>
-#include <QAbstractItemView>
+class QAbstractItemView;
 
 namespace Fm {
 
 class LIBFM_QT_API FolderItemDelegate : public QStyledItemDelegate {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit FolderItemDelegate(QAbstractItemView* view, QObject* parent = nullptr);
-  virtual ~FolderItemDelegate();
+    explicit FolderItemDelegate(QAbstractItemView* view, QObject* parent = nullptr);
 
-  inline void setGridSize(QSize size) {
-    gridSize_ = size;
-  }
+    virtual ~FolderItemDelegate();
 
-  inline QSize gridSize() const {
-    return gridSize_;
-  }
+    inline void setItemSize(QSize size) {
+        itemSize_ = size;
+    }
 
-  int fileInfoRole() {
-    return fileInfoRole_;
-  }
+    inline QSize itemSize() const {
+        return itemSize_;
+    }
 
-  void setFileInfoRole(int role) {
-    fileInfoRole_ = role;
-  }
+    inline void setIconSize(QSize size) {
+        iconSize_ = size;
+    }
 
-  int fmIconRole() {
-    return fmIconRole_;
-  }
+    inline QSize iconSize() const {
+        return iconSize_;
+    }
 
-  void setFmIconRole(int role) {
-    fmIconRole_ = role;
-  }
+    int fileInfoRole() {
+        return fileInfoRole_;
+    }
 
-  virtual QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const;
-  virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    void setFileInfoRole(int role) {
+        fileInfoRole_ = role;
+    }
+
+    int iconInfoRole() {
+        return iconInfoRole_;
+    }
+
+    void setIconInfoRole(int role) {
+        iconInfoRole_ = role;
+    }
+
+    // only support vertical layout (icon view mode: text below icon)
+    void setShadowColor(const QColor& shadowColor) {
+      shadowColor_ = shadowColor;
+    }
+
+    // only support vertical layout (icon view mode: text below icon)
+    const QColor& shadowColor() const {
+      return shadowColor_;
+    }
+
+    // only support vertical layout (icon view mode: text below icon)
+    void setMargins(QSize margins) {
+      margins_ = margins.expandedTo(QSize(0, 0));
+    }
+
+    QSize getMargins() const {
+      return margins_;
+    }
+
+    bool hasEditor() const {
+        return hasEditor_;
+    }
+
+    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
+    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
+    virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
+    virtual void setEditorData(QWidget* editor, const QModelIndex& index) const;
+
+    virtual bool eventFilter(QObject* object, QEvent* event);
+
+    virtual void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
+    QSize iconViewTextSize(const QModelIndex& index) const;
 
 private:
-  void drawText(QPainter* painter, QStyleOptionViewItem& opt, QRectF& textRect) const;
-  static QIcon::Mode iconModeFromState(QStyle::State state);
+    void drawText(QPainter* painter, QStyleOptionViewItem& opt, QRectF& textRect) const;
+
+    static QIcon::Mode iconModeFromState(QStyle::State state);
 
 private:
-  QAbstractItemView* view_;
-  QIcon symlinkIcon_;
-  QSize gridSize_;
-  int fileInfoRole_;
-  int fmIconRole_;
+    QIcon symlinkIcon_;
+    QSize iconSize_;
+    QSize itemSize_;
+    int fileInfoRole_;
+    int iconInfoRole_;
+    QColor shadowColor_;
+    QSize margins_;
+    mutable bool hasEditor_;
 };
 
 }
