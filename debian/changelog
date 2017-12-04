@@ -1,3 +1,9 @@
+libfm-qt (0.12.0-13) unstable; urgency=medium
+
+  * Transition to unstable
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 04 Dec 2017 18:41:41 +0100
+
 libfm-qt (0.12.0-12) experimental; urgency=medium
 
   * finally fixed the symbols for the very most architectures
