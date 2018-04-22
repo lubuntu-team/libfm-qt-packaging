@@ -1,9 +1,21 @@
+libfm-qt (0.12.0-15) unstable; urgency=medium
+
+  * Added missed symbols (Closes: #896514)
+  * Bumped debhelper build dependency to 11~
+  * Bumped compat to 11
+  * Bumped Standards to 4.1.4
+  * Fixed VCS fields for salsa
+  * Fixed upstream homepage
+  * Fixed years and source in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 22 Apr 2018 22:39:57 +0200
+
 libfm-qt (0.12.0-14) unstable; urgency=medium
 
   * Bumped Standards to 4.1.2, no changes needed
   * Removed branch from VCS fields
   * Removed debian/gbp.conf
-  * Removed trailing whitespaces  
+  * Removed trailing whitespaces
 
  -- Alf Gaida <agaida@siduction.org>  Wed, 13 Dec 2017 20:08:02 +0100
 
