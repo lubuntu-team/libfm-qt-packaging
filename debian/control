@@ -9,25 +9,26 @@ Priority: optional
 Build-Depends: debhelper (>= 11~),
                libexif-dev,
                libfm-dev (>= 1.2.0),
-               libglib2.0-dev,
                libkf5windowsystem-dev,
                libmenu-cache-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev,
-               lxqt-build-tools (>= 0.4.0),
+               lxqt-build-tools (>= 0.5.0~),
                qtbase5-private-dev
 Standards-Version: 4.1.4
 Vcs-Browser: https://salsa.debian.org/lxqt-team/libfm-qt
 Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
 
-Package: libfm-qt3
+Package: libfm-qt5
 Provides: libfm-qt
 Conflicts: libfm-qt
 Replaces: libfm-qt5-2,
+          libfm-qt3,
           libfm-qt2
 Breaks: libfm-qt5-2,
+        libfm-qt3,
         libfm-qt2
 Architecture: any
 Multi-Arch: same
@@ -51,7 +52,7 @@ Section: libdevel
 Depends: ${misc:Depends},
          libexif-dev,
          libfm-dev (>= 1.2.0),
-         libfm-qt3 (= ${binary:Version}),
+         libfm-qt5 (= ${binary:Version}),
          libmenu-cache-dev
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file
