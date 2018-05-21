@@ -90,16 +90,16 @@ public:
         return mimeType_;
     }
 
-    time_t ctime() const {
+    quint64 ctime() const {
         return ctime_;
     }
 
 
-    time_t atime() const {
+    quint64 atime() const {
         return atime_;
     }
 
-    time_t mtime() const {
+    quint64 mtime() const {
         return mtime_;
     }
 
@@ -163,7 +163,7 @@ public:
     }
 
     bool isDir() const {
-        return mimeType_->isDir();
+        return S_ISDIR(mode_) || mimeType_->isDir();
     }
 
     bool isNative() const {
@@ -194,6 +194,10 @@ public:
         return dispName_;
     }
 
+    QString description() const {
+        return QString::fromUtf8(mimeType_ ? mimeType_->desc() : "");
+    }
+
     FilePath path() const {
         return dirPath_ ? dirPath_.child(name_.c_str()) : FilePath::fromPathStr(name_.c_str());
     }
@@ -221,9 +225,9 @@ private:
     uid_t uid_;
     gid_t gid_;
     uint64_t size_;
-    time_t mtime_;
-    time_t atime_;
-    time_t ctime_;
+    quint64 mtime_;
+    quint64 atime_;
+    quint64 ctime_;
 
     uint64_t blksize_;
     uint64_t blocks_;
@@ -266,9 +270,10 @@ public:
     }
 };
 
+// smart pointer to FileInfo objects (once created, FileInfo objects should stay immutable so const is needed here)
+typedef std::shared_ptr<const FileInfo> FileInfoPtr;
 
-typedef std::pair<std::shared_ptr<const FileInfo>, std::shared_ptr<const FileInfo>> FileInfoPair;
-
+typedef std::pair<FileInfoPtr, FileInfoPtr> FileInfoPair;
 
 }
 

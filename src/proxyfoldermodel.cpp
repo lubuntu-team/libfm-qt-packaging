@@ -27,6 +27,7 @@ namespace Fm {
 ProxyFolderModel::ProxyFolderModel(QObject* parent):
     QSortFilterProxyModel(parent),
     showHidden_(false),
+    backupAsHidden_(true),
     folderFirst_(true),
     showThumbnails_(false),
     thumbnailSize_(0) {
@@ -38,8 +39,6 @@ ProxyFolderModel::ProxyFolderModel(QObject* parent):
 }
 
 ProxyFolderModel::~ProxyFolderModel() {
-    qDebug("delete ProxyFolderModel");
-
     if(showThumbnails_ && thumbnailSize_ != 0) {
         FolderModel* srcModel = static_cast<FolderModel*>(sourceModel());
         // tell the source model that we don't need the thumnails anymore
@@ -90,6 +89,14 @@ void ProxyFolderModel::setShowHidden(bool show) {
     }
 }
 
+void ProxyFolderModel::setBackupAsHidden(bool backupAsHidden) {
+    if(backupAsHidden != backupAsHidden_) {
+        backupAsHidden_ = backupAsHidden;
+        invalidateFilter();
+        Q_EMIT sortFilterChanged();
+    }
+}
+
 // need to call invalidateFilter() manually.
 void ProxyFolderModel::setFolderFirst(bool folderFirst) {
     if(folderFirst != folderFirst_) {
@@ -108,18 +115,20 @@ void ProxyFolderModel::setSortCaseSensitivity(Qt::CaseSensitivity cs) {
 
 bool ProxyFolderModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const {
     if(!showHidden_) {
-        QAbstractItemModel* srcModel = sourceModel();
-        QString name = srcModel->data(srcModel->index(source_row, 0, source_parent)).toString();
-        if(name.startsWith(".") || name.endsWith("~")) {
-            return false;
+        if(FolderModel* srcModel = static_cast<FolderModel*>(sourceModel())) {
+            auto info = srcModel->fileInfoFromIndex(srcModel->index(source_row, 0, source_parent));
+            if(info && (info->isHidden() || (backupAsHidden_ && info->isBackup()))) {
+                return false;
+            }
         }
     }
     // apply additional filters if there're any
-    Q_FOREACH(ProxyFolderModelFilter* filter, filters_) {
-        FolderModel* srcModel = static_cast<FolderModel*>(sourceModel());
-        auto fileInfo = srcModel->fileInfoFromIndex(srcModel->index(source_row, 0, source_parent));
-        if(!filter->filterAcceptsRow(this, fileInfo)) {
-            return false;
+    for(ProxyFolderModelFilter* const filter : qAsConst(filters_)) {
+        if(FolderModel* srcModel = static_cast<FolderModel*>(sourceModel())){
+            auto fileInfo = srcModel->fileInfoFromIndex(srcModel->index(source_row, 0, source_parent));
+            if(!filter->filterAcceptsRow(this, fileInfo)) {
+                return false;
+            }
         }
     }
     return true;
@@ -140,17 +149,26 @@ bool ProxyFolderModel::lessThan(const QModelIndex& left, const QModelIndex& righ
             }
         }
 
+        int comp;
         switch(sortColumn()) {
         case FolderModel::ColumnFileMTime:
-            return leftInfo->mtime() < rightInfo->mtime();
+            comp = leftInfo->mtime() - rightInfo->mtime();
+            break;
         case FolderModel::ColumnFileSize:
-            return leftInfo->size() < rightInfo->size();
+            comp = leftInfo->size() - rightInfo->size();
+            break;
         default: {
             QString leftText = left.data(Qt::DisplayRole).toString();
             QString rightText = right.data(Qt::DisplayRole).toString();
-            return collator_.compare(leftText, rightText) < 0;
+            comp = collator_.compare(leftText, rightText);
+            break;
         }
         }
+        // always sort files by their display names when they have the same property
+        if(comp == 0) {
+            return collator_.compare(leftInfo->displayName(), rightInfo->displayName()) < 0;
+        }
+        return comp < 0;
     }
     return QSortFilterProxyModel::lessThan(left, right);
 }

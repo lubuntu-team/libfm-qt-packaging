@@ -20,7 +20,6 @@
 
 #include "filemenu.h"
 #include "createnewmenu.h"
-#include "icontheme.h"
 #include "filepropsdialog.h"
 #include "utilities.h"
 #include "fileoperation.h"
@@ -35,7 +34,7 @@
 #include <QDebug>
 #include "filemenu_p.h"
 
-#include "core/compat_p.h"
+#include "core/archiver.h"
 
 namespace Fm {
 
@@ -207,18 +206,17 @@ FileMenu::FileMenu(Fm::FileInfoList files, std::shared_ptr<const Fm::FileInfo> i
     // FIXME: we need to modify upstream libfm to include some Qt-based archiver programs.
     if(!allVirtual_) {
         if(sameType_) {
-            // FIXME: port these parts to Fm API
-            FmArchiver* archiver = fm_archiver_get_default();
+            auto archiver = Archiver::defaultArchiver();
             if(archiver) {
-                if(fm_archiver_is_mime_type_supported(archiver, mime_type->name())) {
+                if(archiver->isMimeTypeSupported(mime_type->name())) {
                     QAction* archiverSeparator = nullptr;
-                    if(cwd_ && archiver->extract_to_cmd) {
+                    if(cwd_ && archiver->canExtractArchivesTo()) {
                         archiverSeparator = addSeparator();
                         QAction* action = new QAction(tr("Extract to..."), this);
                         connect(action, &QAction::triggered, this, &FileMenu::onExtract);
                         addAction(action);
                     }
-                    if(archiver->extract_cmd) {
+                    if(archiver->canExtractArchives()) {
                         if(!archiverSeparator) {
                             addSeparator();
                         }
@@ -227,7 +225,7 @@ FileMenu::FileMenu(Fm::FileInfoList files, std::shared_ptr<const Fm::FileInfo> i
                         addAction(action);
                     }
                 }
-                else {
+                else if(archiver->canCreateArchive()){
                     addSeparator();
                     QAction* action = new QAction(tr("Compress"), this);
                     connect(action, &QAction::triggered, this, &FileMenu::onCompress);
@@ -376,7 +374,9 @@ void FileMenu::onRenameTriggered() {
         }
     }
     for(auto& info: files_) {
-        Fm::renameFile(info, nullptr);
+        if(!Fm::renameFile(info, nullptr)) {
+            break;
+        }
     }
 }
 
@@ -391,27 +391,23 @@ void FileMenu::setUseTrash(bool trash) {
 }
 
 void FileMenu::onCompress() {
-    FmArchiver* archiver = fm_archiver_get_default();
+    auto archiver = Archiver::defaultArchiver();
     if(archiver) {
-        auto paths = Fm::_convertPathList(files_.paths());
-        fm_archiver_create_archive(archiver, nullptr, paths.dataPtr());
+        archiver->createArchive(nullptr, files_.paths());
     }
 }
 
 void FileMenu::onExtract() {
-    FmArchiver* archiver = fm_archiver_get_default();
+    auto archiver = Archiver::defaultArchiver();
     if(archiver) {
-        auto paths = Fm::_convertPathList(files_.paths());
-        fm_archiver_extract_archives(archiver, nullptr, paths.dataPtr());
+        archiver->extractArchives(nullptr, files_.paths());
     }
 }
 
 void FileMenu::onExtractHere() {
-    FmArchiver* archiver = fm_archiver_get_default();
+    auto archiver = Archiver::defaultArchiver();
     if(archiver) {
-        auto paths = Fm::_convertPathList(files_.paths());
-        auto cwd = Fm::_convertPath(cwd_);
-        fm_archiver_extract_archives_to(archiver, nullptr, paths.dataPtr(), cwd);
+        archiver->extractArchivesTo(nullptr, files_.paths(), cwd_);
     }
 }
 

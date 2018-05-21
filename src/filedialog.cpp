@@ -346,40 +346,42 @@ void FileDialog::goHome() {
 }
 
 void FileDialog::setDirectoryPath(FilePath directory, FilePath selectedPath, bool addHistory) {
-    if(!directory.isValid() || directoryPath_ == directory) {
+    if(!directory.isValid()) {
         updateAcceptButtonState(); // FIXME: is this needed?
         return;
     }
 
-   if(folder_) {
-        if(folderModel_) {
-            proxyModel_->setSourceModel(nullptr);
-            folderModel_->unref(); // unref the cached model
-            folderModel_ = nullptr;
+   if(directoryPath_ != directory) {
+       if(folder_) {
+            if(folderModel_) {
+                proxyModel_->setSourceModel(nullptr);
+                folderModel_->unref(); // unref the cached model
+                folderModel_ = nullptr;
+            }
+            freeFolder();
+       }
+    
+        directoryPath_ = std::move(directory);
+    
+        ui->location->setPath(directoryPath_);
+        ui->sidePane->chdir(directoryPath_);
+        if(addHistory) {
+            history_.add(directoryPath_);
         }
-        freeFolder();
+        backAction_->setEnabled(history_.canBackward());
+        forwardAction_->setEnabled(history_.canForward());
+    
+        folder_ = Fm::Folder::fromPath(directoryPath_);
+        folderModel_ = CachedFolderModel::modelFromFolder(folder_);
+        proxyModel_->setSourceModel(folderModel_);
+    
+        // no lambda in these connections for easy disconnection
+        connect(folder_.get(), &Fm::Folder::removed, this, &FileDialog::goHome);
+        connect(folder_.get(), &Fm::Folder::unmount, this, &FileDialog::goHome);
+    
+        QUrl uri = QUrl::fromEncoded(directory.uri().get());
+        Q_EMIT directoryEntered(uri);
    }
-
-    directoryPath_ = std::move(directory);
-
-    ui->location->setPath(directoryPath_);
-    ui->sidePane->chdir(directoryPath_);
-    if(addHistory) {
-        history_.add(directoryPath_);
-    }
-    backAction_->setEnabled(history_.canBackward());
-    forwardAction_->setEnabled(history_.canForward());
-
-    folder_ = Fm::Folder::fromPath(directoryPath_);
-    folderModel_ = CachedFolderModel::modelFromFolder(folder_);
-    proxyModel_->setSourceModel(folderModel_);
-
-    // no lambda in these connections for easy disconnection
-    connect(folder_.get(), &Fm::Folder::removed, this, &FileDialog::goHome);
-    connect(folder_.get(), &Fm::Folder::unmount, this, &FileDialog::goHome);
-
-    QUrl uri = QUrl::fromEncoded(directory.uri().get());
-    Q_EMIT directoryEntered(uri);
 
     // select the path if valid
     if(selectedPath.isValid()) {
@@ -415,13 +417,13 @@ void FileDialog::selectFilePath(const FilePath &path) {
     QItemSelectionModel* selModel = ui->folderView->selectionModel();
     selModel->select(idx, flags);
     selModel->setCurrentIndex(idx, QItemSelectionModel::Current);
-    QTimer::singleShot(0, [this, idx]() {
+    QTimer::singleShot(0, this, [this, idx]() {
         ui->folderView->childView()->scrollTo(idx, QAbstractItemView::PositionAtCenter);
     });
 }
 
 void FileDialog::selectFilePathWithDelay(const FilePath &path) {
-    QTimer::singleShot(0, [this, path]() {
+    QTimer::singleShot(0, this, [this, path]() {
         if(acceptMode_ == QFileDialog::AcceptSave) {
             // with a save dialog, always put the base name in line-edit, regardless of selection
             ui->fileName->setText(path.baseName().get());
@@ -436,7 +438,7 @@ void FileDialog::selectFilePathWithDelay(const FilePath &path) {
 
 void FileDialog::selectFilesOnReload(const Fm::FileInfoList& infos) {
     QObject::disconnect(lambdaConnection_);
-    QTimer::singleShot(0, [this, infos]() {
+    QTimer::singleShot(0, this, [this, infos]() {
         for(auto& fileInfo: infos) {
             selectFilePath(fileInfo->path());
         }
@@ -635,13 +637,8 @@ void FileDialog::selectFile(const QUrl& filename) {
     auto urlStr = filename.toEncoded();
     auto path = FilePath::fromUri(urlStr.constData());
     auto parent = path.parent();
-    if(parent.isValid() && parent != directoryPath_) {
-        // chdir into file's parent if it isn't the current directory
-        setDirectoryPath(parent, path);
-    }
-    else {
-        selectFilePathWithDelay(path);
-    }
+    // chdir into file's parent if needed and select the file
+    setDirectoryPath(parent, path);
 }
 
 QList<QUrl> FileDialog::selectedFiles() {
@@ -770,7 +767,8 @@ void FileDialog::setMimeTypeFilters(const QStringList& filters) {
         auto nameFilter = mimeType.comment();
         if(!mimeType.suffixes().empty()) {
             nameFilter + " (";
-            for(const auto& suffix: mimeType.suffixes()) {
+            const auto suffixes = mimeType.suffixes();
+            for(const auto& suffix: suffixes) {
                 nameFilter += "*.";
                 nameFilter += suffix;
                 nameFilter += ' ';

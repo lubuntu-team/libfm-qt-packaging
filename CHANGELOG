@@ -1,7 +1,86 @@
 
-libfm-qt-0.12.0 / 2017-10-21
+libfm-qt-0.13.0 / 2018-05-21
 ============================
 
+  * Bumped minor version to 13
+  * Fixed shortcut detection
+  * Delete CachedFolderModel immediately on unreffing it
+  * Fix crashes in new templates code
+  * Remove the C++ wrapper for the old FmPath struct in libfm.
+  * Avoid using FmPath from libfm in FmSearch.
+  * Removed redundant code
+  * Modify Fm::BasicFileLauncher APIs to use Fm::FileInfoPtr consistently.
+  * Add typedef FileInfoPtr for std::shared_ptr<const FileInfo> since it's so frequently used.
+  * Correctly handle the mounting of mountable paths and correctly parse the target URIs of shortcuts.
+  * Add new APIs Fm::MountOperation::mountEnclosingVolume() and Fm::MountOperation::mountMountable() and deprecate Fm::MountOperation::mount().
+  * Also cover local shortcuts
+  * Added "reject" to exec dialog
+  * Delete some libfm compatibility wrappers.
+  * Delete the unused old FmTemplate wrapper.
+  * Create the template items in the "Create New" menu with the new C++ file template APIs.
+  * Port template support to C++ (Fm::Templates class).
+  * Add convinient functions in Fm::FileOperation to set dest paths for file transfer jobs.
+  * Made job async again
+  * Fixed launching of desktop files
+  * Cleanup
+  * CMake: Prevent in-source builds
+  * Fix Fm::FileInfo::isDir() and isExecutableType() to make its behavior consistent with libfm.
+  * Port file lancher to C++ and Implement Fm::BasicFileLauncher base class. * Migrate Fm::FileLauncher to the new C++ implementation.
+  * Port archiver integration to C++ (#182)
+  * Fully port all file operations to C++ 11 (#181)
+  * Add kitty to terminals.list
+  * Italic font for hidden items
+  * Select multiple files
+  * No visible cursor in File Properties labels
+  * Just corrected a misspelling
+  * Elided labels for file operation dialog
+  * fix namespace, fixes lxqt/libfm-qt/issues/174
+  * Misc link fixes
+  * Fixes some pathes after repo move
+  * Fix a cause of crash in `AppChooserComboBox`
+  * build: Bump version
+  * Drop Fm::IconTheme
+  * iconinfo: Properly handle multiple names
+  * Some code cleanup
+  * Fixed custom action execution mode
+  * Don't drop on files
+  * Prevent possible c++11 range-loop container detach
+  * See `.bak` and `.old` as backup extensions; also follow GLib
+  * Ensure that rename editor has opaque background
+  * Use special/custom folder icons for bookmarks
+  * Added two missing cases of `mapFromSource()`
+  * Support hiding items in Places side-pane
+  * Fixed sorting by type/owner
+  * Fix lambda connections in filedialog (#159)
+  * Drop Q_FOREACH
+  * Fix memory leak in thumbnail loading (#150)
+  * Be more tolerant
+  * Fix the "Folders" key in custom actions
+  * Add Group column and don't use owner's full name
+  * Fix comparison of integers of different signs
+  * Guarantee 64-bit time attributes (#148)
+  * Added a proxy setting for backup as hidden (#145)
+  * Fixed the logic of queued deletion
+  * Track folders containing cut files only with QString
+  * Copy selected pathbar text to selection clipboard
+  * Smooth scrolling for icon and thumbnail views
+  * cmake: Handle CMP0071
+  * Prepare libfm-qt for bulk rename
+  * No change queue of files in the deletion queue
+  * FileInfo: Fix potential SEGFAULT
+  * Fix two devices for one mount
+  * Always wait for the folder to load before selecting
+  * Really cancel multiple renaming on cancelling
+  * Prevent a potential crash in xdndworkaround
+  * Fix wrong gray-out of cut files
+  * Merge side-pane with its surroundings
+  * Prompt dialog specifically for desktop files
+  * Remove unnecessary noise
+
+0.12.0 / 2017-10-21
+===================
+
+  * Release 0.12.0: Update changelog
   * Add data transferred to file operation dialog.
   * Bump versions
   * Disable context-menu actions that cannot be used
