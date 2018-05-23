@@ -6,10 +6,9 @@ libfm-qt (0.13.0-1) experimental; urgency=medium
   * Renamed libfm-qt3 -> libfm-qt5. soname bumped
   * Added Breaks and replaces for libfm-qt3
   * Bumped years in copyright
-  * Added symbols and removed two not used old (internal) ones, no soname bump
-    needed.
+  * Messed around with symbols (gcc7/gcc8, removals, new symbols)
 
- -- Alf Gaida <agaida@siduction.org>  Wed, 23 May 2018 20:58:31 +0200
+ -- Alf Gaida <agaida@siduction.org>  Wed, 23 May 2018 23:02:00 +0200
 
 libfm-qt (0.12.0-17) unstable; urgency=medium
 
