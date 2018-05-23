@@ -1,8 +1,15 @@
 libfm-qt (0.13.0-1) experimental; urgency=medium
 
-  *
+  * Cherry-picking upstream release 0.13.0.
+  * Removed build dependency libglib2.0-dev, thrown in via lxqt-build-tools
+  * Bumped build dependency lxqt-build-tools to >= 0.5.0~
+  * Renamed libfm-qt3 -> libfm-qt5. soname bumped
+  * Added Breaks and replaces for libfm-qt3
+  * Bumped years in copyright
+  * Added symbols and removed two not used old (internal) ones, no soname bump
+    needed.
 
- -- Alf Gaida <agaida@siduction.org>  Mon, 21 May 2018 16:44:53 +0200
+ -- Alf Gaida <agaida@siduction.org>  Wed, 23 May 2018 20:58:31 +0200
 
 libfm-qt (0.12.0-17) unstable; urgency=medium
 

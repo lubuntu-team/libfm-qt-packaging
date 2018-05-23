@@ -45,11 +45,15 @@
 #include <QX11Info> // for XDS support
 #include <xcb/xcb.h> // for XDS support
 #include "xdndworkaround.h" // for XDS support
-#include "path.h"
 #include "folderview_p.h"
 #include "utilities.h"
 
 Q_DECLARE_OPAQUE_POINTER(FmFileInfo*)
+
+#define SCROLL_FRAMES_PER_SEC 50
+#define SCROLL_DURATION 300 // in ms
+
+static const int scrollAnimFrames = SCROLL_FRAMES_PER_SEC * SCROLL_DURATION / 1000;
 
 using namespace Fm;
 
@@ -144,7 +148,7 @@ void FolderViewListView::dragEnterEvent(QDragEnterEvent* event) {
     else {
         QAbstractItemView::dragEnterEvent(event);
     }
-    qDebug("dragEnterEvent");
+    //qDebug("dragEnterEvent");
     //static_cast<FolderView*>(parent())->childDragEnterEvent(event);
 }
 
@@ -410,7 +414,7 @@ void FolderViewTreeView::reset() {
     // This is for performance reason so in this case rowsInserted() and rowsAboutToBeRemoved()
     // might not be called. Hence we also have to re-layout the columns when the model is reset.
     // This fixes bug #190
-    // https://github.com/lxde/pcmanfm-qt/issues/190
+    // https://github.com/lxqt/pcmanfm-qt/issues/190
     QTreeView::reset();
     queueLayoutColumns();
 }
@@ -476,7 +480,9 @@ FolderView::FolderView(FolderView::ViewMode _mode, QWidget *parent):
     autoSelectionDelay_(600),
     autoSelectionTimer_(nullptr),
     selChangedTimer_(nullptr),
-    itemDelegateMargins_(QSize(3, 3)) {
+    itemDelegateMargins_(QSize(3, 3)),
+    smoothScrollTimer_(nullptr),
+    wheelEvent_(nullptr) {
 
     iconSize_[IconMode - FirstViewMode] = QSize(48, 48);
     iconSize_[CompactMode - FirstViewMode] = QSize(24, 24);
@@ -495,6 +501,11 @@ FolderView::FolderView(FolderView::ViewMode _mode, QWidget *parent):
 }
 
 FolderView::~FolderView() {
+    if(smoothScrollTimer_) {
+        disconnect(smoothScrollTimer_, &QTimer::timeout, this, &FolderView::scrollSmoothly);
+        smoothScrollTimer_->stop();
+        delete smoothScrollTimer_;
+    }
 }
 
 void FolderView::onItemActivated(QModelIndex index) {
@@ -566,6 +577,13 @@ void FolderView::onClosingEditor(QWidget* editor, QAbstractItemDelegate::EndEdit
 void FolderView::setViewMode(ViewMode _mode) {
     if(_mode == mode) { // if it's the same more, ignore
         return;
+    }
+    // smooth scrolling is only for icon and thumbnail modes
+    if(smoothScrollTimer_ && (_mode == DetailedListMode || _mode == CompactMode)) {
+        disconnect(smoothScrollTimer_, &QTimer::timeout, this, &FolderView::scrollSmoothly);
+        smoothScrollTimer_->stop();
+        delete smoothScrollTimer_;
+        smoothScrollTimer_ = nullptr;
     }
     // FIXME: retain old selection
 
@@ -656,11 +674,10 @@ void FolderView::setViewMode(ViewMode _mode) {
         view->setSelectionMode(QAbstractItemView::ExtendedSelection);
         layout()->addWidget(view);
 
-        // enable dnd
+        // enable dnd (the drop indicator is set at "FolderView::childDragMoveEvent()")
         view->setDragEnabled(true);
         view->setAcceptDrops(true);
         view->setDragDropMode(QAbstractItemView::DragDrop);
-        view->setDropIndicatorShown(true);
 
         // inline renaming
         if(delegate) {
@@ -891,6 +908,43 @@ QModelIndex FolderView::indexFromFolderPath(const Fm::FilePath& folderPath) cons
     return QModelIndex();
 }
 
+void FolderView::selectFiles(const Fm::FileInfoList& files, bool add) {
+  if(!model_ || files.empty()) {
+      return;
+  }
+  if(!add) {
+      selectionModel()->clear();
+  }
+  QModelIndex index, firstIndex;
+  int count = model_->rowCount();
+  Fm::FileInfoList list = files;
+  bool singleFile(files.size() == 1);
+  for(int row = 0; row < count; ++row) {
+      if (list.empty()) {
+          break;
+      }
+      index = model_->index(row, 0);
+      auto info = model_->fileInfoFromIndex(index);
+      for(auto it = list.cbegin(); it != list.cend(); ++it) {
+          auto& item = *it;
+          if(item == info) {
+              selectionModel()->select(index, QItemSelectionModel::Select);
+              if (!firstIndex.isValid()) {
+                  firstIndex = index;
+              }
+              list.erase(it);
+              break;
+          }
+      }
+  }
+  if (firstIndex.isValid()) {
+      view->scrollTo(firstIndex, QAbstractItemView::EnsureVisible);
+      if (singleFile) { // give focus to the single file
+          selectionModel()->setCurrentIndex(firstIndex, QItemSelectionModel::Current);
+      }
+  }
+}
+
 Fm::FileInfoList FolderView::selectedFiles() const {
     if(model_) {
         QModelIndexList selIndexes = mode == DetailedListMode ? selectedRows() : selectedIndexes();
@@ -941,7 +995,7 @@ void FolderView::invertSelection() {
 }
 
 void FolderView::childDragEnterEvent(QDragEnterEvent* event) {
-    qDebug("drag enter");
+    //qDebug("drag enter");
     if(event->mimeData()->hasFormat("text/uri-list")) {
         event->accept();
     }
@@ -951,12 +1005,23 @@ void FolderView::childDragEnterEvent(QDragEnterEvent* event) {
 }
 
 void FolderView::childDragLeaveEvent(QDragLeaveEvent* e) {
-    qDebug("drag leave");
+    //qDebug("drag leave");
     e->accept();
 }
 
-void FolderView::childDragMoveEvent(QDragMoveEvent* /*e*/) {
-    qDebug("drag move");
+void FolderView::childDragMoveEvent(QDragMoveEvent* e) {
+    // Since it isn't possible to drop on a file (see "FolderModel::dropMimeData()"),
+    // we enable the drop indicator only when the cursor is on a folder.
+    QModelIndex index = view->indexAt(e->pos());
+    if(index.isValid() && index.model()) {
+        QVariant data = index.model()->data(index, FolderModel::FileInfoRole);
+        auto info = data.value<std::shared_ptr<const Fm::FileInfo>>();
+        if(info && !info->isDir()) {
+            view->setDropIndicatorShown(false);
+            return;
+        }
+    }
+    view->setDropIndicatorShown(true);
 }
 
 void FolderView::childDropEvent(QDropEvent* e) {
@@ -1049,8 +1114,8 @@ bool FolderView::eventFilter(QObject* watched, QEvent* event) {
                     }
                     autoSelectionTimer_->start(autoSelectionDelay_);
                 }
-                break;
             }
+            break;
         case QEvent::HoverLeave:
             if(style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)) {
                 setCursor(Qt::ArrowCursor);
@@ -1086,12 +1151,78 @@ bool FolderView::eventFilter(QObject* watched, QEvent* event) {
                     return true;
                 }
             }
+            // Smooth Scrolling
+            // Some tricks are adapted from <https://github.com/zhou13/qsmoothscrollarea>.
+            else if(mode != DetailedListMode
+                    && event->spontaneous()
+                    && !(QApplication::keyboardModifiers() & (Qt::ShiftModifier | Qt::AltModifier))) {
+                if(QScrollBar* vbar = view->verticalScrollBar()) {
+                    // keep track of the wheel event for smooth scrolling
+                    wheelEvent_ = static_cast<QWheelEvent*>(event);
+                    int delta = wheelEvent_->angleDelta().y();
+                    if((delta > 0 && vbar->value() == vbar->minimum()) || (delta < 0 && vbar->value() == vbar->maximum())) {
+                        break; // the scrollbar can't move
+                    }
+                    // get a rough estimation of the wheel speed and disable animation if it's too high
+                    static QList<qint64> wheelEvents;
+                    wheelEvents << QDateTime::currentMSecsSinceEpoch();
+                    while(wheelEvents.last() - wheelEvents.first() > 500) {
+                        wheelEvents.removeFirst();
+                    }
+                    if(wheelEvents.size() > 10) {
+                        break;
+                    }
+
+                    if(!smoothScrollTimer_) {
+                        smoothScrollTimer_ = new QTimer();
+                        connect(smoothScrollTimer_, &QTimer::timeout, this, &FolderView::scrollSmoothly);
+                    }
+
+                    // set the data for smooth scrolling
+                    scollData data;
+                    data.delta = delta;
+                    data.leftFrames = scrollAnimFrames;
+                    queuedScrollSteps_.append(data);
+                    smoothScrollTimer_->start(1000 / SCROLL_FRAMES_PER_SEC);
+                    return true;
+                }
+            }
             break;
         default:
             break;
         }
     }
     return QObject::eventFilter(watched, event);
+}
+
+void FolderView::scrollSmoothly() {
+    if(!wheelEvent_ || !view->verticalScrollBar()) {
+        return;
+    }
+
+    int totalDelta = 0;
+    QList<scollData>::iterator it = queuedScrollSteps_.begin();
+    while(it != queuedScrollSteps_.end()) {
+        if(it->leftFrames == 1) { // find the exact delta for the last frame
+            totalDelta += it->delta - (scrollAnimFrames - 1) * qRound((qreal)it->delta / (qreal)scrollAnimFrames);
+            it = queuedScrollSteps_.erase(it);
+        }
+        else {
+            totalDelta += qRound((qreal)it->delta / (qreal)scrollAnimFrames);
+            -- it->leftFrames;
+            ++it;
+        }
+    }
+    if(totalDelta != 0) {
+        // as in qevent.cpp -> QWheelEvent::QWheelEvent()
+        QWheelEvent e(wheelEvent_->pos(), wheelEvent_->globalPos(),
+                      totalDelta,
+                      wheelEvent_->buttons(), Qt::NoModifier, Qt::Vertical);
+        QApplication::sendEvent(view->verticalScrollBar(), &e);
+    }
+    if(queuedScrollSteps_.empty()) {
+        smoothScrollTimer_->stop();
+    }
 }
 
 // this slot handles auto-selection of items.
@@ -1218,8 +1349,10 @@ void FolderView::onClipboardDataChange() {
         if(!folder()->path().hasUriScheme("search") // skip for search results
            && isCutSelection
            && Fm::isCurrentPidClipboardData(*data)) { // set cut files only with this app
-            auto cutDirPath = paths.size() > 0 ? paths[0].parent(): FilePath();
-            if(folder()->path() == cutDirPath) {
+            auto cutDirPath = paths.size() > 0 ? paths[0].parent() : FilePath();
+            // set the cut file(s) only if the cutting is done here
+            if(folder()->path() == cutDirPath
+               && selectedFilePaths() == paths) {
                 model_->setCutFiles(selectionModel()->selection());
             }
             else if(folder()->hadCutFilesUnset() || folder()->hasCutFiles()) {

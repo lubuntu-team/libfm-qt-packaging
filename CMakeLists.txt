@@ -4,27 +4,27 @@ project(libfm-qt)
 set(LIBFM_QT_LIBRARY_NAME "fm-qt" CACHE STRING "fm-qt")
 
 set(LIBFM_QT_VERSION_MAJOR 0)
-set(LIBFM_QT_VERSION_MINOR 12)
+set(LIBFM_QT_VERSION_MINOR 13)
 set(LIBFM_QT_VERSION_PATCH 0)
 set(LIBFM_QT_VERSION ${LIBFM_QT_VERSION_MAJOR}.${LIBFM_QT_VERSION_MINOR}.${LIBFM_QT_VERSION_PATCH})
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
 # We use the libtool versioning scheme for the internal so name, "current:revision:age"
-# http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html#Updating-version-info
+# https://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html#Updating-version-info
 # https://www.sourceware.org/autobook/autobook/autobook_91.html
 # http://pusling.com/blog/?p=352
 # Actually, libtool uses different ways on different operating systems. So there is no
 # universal way to translate a libtool version-info to a cmake version.
 # We use "(current-age).age.revision" as the cmake version.
-# current: 4, revision: 0, age: 1 => version: 3.1.0
-set(LIBFM_QT_LIB_VERSION "3.1.0")
-set(LIBFM_QT_LIB_SOVERSION "3")
+# current: 5, revision: 0, age: 0 => version: 5.0.0
+set(LIBFM_QT_LIB_VERSION "5.0.0")
+set(LIBFM_QT_LIB_SOVERSION "5")
 
-set(REQUIRED_QT_VERSION "5.2")
+set(REQUIRED_QT_VERSION "5.7.1")
 set(REQUIRED_LIBFM_VERSION "1.2.0")
 set(REQUIRED_LIBMENUCACHE_VERSION "0.4.0")
-set(REQUIRED_LXQT_BUILD_TOOLS_VERSION "0.4.0")
+set(REQUIRED_LXQT_BUILD_TOOLS_VERSION "0.5.0")
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -46,11 +46,13 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 include(GNUInstallDirs)
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
+include(LXQtPreventInSourceBuilds)
 include(LXQtTranslateTs)
 include(LXQtTranslateDesktop)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 set(CMAKE_AUTOMOC TRUE)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 write_basic_package_version_file(
@@ -70,8 +72,7 @@ add_subdirectory(data)
 
 # add Doxygen support to generate API docs
 # References:
-# http://majewsky.wordpress.com/2010/08/14/tip-of-the-day-cmake-and-doxygen/
-# http://www.bluequartz.net/projects/EIM_Segmentation/SoftwareDocumentation/html/usewithcmakeproject.html
+# https://majewsky.wordpress.com/2010/08/14/tip-of-the-day-cmake-and-doxygen/
 option(BUILD_DOCUMENTATION "Use Doxygen to create the HTML based API documentation" OFF)
 if(BUILD_DOCUMENTATION)
     find_package(Doxygen REQUIRED)

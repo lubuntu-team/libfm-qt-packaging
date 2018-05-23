@@ -120,7 +120,7 @@ bool ThumbnailJob::isSupportedImageType(const std::shared_ptr<const MimeType>& m
 
 bool ThumbnailJob::isThumbnailOutdated(const std::shared_ptr<const FileInfo>& file, const QImage &thumbnail) const {
     QString thumb_mtime = thumbnail.text("Thumb::MTime");
-    return (thumb_mtime.isEmpty() || thumb_mtime.toInt() != file->mtime());
+    return (thumb_mtime.isEmpty() || thumb_mtime.toULongLong() != file->mtime());
 }
 
 bool ThumbnailJob::readJpegExif(GInputStream *stream, QImage& thumbnail, int& rotate_degrees) {
@@ -140,7 +140,7 @@ bool ThumbnailJob::readJpegExif(GInputStream *stream, QImage& thumbnail, int& ro
     exif_loader_unref(exif_loader);
     if(exif_data) {
         /* reference for EXIF orientation tag:
-         * http://www.impulseadventure.com/photo/exif-orientation.html */
+         * https://www.impulseadventure.com/photo/exif-orientation.html */
         ExifEntry* orient_ent = exif_data_get_entry(exif_data, EXIF_TAG_ORIENTATION);
         if(orient_ent) { /* orientation flag found in EXIF */
             gushort orient;

@@ -1,4 +1,4 @@
-libfm-qt.so.3 libfm-qt3 #MINVER#
+libfm-qt.so.5 libfm-qt5 #MINVER#
  (c++)"Fm::AppChooserComboBox::AppChooserComboBox(QWidget*)@Base" 0.10.0
  (c++)"Fm::AppChooserComboBox::isChanged() const@Base" 0.12.0
  (c++)"Fm::AppChooserComboBox::metaObject() const@Base" 0.10.0
@@ -37,7 +37,35 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::AppMenuView::selectionChanged(QItemSelection const&, QItemSelection const&)@Base" 0.12.0
  (c++)"Fm::AppMenuView::staticMetaObject@Base" 0.10.0
  (c++)"Fm::AppMenuView::~AppMenuView()@Base" 0.10.0
+ (c++)"Fm::Archiver::Archiver()@Base" 0.13.0~
+ (c++)"Fm::Archiver::allArchivers()@Base" 0.13.0~
+ (c++)"Fm::Archiver::allArchivers_@Base" 0.13.0~
+ (c++)"Fm::Archiver::createArchive(_GAppLaunchContext*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.13.0~
+ (c++)"Fm::Archiver::defaultArchiver()@Base" 0.13.0~
+ (c++)"Fm::Archiver::defaultArchiver_@Base" 0.13.0~
+ (c++)"Fm::Archiver::extractArchives(_GAppLaunchContext*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.13.0~
+ (c++)"Fm::Archiver::extractArchivesTo(_GAppLaunchContext*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, Fm::FilePath const&)@Base" 0.13.0~
+ (c++)"Fm::Archiver::isMimeTypeSupported(char const*)@Base" 0.13.0~
+ (c++)"Fm::Archiver::launchProgram(_GAppLaunchContext*, char const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, Fm::FilePath const&)@Base" 0.13.0~
+ (c++)"Fm::Archiver::setDefaultArchiver(Fm::Archiver*)@Base" 0.13.0~
+ (c++)"Fm::Archiver::setDefaultArchiverByName(char const*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::BasicFileLauncher()@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::ask(char const*, char* const*, int)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::askExecFile(std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::chooseApp(Fm::FileInfoList const&, char const*, Fm::GErrorPtr&)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::handleShortcut(std::shared_ptr<Fm::FileInfo const> const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchDesktopEntry(char const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchDesktopEntry(std::shared_ptr<Fm::FileInfo const> const&, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchExecutable(std::shared_ptr<Fm::FileInfo const> const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchFiles(Fm::FileInfoList const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchPaths(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchWithApp(_GAppInfo*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::launchWithDefaultApp(std::shared_ptr<Fm::FileInfo const> const&, _GAppLaunchContext*)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::openFolder(_GAppLaunchContext*, Fm::FileInfoList const&, Fm::GErrorPtr&)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::showError(_GAppLaunchContext*, Fm::GErrorPtr&, Fm::FilePath const&, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.0~
+ (c++)"Fm::BasicFileLauncher::~BasicFileLauncher()@Base" 0.13.0~
  (c++)"Fm::BookmarkAction::BookmarkAction(std::shared_ptr<Fm::BookmarkItem const>, QObject*)@Base" 0.12.0
+ (c++)"Fm::BookmarkItem::BookmarkItem(Fm::FilePath const&, QString)@Base" 0.13.0~
  (c++)"Fm::Bookmarks::Bookmarks(QObject*)@Base" 0.12.0
  (c++)"Fm::Bookmarks::changed()@Base" 0.12.0
  (c++)"Fm::Bookmarks::globalInstance()@Base" 0.12.0
@@ -82,30 +110,20 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::ColorButton::setColor(QColor const&)@Base" 0.10.0
  (c++)"Fm::ColorButton::staticMetaObject@Base" 0.10.0
  (c++)"Fm::ColorButton::~ColorButton()@Base" 0.10.0
- (c++)"Fm::CopyJob::CopyJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&&, Fm::FilePath const&&, Fm::CopyJob::Mode)@Base" 0.12.0
- (c++)"Fm::CopyJob::CopyJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&, Fm::FilePath const&, Fm::CopyJob::Mode)@Base" 0.12.0
- (c++)"Fm::CopyJob::copyDir(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath const&)@Base" 0.12.0
- (c++)"Fm::CopyJob::copyPath(Fm::FilePath const&, Fm::FilePath const&, char const*)@Base" 0.12.0
- (c++)"Fm::CopyJob::copyPath(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath const&, char const*)@Base" 0.12.0
- (c++)"Fm::CopyJob::copyRegularFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath const&)@Base" 0.12.0
- (c++)"Fm::CopyJob::copySpecialFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath const&)@Base" 0.12.0
- (c++)"Fm::CopyJob::exec()@Base" 0.12.0
- (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::CopyJob::gfileProgressCallback(long, long, Fm::CopyJob*)@Base" 0.12.0
- (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::CopyJob::gfileProgressCallback(long long, long long, Fm::CopyJob*)@Base" 0.12.0
- (c++)"Fm::CopyJob::makeDir(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath const&)@Base" 0.12.0
- (c++)"Fm::CopyJob::metaObject() const@Base" 0.12.0
- (c++)"Fm::CopyJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
- (c++)"Fm::CopyJob::qt_metacast(char const*)@Base" 0.12.0
- (c++)"Fm::CopyJob::staticMetaObject@Base" 0.12.0
  (c++)"Fm::CreateNewMenu::CreateNewMenu(QWidget*, Fm::FilePath, QWidget*)@Base" 0.12.0
+ (c++)"Fm::CreateNewMenu::addTemplateItem(std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
  (c++)"Fm::CreateNewMenu::metaObject() const@Base" 0.10.0
  (c++)"Fm::CreateNewMenu::onCreateNew()@Base" 0.10.0
  (c++)"Fm::CreateNewMenu::onCreateNewFile()@Base" 0.10.0
  (c++)"Fm::CreateNewMenu::onCreateNewFolder()@Base" 0.10.0
  (c++)"Fm::CreateNewMenu::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::CreateNewMenu::qt_metacast(char const*)@Base" 0.10.0
+ (c++)"Fm::CreateNewMenu::removeTemplateItem(std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
  (c++)"Fm::CreateNewMenu::staticMetaObject@Base" 0.10.0
+ (c++)"Fm::CreateNewMenu::updateTemplateItem(std::shared_ptr<Fm::TemplateItem const> const&, std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
  (c++)"Fm::CreateNewMenu::~CreateNewMenu()@Base" 0.10.0
+ (c++)"Fm::DeleteJob::DeleteJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.13.0~
+ (c++)"Fm::DeleteJob::DeleteJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >&&)@Base" 0.13.0~
  (c++)"Fm::DeleteJob::deleteDirContent(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>)@Base" 0.12.0
  (c++)"Fm::DeleteJob::deleteFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>)@Base" 0.12.0
  (c++)"Fm::DeleteJob::exec()@Base" 0.12.0
@@ -113,6 +131,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::DeleteJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::DeleteJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::DeleteJob::staticMetaObject@Base" 0.12.0
+ (c++)"Fm::DeleteJob::~DeleteJob()@Base" 0.13.0~
  (c++)"Fm::DirListJob::DirListJob(Fm::FilePath const&, Fm::DirListJob::Flags, std::shared_ptr<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > const> const&)@Base" 0.12.0
  (c++)"Fm::DirListJob::exec()@Base" 0.12.0
  (c++)"Fm::DirListJob::filesFound(Fm::FileInfoList&)@Base" 0.12.0
@@ -206,8 +225,18 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::EditBookmarksDialog::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::EditBookmarksDialog::staticMetaObject@Base" 0.10.0
  (c++)"Fm::EditBookmarksDialog::~EditBookmarksDialog()@Base" 0.10.0
- (c++)"Fm::FileChangeAttrJob::FileChangeAttrJob()@Base" 0.12.0
+ (c++)"Fm::FileChangeAttrJob::FileChangeAttrJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileDisplayName(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, char const*)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileGroup(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, unsigned int)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileHidden(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, bool)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileIcon(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::GObjectPtr<_GIcon>&)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileMode(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, unsigned int, unsigned int)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileOwner(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, unsigned int)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::changeFileTargetUri(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, char const*)@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::exec()@Base" 0.13.0~
+ (c++)"Fm::FileChangeAttrJob::handleError(Fm::GErrorPtr&, Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::Job::ErrorSeverity)@Base" 0.13.0~
  (c++)"Fm::FileChangeAttrJob::metaObject() const@Base" 0.12.0
+ (c++)"Fm::FileChangeAttrJob::processFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&)@Base" 0.13.0~
  (c++)"Fm::FileChangeAttrJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::FileChangeAttrJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::FileChangeAttrJob::staticMetaObject@Base" 0.12.0
@@ -270,7 +299,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FileInfo::isExecutableType() const@Base" 0.12.0
  (c++)"Fm::FileInfo::setFromGFileInfo(Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath const&)@Base" 0.12.0
  (c++)"Fm::FileInfo::~FileInfo()@Base" 0.12.0
- (c++)"Fm::FileInfoJob::FileInfoJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath, std::shared_ptr<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > const> const&)@Base" 0.12.0
+ (c++)"Fm::FileInfoJob::FileInfoJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath, std::shared_ptr<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > const> const&)@Base" 0.13.0~
  (c++)"Fm::FileInfoJob::exec()@Base" 0.12.0
  (c++)"Fm::FileInfoJob::gotInfo(Fm::FilePath const&, std::shared_ptr<Fm::FileInfo const>&)@Base" 0.12.0
  (c++)"Fm::FileInfoJob::metaObject() const@Base" 0.12.0
@@ -281,15 +310,12 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FileInfoList::isSameType() const@Base" 0.12.0
  (c++)"Fm::FileLauncher::FileLauncher()@Base" 0.10.0
  (c++)"Fm::FileLauncher::ask(char const*, char* const*, int)@Base" 0.10.0
- (c++)"Fm::FileLauncher::error(_GAppLaunchContext*, _GError*, _FmPath*)@Base" 0.10.0
- (c++)"Fm::FileLauncher::execFile(_FmFileInfo*)@Base" 0.10.0
- (c++)"Fm::FileLauncher::funcs@Base" 0.10.0
- (c++)"Fm::FileLauncher::getApp(_GList*, _FmMimeType*, _GError**)@Base" 0.10.0
- (c++)"Fm::FileLauncher::launchFiles(QWidget*, Fm::FileInfoList)@Base" 0.12.0
- (c++)"Fm::FileLauncher::launchFiles(QWidget*, _GList*)@Base" 0.10.0
- (c++)"Fm::FileLauncher::launchPaths(QWidget*, _GList*)@Base" 0.10.0
- (c++)"Fm::FileLauncher::launchPaths(QWidget*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.12.0
- (c++)"Fm::FileLauncher::openFolder(_GAppLaunchContext*, _GList*, _GError**)@Base" 0.10.0
+ (c++)"Fm::FileLauncher::askExecFile(std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.0~
+ (c++)"Fm::FileLauncher::chooseApp(Fm::FileInfoList const&, char const*, Fm::GErrorPtr&)@Base" 0.13.0~
+ (c++)"Fm::FileLauncher::launchFiles(QWidget*, Fm::FileInfoList const&)@Base" 0.13.0~
+ (c++)"Fm::FileLauncher::launchPaths(QWidget*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.13.0~
+ (c++)"Fm::FileLauncher::openFolder(_GAppLaunchContext*, Fm::FileInfoList const&, Fm::GErrorPtr&)@Base" 0.13.0~
+ (c++)"Fm::FileLauncher::showError(_GAppLaunchContext*, Fm::GErrorPtr&, Fm::FilePath const&, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.0~
  (c++)"Fm::FileLauncher::~FileLauncher()@Base" 0.12.0
  (c++)"Fm::FileLinkJob::FileLinkJob()@Base" 0.12.0
  (c++)"Fm::FileMenu::FileMenu(Fm::FileInfoList, std::shared_ptr<Fm::FileInfo const>, Fm::FilePath, bool, QString const&, QWidget*)@Base" 0.12.0
@@ -321,37 +347,41 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FileMonitor::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::FileMonitor::staticMetaObject@Base" 0.12.0
  (c++)"Fm::FileOperation::FileOperation(Fm::FileOperation::Type, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QObject*)@Base" 0.12.0
+ (c++)"Fm::FileOperation::cancel()@Base" 0.13.0~
  (c++)"Fm::FileOperation::changeAttrFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QWidget*)@Base" 0.12.0
  (c++)"Fm::FileOperation::copyFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath, QWidget*)@Base" 0.12.0
+ (c++)"Fm::FileOperation::copyFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QWidget*)@Base" 0.13.0~
  (c++)"Fm::FileOperation::deleteFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, bool, QWidget*)@Base" 0.12.0
  (c++)"Fm::FileOperation::disconnectJob()@Base" 0.10.0
  (c++)"Fm::FileOperation::finished()@Base" 0.10.0
- (c++)"Fm::FileOperation::handleFinish()@Base" 0.10.0
  (c++)"Fm::FileOperation::metaObject() const@Base" 0.10.0
  (c++)"Fm::FileOperation::moveFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath, QWidget*)@Base" 0.12.0
- (c++)"Fm::FileOperation::onFileOpsJobAsk(_FmFileOpsJob*, char const*, char* const*, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobAskRename(_FmFileOpsJob*, _FmFileInfo*, _FmFileInfo*, char**, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobCancelled(_FmFileOpsJob*, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobCurFile(_FmFileOpsJob*, char const*, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobError(_FmFileOpsJob*, _GError*, FmJobErrorSeverity, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobFinished(_FmFileOpsJob*, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobPercent(_FmFileOpsJob*, unsigned int, Fm::FileOperation*)@Base" 0.10.0
- (c++)"Fm::FileOperation::onFileOpsJobPrepared(_FmFileOpsJob*, Fm::FileOperation*)@Base" 0.10.0
+ (c++)"Fm::FileOperation::moveFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QWidget*)@Base" 0.13.0~
+ (c++)"Fm::FileOperation::onJobCancalled()@Base" 0.13.0~
+ (c++)"Fm::FileOperation::onJobError(Fm::GErrorPtr const&, Fm::Job::ErrorSeverity, Fm::Job::ErrorAction&)@Base" 0.13.0~
+ (c++)"Fm::FileOperation::onJobFileExists(Fm::FileInfo const&, Fm::FileInfo const&, Fm::FileOperationJob::FileExistsAction&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileOperation::onJobFinish()@Base" 0.13.0~
+ (c++)"Fm::FileOperation::onJobPrepared()@Base" 0.13.0~
  (c++)"Fm::FileOperation::onUiTimeout()@Base" 0.10.0
  (c++)"Fm::FileOperation::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::FileOperation::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::FileOperation::run()@Base" 0.10.0
+ (c++)"Fm::FileOperation::setChmod(unsigned int, unsigned int)@Base" 0.13.0~
+ (c++)"Fm::FileOperation::setChown(unsigned int, unsigned int)@Base" 0.13.0~
+ (c++)"Fm::FileOperation::setDestFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
  (c++)"Fm::FileOperation::setDestination(Fm::FilePath)@Base" 0.12.0
+ (c++)"Fm::FileOperation::setRecursiveChattr(bool)@Base" 0.13.0~
  (c++)"Fm::FileOperation::showDialog()@Base" 0.10.0
  (c++)"Fm::FileOperation::staticMetaObject@Base" 0.10.0
  (c++)"Fm::FileOperation::symlinkFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath, QWidget*)@Base" 0.12.0
+ (c++)"Fm::FileOperation::symlinkFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QWidget*)@Base" 0.13.0~
  (c++)"Fm::FileOperation::trashFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, bool, QWidget*)@Base" 0.12.0
  (c++)"Fm::FileOperation::unTrashFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, QWidget*)@Base" 0.12.0
  (c++)"Fm::FileOperation::~FileOperation()@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::FileOperationDialog(Fm::FileOperation*)@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::ask(QString, char* const*)@Base" 0.10.0
- (c++)"Fm::FileOperationDialog::askRename(_FmFileInfo*, _FmFileInfo*, QString&)@Base" 0.10.0
- (c++)"Fm::FileOperationDialog::error(_GError*, FmJobErrorSeverity)@Base" 0.10.0
+ (c++)"Fm::FileOperationDialog::askRename(Fm::FileInfo const&, Fm::FileInfo const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileOperationDialog::error(_GError*, Fm::Job::ErrorSeverity)@Base" 0.13.0~
  (c++)"Fm::FileOperationDialog::metaObject() const@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::qt_metacast(char const*)@Base" 0.10.0
@@ -360,6 +390,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::FileOperationDialog::setDataTransferred(unsigned long, unsigned long)@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !ppc64 !riscv64 !sparc64 )"Fm::FileOperationDialog::setDataTransferred(unsigned long long, unsigned long long)@Base" 0.12.0
  (c++)"Fm::FileOperationDialog::setDestPath(Fm::FilePath const&)@Base" 0.12.0
+ (optional|c++|arch= !i386 )"Fm::FileOperationDialog::setFilesProcessed(unsigned long, unsigned long)@Base" 0.13.0~
  (c++)"Fm::FileOperationDialog::setPercent(unsigned int)@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::setPrepared()@Base" 0.10.0
  (c++)"Fm::FileOperationDialog::setRemainingTime(unsigned int)@Base" 0.10.0
@@ -370,6 +401,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::FileOperationJob::addFinishedAmount(unsigned long, unsigned long)@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::FileOperationJob::addFinishedAmount(unsigned long long, unsigned long long)@Base" 0.12.0
  (c++)"Fm::FileOperationJob::askRename(Fm::FileInfo const&, Fm::FileInfo const&, Fm::FilePath&)@Base" 0.12.0
+ (c++)"Fm::FileOperationJob::currentFile() const@Base" 0.13.0~
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::FileOperationJob::currentFileProgress(Fm::FilePath&, unsigned long&, unsigned long&) const@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::FileOperationJob::currentFileProgress(Fm::FilePath&, unsigned long long&, unsigned long long&) const@Base" 0.12.0
  (c++)"Fm::FileOperationJob::fileExists(Fm::FileInfo const&, Fm::FileInfo const&, Fm::FileOperationJob::FileExistsAction&, Fm::FilePath&)@Base" 0.12.0
@@ -377,6 +409,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::FileOperationJob::finishedAmount(unsigned long long&, unsigned long long&) const@Base" 0.12.0
  (c++)"Fm::FileOperationJob::metaObject() const@Base" 0.12.0
  (c++)"Fm::FileOperationJob::preparedToRun()@Base" 0.12.0
+ (c++)"Fm::FileOperationJob::progress() const@Base" 0.13.0~
  (c++)"Fm::FileOperationJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::FileOperationJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::FileOperationJob::setCurrentFile(Fm::FilePath const&)@Base" 0.12.0
@@ -427,6 +460,30 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FileSystemInfoJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::FileSystemInfoJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::FileSystemInfoJob::staticMetaObject@Base" 0.12.0
+ (c++)"Fm::FileTransferJob::FileTransferJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FilePath const&, Fm::FileTransferJob::Mode)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::FileTransferJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FileTransferJob::Mode)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::FileTransferJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >, Fm::FileTransferJob::Mode)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::copyDirContent(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath&, bool)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::copyFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath const&, char const*, bool)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::copyRegularFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::copySpecialFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::createShortcut(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::createSymlink(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::exec()@Base" 0.13.0~
+ (optional|c++|arch= !i386 )"Fm::FileTransferJob::gfileCopyProgressCallback(long, long, Fm::FileTransferJob*)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::handleError(Fm::GErrorPtr&, Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&, int&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::linkFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath const&, char const*)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::makeDir(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo>, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::metaObject() const@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::moveFile(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath const&, char const*)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::moveFileSameFs(Fm::FilePath const&, Fm::GObjectPtr<_GFileInfo> const&, Fm::FilePath&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::processPath(Fm::FilePath const&, Fm::FilePath const&, char const*)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::qt_metacast(char const*)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::setDestDirPath(Fm::FilePath const&)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::setDestPaths(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::setSrcPaths(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
+ (c++)"Fm::FileTransferJob::staticMetaObject@Base" 0.13.0~
  (c++)"Fm::Folder::Folder()@Base" 0.12.0
  (c++)"Fm::Folder::Folder(Fm::FilePath const&)@Base" 0.12.0
  (c++)"Fm::Folder::cache_@Base" 0.12.0
@@ -522,6 +579,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FolderModel::dropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::FolderModel::fileInfoFromIndex(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::FolderModel::fileSizeChanged(QModelIndex const&)@Base" 0.12.0
+ (c++)"Fm::FolderModel::filesAdded(Fm::FileInfoList)@Base" 0.13.0~
  (c++)"Fm::FolderModel::findItemByFileInfo(Fm::FileInfo const*, int*)@Base" 0.12.0
  (c++)"Fm::FolderModel::findItemByName(char const*, int*)@Base" 0.10.0
  (c++)"Fm::FolderModel::findItemByPath(Fm::FilePath const&, int*)@Base" 0.12.0
@@ -597,8 +655,10 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::FolderView::prepareFolderMenu(Fm::FolderMenu*)@Base" 0.10.0
  (c++)"Fm::FolderView::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::FolderView::qt_metacast(char const*)@Base" 0.10.0
+ (c++)"Fm::FolderView::scrollSmoothly()@Base" 0.13.0~
  (c++)"Fm::FolderView::selChanged()@Base" 0.12.0
  (c++)"Fm::FolderView::selectAll()@Base" 0.10.0
+ (c++)"Fm::FolderView::selectFiles(Fm::FileInfoList const&, bool)@Base" 0.13.0~
  (c++)"Fm::FolderView::selectedFilePaths() const@Base" 0.10.0
  (c++)"Fm::FolderView::selectedFiles() const@Base" 0.10.0
  (c++)"Fm::FolderView::selectedIndexes() const@Base" 0.10.0
@@ -627,25 +687,15 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::IconInfo::IconInfo(char const*)@Base" 0.12.0
  (c++)"Fm::IconInfo::cache_@Base" 0.12.0
  (c++)"Fm::IconInfo::emblems() const@Base" 0.12.0
- (c++)"Fm::IconInfo::fallbackQicon_@Base" 0.12.0
+ (c++)"Fm::IconInfo::fallbackQicons_@Base" 0.13.0~
  (c++)"Fm::IconInfo::fromGIcon(Fm::GObjectPtr<_GIcon>)@Base" 0.12.0
  (c++)"Fm::IconInfo::fromName(char const*)@Base" 0.12.0
  (c++)"Fm::IconInfo::internalQicon() const@Base" 0.12.0
  (c++)"Fm::IconInfo::mutex_@Base" 0.12.0
  (c++)"Fm::IconInfo::qicon(bool const&) const@Base" 0.12.0
- (c++)"Fm::IconInfo::qiconFromNames(char const* const*)@Base" 0.12.0
+ (c++)"Fm::IconInfo::qiconsFromNames(char const* const*)@Base" 0.13.0~
  (c++)"Fm::IconInfo::updateQIcons()@Base" 0.12.0
  (c++)"Fm::IconInfo::~IconInfo()@Base" 0.12.0
- (c++)"Fm::IconTheme::IconTheme()@Base" 0.10.0
- (c++)"Fm::IconTheme::changed()@Base" 0.10.0
- (c++)"Fm::IconTheme::checkChanged()@Base" 0.10.0
- (c++)"Fm::IconTheme::eventFilter(QObject*, QEvent*)@Base" 0.10.0
- (c++)"Fm::IconTheme::instance()@Base" 0.10.0
- (c++)"Fm::IconTheme::metaObject() const@Base" 0.10.0
- (c++)"Fm::IconTheme::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
- (c++)"Fm::IconTheme::qt_metacast(char const*)@Base" 0.10.0
- (c++)"Fm::IconTheme::staticMetaObject@Base" 0.10.0
- (c++)"Fm::IconTheme::~IconTheme()@Base" 0.12.0
  (c++)"Fm::Job::Job()@Base" 0.12.0
  (c++)"Fm::Job::cancel()@Base" 0.12.0
  (c++)"Fm::Job::cancelled()@Base" 0.12.0
@@ -676,12 +726,15 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::MountOperation::finished(_GError*)@Base" 0.10.0
  (c++)"Fm::MountOperation::handleFinish(_GError*)@Base" 0.10.0
  (c++)"Fm::MountOperation::metaObject() const@Base" 0.10.0
+ (c++)"Fm::MountOperation::mountEnclosingVolume(Fm::FilePath const&)@Base" 0.13.0~
+ (c++)"Fm::MountOperation::mountMountable(Fm::FilePath const&)@Base" 0.13.0~
  (c++)"Fm::MountOperation::onAbort(_GMountOperation*, Fm::MountOperation*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onAskPassword(_GMountOperation*, char*, char*, char*, GAskPasswordFlags, Fm::MountOperation*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onAskQuestion(_GMountOperation*, char*, char**, Fm::MountOperation*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onEjectMountFinished(_GMount*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onEjectVolumeFinished(_GVolume*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onMountFileFinished(_GFile*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
+ (c++)"Fm::MountOperation::onMountMountableFinished(_GFile*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.13.0~
  (c++)"Fm::MountOperation::onMountVolumeFinished(_GVolume*, _GAsyncResult*, QPointer<Fm::MountOperation>*)@Base" 0.10.0
  (c++)"Fm::MountOperation::onShowProcesses(_GMountOperation*, char*, _GArray*, char**, Fm::MountOperation*)@Base" 0.10.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::MountOperation::onShowUnmountProgress(_GMountOperation*, char*, long, long, Fm::MountOperation*)@Base" 0.12.0
@@ -780,6 +833,16 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::PlacesModelVolumeItem::PlacesModelVolumeItem(_GVolume*)@Base" 0.10.0
  (c++)"Fm::PlacesModelVolumeItem::isMounted()@Base" 0.10.0
  (c++)"Fm::PlacesModelVolumeItem::update()@Base" 0.10.0
+ (c++)"Fm::PlacesProxyModel::PlacesProxyModel(QObject*)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::filterAcceptsRow(int, QModelIndex const&) const@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::metaObject() const@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::qt_metacast(char const*)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::restoreHiddenItems(QSet<QString> const&)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::setHidden(QString const&, bool)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::showAll(bool)@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::staticMetaObject@Base" 0.13.0~
+ (c++)"Fm::PlacesProxyModel::~PlacesProxyModel()@Base" 0.13.0~
  (c++)"Fm::PlacesView::PlacesView(QWidget*)@Base" 0.10.0
  (c++)"Fm::PlacesView::activateRow(int, QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::PlacesView::chdirRequested(int, Fm::FilePath const&)@Base" 0.12.0
@@ -787,6 +850,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::PlacesView::contextMenuEvent(QContextMenuEvent*)@Base" 0.10.0
  (c++)"Fm::PlacesView::dragMoveEvent(QDragMoveEvent*)@Base" 0.10.0
  (c++)"Fm::PlacesView::dropEvent(QDropEvent*)@Base" 0.10.0
+ (c++)"Fm::PlacesView::hiddenItemSet(QString const&, bool)@Base" 0.13.0~
  (c++)"Fm::PlacesView::metaObject() const@Base" 0.10.0
  (c++)"Fm::PlacesView::onClicked(QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::PlacesView::onDeleteBookmark()@Base" 0.10.0
@@ -803,9 +867,12 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::PlacesView::onRenameBookmark()@Base" 0.10.0
  (c++)"Fm::PlacesView::onUnmountMount()@Base" 0.10.0
  (c++)"Fm::PlacesView::onUnmountVolume()@Base" 0.10.0
+ (c++)"Fm::PlacesView::proxyModel_@Base" 0.13.0~
  (c++)"Fm::PlacesView::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::PlacesView::qt_metacast(char const*)@Base" 0.10.0
+ (c++)"Fm::PlacesView::restoreHiddenItems(QSet<QString> const&)@Base" 0.13.0~
  (c++)"Fm::PlacesView::setCurrentPath(Fm::FilePath)@Base" 0.12.0
+ (c++)"Fm::PlacesView::showAll(bool)@Base" 0.13.0~
  (c++)"Fm::PlacesView::staticMetaObject@Base" 0.10.0
  (c++)"Fm::PlacesView::~PlacesView()@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::ProxyFolderModel(QObject*)@Base" 0.10.0
@@ -821,6 +888,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::ProxyFolderModel::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::removeFilter(Fm::ProxyFolderModelFilter*)@Base" 0.10.0
+ (c++)"Fm::ProxyFolderModel::setBackupAsHidden(bool)@Base" 0.13.0~
  (c++)"Fm::ProxyFolderModel::setCutFiles(QItemSelection const&)@Base" 0.12.0
  (c++)"Fm::ProxyFolderModel::setFolderFirst(bool)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::setShowHidden(bool)@Base" 0.10.0
@@ -833,7 +901,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::ProxyFolderModel::staticMetaObject@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::updateFilters()@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::~ProxyFolderModel()@Base" 0.10.0
- (c++)"Fm::RenameDialog::RenameDialog(_FmFileInfo*, _FmFileInfo*, QWidget*, QFlags<Qt::WindowType>)@Base" 0.10.0
+ (c++)"Fm::RenameDialog::RenameDialog(Fm::FileInfo const&, Fm::FileInfo const&, QWidget*, QFlags<Qt::WindowType>)@Base" 0.13.0~
  (c++)"Fm::RenameDialog::accept()@Base" 0.10.0
  (c++)"Fm::RenameDialog::metaObject() const@Base" 0.10.0
  (c++)"Fm::RenameDialog::onFileNameChanged(QString)@Base" 0.10.0
@@ -847,6 +915,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::SidePane::SidePane(QWidget*)@Base" 0.10.0
  (c++)"Fm::SidePane::chdirRequested(int, Fm::FilePath const&)@Base" 0.12.0
  (c++)"Fm::SidePane::createNewFolderRequested(Fm::FilePath const&)@Base" 0.12.0
+ (c++)"Fm::SidePane::hiddenPlaceSet(QString const&, bool)@Base" 0.13.0~
  (c++)"Fm::SidePane::initDirTree()@Base" 0.10.0
  (c++)"Fm::SidePane::metaObject() const@Base" 0.10.0
  (c++)"Fm::SidePane::modeByName(char const*)@Base" 0.10.0
@@ -859,6 +928,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::SidePane::prepareFileMenu(Fm::FileMenu*)@Base" 0.10.0
  (c++)"Fm::SidePane::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::SidePane::qt_metacast(char const*)@Base" 0.10.0
+ (c++)"Fm::SidePane::restoreHiddenPlaces(QSet<QString> const&)@Base" 0.13.0~
  (c++)"Fm::SidePane::setCurrentPath(Fm::FilePath)@Base" 0.12.0
  (c++)"Fm::SidePane::setHomeDir(char const*)@Base" 0.10.0
  (c++)"Fm::SidePane::setIconSize(QSize)@Base" 0.10.0
@@ -866,6 +936,23 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::SidePane::setShowHidden(bool)@Base" 0.10.0
  (c++)"Fm::SidePane::staticMetaObject@Base" 0.10.0
  (c++)"Fm::SidePane::~SidePane()@Base" 0.10.0
+ (c++)"Fm::TemplateItem::TemplateItem(std::shared_ptr<Fm::FileInfo const>)@Base" 0.13.0~
+ (c++)"Fm::TemplateItem::filePath() const@Base" 0.13.0~
+ (c++)"Fm::Templates::Templates()@Base" 0.13.0~
+ (c++)"Fm::Templates::addTemplateDir(char const*)@Base" 0.13.0~
+ (c++)"Fm::Templates::globalInstance()@Base" 0.13.0~
+ (c++)"Fm::Templates::globalInstance_@Base" 0.13.0~
+ (c++)"Fm::Templates::itemAdded(std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
+ (c++)"Fm::Templates::itemChanged(std::shared_ptr<Fm::TemplateItem const> const&, std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
+ (c++)"Fm::Templates::itemRemoved(std::shared_ptr<Fm::TemplateItem const> const&)@Base" 0.13.0~
+ (c++)"Fm::Templates::metaObject() const@Base" 0.13.0~
+ (c++)"Fm::Templates::onFilesAdded(Fm::FileInfoList&)@Base" 0.13.0~
+ (c++)"Fm::Templates::onFilesChanged(std::vector<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> > > >&)@Base" 0.13.0~
+ (c++)"Fm::Templates::onFilesRemoved(Fm::FileInfoList&)@Base" 0.13.0~
+ (c++)"Fm::Templates::onTemplateDirRemoved()@Base" 0.13.0~
+ (c++)"Fm::Templates::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.0~
+ (c++)"Fm::Templates::qt_metacast(char const*)@Base" 0.13.0~
+ (c++)"Fm::Templates::staticMetaObject@Base" 0.13.0~
  (c++)"Fm::ThumbnailJob::ThumbnailJob(Fm::FileInfoList, int)@Base" 0.12.0
  (c++)"Fm::ThumbnailJob::exec()@Base" 0.12.0
  (c++)"Fm::ThumbnailJob::generateThumbnail(std::shared_ptr<Fm::FileInfo const> const&, Fm::FilePath const&, char const*, QString const&)@Base" 0.12.0
@@ -898,15 +985,13 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::TotalSizeJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::TotalSizeJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::TotalSizeJob::staticMetaObject@Base" 0.12.0
- (c++)"Fm::TrashJob::TrashJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&&)@Base" 0.12.0
- (c++)"Fm::TrashJob::TrashJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.12.0
+ (c++)"Fm::TrashJob::TrashJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
  (c++)"Fm::TrashJob::exec()@Base" 0.12.0
  (c++)"Fm::TrashJob::metaObject() const@Base" 0.12.0
  (c++)"Fm::TrashJob::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.12.0
  (c++)"Fm::TrashJob::qt_metacast(char const*)@Base" 0.12.0
  (c++)"Fm::TrashJob::staticMetaObject@Base" 0.12.0
- (c++)"Fm::UntrashJob::UntrashJob()@Base" 0.12.0
- (c++)"Fm::UntrashJob::ensure_parent_dir(_GFile*)@Base" 0.12.0
+ (c++)"Fm::UntrashJob::UntrashJob(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.13.0~
  (c++)"Fm::UntrashJob::exec()@Base" 0.12.0
  (c++)"Fm::UserInfoCache::UserInfoCache()@Base" 0.12.0
  (c++)"Fm::UserInfoCache::changed()@Base" 0.12.0
@@ -943,9 +1028,9 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"Fm::VolumeManager::volumeRemoved(Fm::Volume const&)@Base" 0.12.0
  (c++)"Fm::VolumeManager::~VolumeManager()@Base" 0.12.0
  (c++)"Fm::allKnownTerminals()@Base" 0.12.0
- (c++)"Fm::changeFileName(Fm::FilePath const&, QString const&, QWidget*)@Base" 0.12.0
+ (c++)"Fm::changeFileName(Fm::FilePath const&, QString const&, QWidget*, bool)@Base" 0.13.0~
  (c++)"Fm::copyFilesToClipboard(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.12.0
- (c++)"Fm::createFileOrFolder(Fm::CreateFileType, Fm::FilePath, _FmTemplate*, QWidget*)@Base" 0.12.0
+ (c++)"Fm::createFileOrFolder(Fm::CreateFileType, Fm::FilePath, Fm::TemplateItem const*, QWidget*)@Base" 0.13.0~
  (c++)"Fm::cutFilesToClipboard(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.12.0
  (c++)"Fm::execModelessDialog(QDialog*)@Base" 0.10.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::formatFileSize(unsigned long, bool)@Base" 0.12.0
@@ -969,6 +1054,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"non-virtual thunk to Fm::AppMenuView::~AppMenuView()@Base" 0.10.0
  (c++)"non-virtual thunk to Fm::ColorButton::~ColorButton()@Base" 0.10.0
  (c++)"non-virtual thunk to Fm::CreateNewMenu::~CreateNewMenu()@Base" 0.10.0
+ (c++)"non-virtual thunk to Fm::DeleteJob::~DeleteJob()@Base" 0.13.0~
  (c++)"non-virtual thunk to Fm::DirTreeView::~DirTreeView()@Base" 0.10.0
  (c++)"non-virtual thunk to Fm::EditBookmarksDialog::~EditBookmarksDialog()@Base" 0.10.0
  (c++)"non-virtual thunk to Fm::FileDialog::~FileDialog()@Base" 0.12.0
@@ -988,14 +1074,15 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"non-virtual thunk to Fm::ThumbnailJob::~ThumbnailJob()@Base" 0.12.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_find_before_node(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long) const@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_find_before_node(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned int) const@Base" 0.12.0
- (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, true>*)@Base" 0.12.0
- (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert_unique_node(unsigned int, unsigned int, std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, true>*)@Base" 0.12.0
  (c++)"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::clear()@Base" 0.12.0
+ (optional=gcc8|c++|arch= !i386 )"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, false, true>)@Base" 0.13.0~
  (c++)"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::find(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@Base" 0.12.0
- (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*)@Base" 0.12.0
- (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned int, unsigned int, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*)@Base" 0.12.0
- (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*)@Base" 0.12.0
- (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned int, unsigned int, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*)@Base" 0.12.0
+ (optional=gcc8|c++|arch= !i386 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*, unsigned long)@Base" 0.13.0~
+ (optional=gcc8|c++)"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*, unsigned long)@Base" 0.13.0~
+ (optional=gcc7|c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*)@Base" 0.12.0
+ (optional=gcc7|c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned int, unsigned int, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*)@Base" 0.12.0
+ (optional=gcc7|c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*)@Base" 0.12.0
+ (optional=gcc7|c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned int, unsigned int, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*)@Base" 0.12.0
  (c++)"std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_erase(std::_Rb_tree_node<unsigned int>*)@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
@@ -1074,78 +1161,62 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch= !arm64 !armel !armhf !i386 !mips !mipsel !mips64el !ppc64el !alpha !hppa !hurd-i386 !ia64 !kfreebsd-i386 !m68k !powerpc !ppc64 !riscv64 !sh4 !sparc64 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mips64el !mipsel !ppc64el !s390x !hppa !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !riscv64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag), unsigned long, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !i386 !mips !mips64el !mipsel !ppc64el !s390x !alpha !hppa !hurd-i386 !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !riscv64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned int, char const*, std::__va_list), unsigned int, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips64el !ppc64el !s390x !alpha !hurd-i386 !ia64 !kfreebsd-amd64 !kfreebsd-i386 !powerpc !ppc64 !riscv64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned int, char const*, void*), unsigned int, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mips64el !mipsel !s390x !alpha !hppa !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !riscv64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, char*), unsigned long, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !mips !mipsel !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !hppa !m68k !powerpc !ppc64 !riscv64 !sh4 !sparc64 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned int, char const*, char*), unsigned int, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mips64el !mipsel !ppc64el !s390x !alpha !hppa !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !ppc64 !riscv64 !sh4 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned int, char const*, __va_list_tag*), unsigned int, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mips64el !mipsel !ppc64el !s390x !alpha !hppa !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !riscv64 !x32)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned int, char const*, __va_list_tag), unsigned int, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mipsel !ppc64el !s390x !alpha !hppa !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, void*), unsigned long, char const*, ...)@Base" 0.12.0
- (optional|c++|arch= !amd64 !armel !armhf !i386 !mips !mipsel !mips64el !ppc64el !s390x !alpha !hppa !hurd-i386 !ia64 !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !riscv64 !sh4 !sparc64 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, std::__va_list), unsigned long, char const*, ...)@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.0~
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.0~
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.0~
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.0~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.0~
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (c++)"std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (c++)"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)@Base" 0.12.0
  (c++)"std::__detail::_Map_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, true>::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@Base" 0.12.0
+ (c++)"std::__detail::_Map_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Fm::FileInfoList>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Fm::FileInfoList> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, true>::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)@Base" 0.13.0~
  (c++)"std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int>(unsigned int&&)@Base" 0.12.0
+ (optional=gcc8|c++)"std::pair<std::__detail::_Node_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*>, false, true>, bool> std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_emplace<std::pair<char const*, char const*> >(std::integral_constant<bool, true>, std::pair<char const*, char const*>&&)@Base" 0.13.0~
  (c++)"std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::BrowseHistoryItem*, std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> > >)@Base" 0.12.0
  (c++)"std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::DirTreeModelItem**, std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> > >)@Base" 0.12.0
  (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, __gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >)@Base" 0.12.0
- (c++|arch= !i386 !mips !mipsel !s390x !alpha !hurd-i386 !kfreebsd-i386 !powerpc !ppc64 )"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::insert(__gnu_cxx::__normal_iterator<Fm::FilePath const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, Fm::FilePath const&)@Base" 0.12.0
+ (optional=gcc8|c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::reserve(unsigned long)@Base" 0.13.0~
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_erase(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const>*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >)@Base" 0.12.0
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_insert_rval(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const> const*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >, std::shared_ptr<Fm::BookmarkItem const>&&)@Base" 0.12.0
  (c++)"std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::operator=(std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > > const&)@Base" 0.12.0
- (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::reserve(unsigned long)@Base" 0.12.0
- (optional|c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !ia64 !kfreebsd-amd64 !alpha !ppc64 !riscv64 !sparc64 )"std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::reserve(unsigned int)@Base" 0.12.0
+ (c++)"std::vector<std::shared_ptr<Fm::TemplateItem>, std::allocator<std::shared_ptr<Fm::TemplateItem> > >::_M_erase(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::TemplateItem>*, std::vector<std::shared_ptr<Fm::TemplateItem>, std::allocator<std::shared_ptr<Fm::TemplateItem> > > >, __gnu_cxx::__normal_iterator<std::shared_ptr<Fm::TemplateItem>*, std::vector<std::shared_ptr<Fm::TemplateItem>, std::allocator<std::shared_ptr<Fm::TemplateItem> > > >)@Base" 0.13.0~
  (c++)"std::vector<std::shared_ptr<Fm::Thumbnailer>, std::allocator<std::shared_ptr<Fm::Thumbnailer> > >::~vector()@Base" 0.12.0
+ (c++)"std::vector<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> >, std::allocator<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> > > >::~vector()@Base" 0.13.0~
  (c++)"typeinfo for Fm::AppChooserComboBox@Base" 0.10.0
  (c++)"typeinfo for Fm::AppChooserDialog@Base" 0.10.0
  (c++)"typeinfo for Fm::AppMenuView@Base" 0.10.0
+ (c++)"typeinfo for Fm::BasicFileLauncher@Base" 0.13.0~
  (c++)"typeinfo for Fm::BookmarkAction@Base" 0.10.0
  (c++)"typeinfo for Fm::Bookmarks@Base" 0.12.0
  (c++)"typeinfo for Fm::BrowseHistory@Base" 0.10.0
  (c++)"typeinfo for Fm::CachedFolderModel@Base" 0.10.0
  (c++)"typeinfo for Fm::ColorButton@Base" 0.10.0
- (c++)"typeinfo for Fm::CopyJob@Base" 0.12.0
  (c++)"typeinfo for Fm::CreateNewMenu@Base" 0.10.0
  (c++)"typeinfo for Fm::DeleteJob@Base" 0.12.0
  (c++)"typeinfo for Fm::DirListJob@Base" 0.12.0
@@ -1167,6 +1238,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo for Fm::FilePropsDialog@Base" 0.10.0
  (c++)"typeinfo for Fm::FileSearchDialog@Base" 0.10.0
  (c++)"typeinfo for Fm::FileSystemInfoJob@Base" 0.12.0
+ (c++)"typeinfo for Fm::FileTransferJob@Base" 0.13.0~
  (c++)"typeinfo for Fm::Folder@Base" 0.12.0
  (c++)"typeinfo for Fm::FolderItemDelegate@Base" 0.10.0
  (c++)"typeinfo for Fm::FolderMenu@Base" 0.10.0
@@ -1174,7 +1246,6 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo for Fm::FolderModelItem@Base" 0.10.0
  (c++)"typeinfo for Fm::FolderView@Base" 0.10.0
  (c++)"typeinfo for Fm::FontButton@Base" 0.10.0
- (c++)"typeinfo for Fm::IconTheme@Base" 0.10.0
  (c++)"typeinfo for Fm::Job@Base" 0.12.0
  (c++)"typeinfo for Fm::MountOperation@Base" 0.10.0
  (c++)"typeinfo for Fm::PathBar@Base" 0.11.2
@@ -1185,11 +1256,13 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo for Fm::PlacesModelItem@Base" 0.10.0
  (c++)"typeinfo for Fm::PlacesModelMountItem@Base" 0.10.0
  (c++)"typeinfo for Fm::PlacesModelVolumeItem@Base" 0.10.0
+ (c++)"typeinfo for Fm::PlacesProxyModel@Base" 0.13.0~
  (c++)"typeinfo for Fm::PlacesView@Base" 0.10.0
  (c++)"typeinfo for Fm::ProxyFolderModel@Base" 0.10.0
  (c++)"typeinfo for Fm::ProxyFolderModelFilter@Base" 0.12.0
  (c++)"typeinfo for Fm::RenameDialog@Base" 0.10.0
  (c++)"typeinfo for Fm::SidePane@Base" 0.10.0
+ (c++)"typeinfo for Fm::Templates@Base" 0.13.0~
  (c++)"typeinfo for Fm::ThumbnailJob@Base" 0.12.0
  (c++)"typeinfo for Fm::TotalSizeJob@Base" 0.12.0
  (c++)"typeinfo for Fm::TrashJob@Base" 0.12.0
@@ -1219,28 +1292,24 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (optional|c++|arch=armel riscv64 )"typeinfo for __gnu_cxx::__mutex@Base" 0.12.0
- (optional|c++|arch=armel riscv64 )"typeinfo name for __gnu_cxx::__mutex@Base" 0.12.0
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (c++)"typeinfo for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++)"typeinfo for std::_Sp_make_shared_tag@Base" 0.12.0
  (c++)"typeinfo name for Fm::AppChooserComboBox@Base" 0.10.0
  (c++)"typeinfo name for Fm::AppChooserDialog@Base" 0.10.0
  (c++)"typeinfo name for Fm::AppMenuView@Base" 0.10.0
+ (c++)"typeinfo name for Fm::BasicFileLauncher@Base" 0.13.0~
  (c++)"typeinfo name for Fm::BookmarkAction@Base" 0.10.0
  (c++)"typeinfo name for Fm::Bookmarks@Base" 0.12.0
  (c++)"typeinfo name for Fm::BrowseHistory@Base" 0.10.0
  (c++)"typeinfo name for Fm::CachedFolderModel@Base" 0.10.0
  (c++)"typeinfo name for Fm::ColorButton@Base" 0.10.0
- (c++)"typeinfo name for Fm::CopyJob@Base" 0.12.0
  (c++)"typeinfo name for Fm::CreateNewMenu@Base" 0.10.0
  (c++)"typeinfo name for Fm::DeleteJob@Base" 0.12.0
  (c++)"typeinfo name for Fm::DirListJob@Base" 0.12.0
@@ -1262,6 +1331,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo name for Fm::FilePropsDialog@Base" 0.10.0
  (c++)"typeinfo name for Fm::FileSearchDialog@Base" 0.10.0
  (c++)"typeinfo name for Fm::FileSystemInfoJob@Base" 0.12.0
+ (c++)"typeinfo name for Fm::FileTransferJob@Base" 0.13.0~
  (c++)"typeinfo name for Fm::Folder@Base" 0.12.0
  (c++)"typeinfo name for Fm::FolderItemDelegate@Base" 0.10.0
  (c++)"typeinfo name for Fm::FolderMenu@Base" 0.10.0
@@ -1269,7 +1339,6 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo name for Fm::FolderModelItem@Base" 0.10.0
  (c++)"typeinfo name for Fm::FolderView@Base" 0.10.0
  (c++)"typeinfo name for Fm::FontButton@Base" 0.10.0
- (c++)"typeinfo name for Fm::IconTheme@Base" 0.10.0
  (c++)"typeinfo name for Fm::Job@Base" 0.12.0
  (c++)"typeinfo name for Fm::MountOperation@Base" 0.10.0
  (c++)"typeinfo name for Fm::PathBar@Base" 0.11.2
@@ -1280,11 +1349,13 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"typeinfo name for Fm::PlacesModelItem@Base" 0.10.0
  (c++)"typeinfo name for Fm::PlacesModelMountItem@Base" 0.10.0
  (c++)"typeinfo name for Fm::PlacesModelVolumeItem@Base" 0.10.0
+ (c++)"typeinfo name for Fm::PlacesProxyModel@Base" 0.13.0~
  (c++)"typeinfo name for Fm::PlacesView@Base" 0.10.0
  (c++)"typeinfo name for Fm::ProxyFolderModel@Base" 0.10.0
  (c++)"typeinfo name for Fm::ProxyFolderModelFilter@Base" 0.12.0
  (c++)"typeinfo name for Fm::RenameDialog@Base" 0.10.0
  (c++)"typeinfo name for Fm::SidePane@Base" 0.10.0
+ (c++)"typeinfo name for Fm::Templates@Base" 0.13.0~
  (c++)"typeinfo name for Fm::ThumbnailJob@Base" 0.12.0
  (c++)"typeinfo name for Fm::TotalSizeJob@Base" 0.12.0
  (c++)"typeinfo name for Fm::TrashJob@Base" 0.12.0
@@ -1315,9 +1386,10 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
+ (c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
@@ -1325,11 +1397,15 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++)"typeinfo name for std::_Sp_make_shared_tag@Base" 0.12.0
+ (optional=gcc8|c++)"void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)@Base" 0.13.0~
+ (optional=gcc8|c++)"void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@Base" 0.13.0~
  (c++)"void std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> >::_M_realloc_insert<Fm::BrowseHistoryItem>(__gnu_cxx::__normal_iterator<Fm::BrowseHistoryItem*, std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> > >, Fm::BrowseHistoryItem&&)@Base" 0.12.0
- (optional|c++)"void std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::_M_realloc_insert<Fm::DirTreeModelItem*>(__gnu_cxx::__normal_iterator<Fm::DirTreeModelItem**, std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> > >, Fm::DirTreeModelItem*&&)@Base" 0.12.0
+ (optional=gcc8|c++)"void std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::emplace_back<Fm::DirTreeModelItem*>(Fm::DirTreeModelItem*&&)@Base" 0.13.0~
  (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_range_insert<__gnu_cxx::__normal_iterator<Fm::FilePath const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > > >(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, __gnu_cxx::__normal_iterator<Fm::FilePath const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, __gnu_cxx::__normal_iterator<Fm::FilePath const*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, std::forward_iterator_tag)@Base" 0.12.0
  (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_realloc_insert<Fm::FilePath const&>(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, Fm::FilePath const&)@Base" 0.12.0
+ (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_realloc_insert<Fm::FilePath&>(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, Fm::FilePath&)@Base" 0.13.0~
  (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_realloc_insert<Fm::FilePath>(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, Fm::FilePath&&)@Base" 0.12.0
+ (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::emplace_back<Fm::FilePath&>(Fm::FilePath&)@Base" 0.13.0~
  (c++)"void std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::emplace_back<Fm::FilePath>(Fm::FilePath&&)@Base" 0.12.0
  (c++)"void std::vector<Fm::Mount, std::allocator<Fm::Mount> >::_M_realloc_insert<Fm::Mount>(__gnu_cxx::__normal_iterator<Fm::Mount*, std::vector<Fm::Mount, std::allocator<Fm::Mount> > >, Fm::Mount&&)@Base" 0.12.0
  (c++)"void std::vector<Fm::Mount, std::allocator<Fm::Mount> >::emplace_back<Fm::Mount>(Fm::Mount&&)@Base" 0.12.0
@@ -1343,16 +1419,20 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"void std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_realloc_insert<std::shared_ptr<Fm::BookmarkItem const> >(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const>*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >, std::shared_ptr<Fm::BookmarkItem const>&&)@Base" 0.12.0
  (c++)"void std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::_M_realloc_insert<std::shared_ptr<Fm::FileInfo const> >(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::FileInfo const>*, std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > > >, std::shared_ptr<Fm::FileInfo const>&&)@Base" 0.12.0
  (c++)"void std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::_M_realloc_insert<std::shared_ptr<Fm::FileInfo const> const&>(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::FileInfo const>*, std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > > >, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.12.0
+ (c++)"void std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::emplace_back<std::shared_ptr<Fm::FileInfo const> const&>(std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.0~
+ (c++)"void std::vector<std::shared_ptr<Fm::Folder>, std::allocator<std::shared_ptr<Fm::Folder> > >::_M_realloc_insert<std::shared_ptr<Fm::Folder> >(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::Folder>*, std::vector<std::shared_ptr<Fm::Folder>, std::allocator<std::shared_ptr<Fm::Folder> > > >, std::shared_ptr<Fm::Folder>&&)@Base" 0.13.0~
+ (c++)"void std::vector<std::shared_ptr<Fm::TemplateItem>, std::allocator<std::shared_ptr<Fm::TemplateItem> > >::_M_realloc_insert<std::shared_ptr<Fm::TemplateItem> >(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::TemplateItem>*, std::vector<std::shared_ptr<Fm::TemplateItem>, std::allocator<std::shared_ptr<Fm::TemplateItem> > > >, std::shared_ptr<Fm::TemplateItem>&&)@Base" 0.13.0~
  (c++)"void std::vector<std::shared_ptr<Fm::Thumbnailer>, std::allocator<std::shared_ptr<Fm::Thumbnailer> > >::_M_realloc_insert<std::shared_ptr<Fm::Thumbnailer> >(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::Thumbnailer>*, std::vector<std::shared_ptr<Fm::Thumbnailer>, std::allocator<std::shared_ptr<Fm::Thumbnailer> > > >, std::shared_ptr<Fm::Thumbnailer>&&)@Base" 0.12.0
+ (c++)"void std::vector<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> >, std::allocator<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> > > >::_M_realloc_insert<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> > >(__gnu_cxx::__normal_iterator<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> >*, std::vector<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> >, std::allocator<std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> > > > >, std::unique_ptr<Fm::Archiver, std::default_delete<Fm::Archiver> >&&)@Base" 0.13.0~
  (c++)"vtable for Fm::AppChooserComboBox@Base" 0.10.0
  (c++)"vtable for Fm::AppChooserDialog@Base" 0.10.0
  (c++)"vtable for Fm::AppMenuView@Base" 0.10.0
+ (c++)"vtable for Fm::BasicFileLauncher@Base" 0.13.0~
  (c++)"vtable for Fm::BookmarkAction@Base" 0.10.0
  (c++)"vtable for Fm::Bookmarks@Base" 0.12.0
  (c++)"vtable for Fm::BrowseHistory@Base" 0.10.0
  (c++)"vtable for Fm::CachedFolderModel@Base" 0.10.0
  (c++)"vtable for Fm::ColorButton@Base" 0.10.0
- (c++)"vtable for Fm::CopyJob@Base" 0.12.0
  (c++)"vtable for Fm::CreateNewMenu@Base" 0.10.0
  (c++)"vtable for Fm::DeleteJob@Base" 0.12.0
  (c++)"vtable for Fm::DirListJob@Base" 0.12.0
@@ -1374,6 +1454,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"vtable for Fm::FilePropsDialog@Base" 0.10.0
  (c++)"vtable for Fm::FileSearchDialog@Base" 0.10.0
  (c++)"vtable for Fm::FileSystemInfoJob@Base" 0.12.0
+ (c++)"vtable for Fm::FileTransferJob@Base" 0.13.0~
  (c++)"vtable for Fm::Folder@Base" 0.12.0
  (c++)"vtable for Fm::FolderItemDelegate@Base" 0.10.0
  (c++)"vtable for Fm::FolderMenu@Base" 0.10.0
@@ -1381,7 +1462,6 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"vtable for Fm::FolderModelItem@Base" 0.10.0
  (c++)"vtable for Fm::FolderView@Base" 0.10.0
  (c++)"vtable for Fm::FontButton@Base" 0.10.0
- (c++)"vtable for Fm::IconTheme@Base" 0.10.0
  (c++)"vtable for Fm::Job@Base" 0.12.0
  (c++)"vtable for Fm::MountOperation@Base" 0.10.0
  (c++)"vtable for Fm::PathBar@Base" 0.11.2
@@ -1392,10 +1472,12 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"vtable for Fm::PlacesModelItem@Base" 0.10.0
  (c++)"vtable for Fm::PlacesModelMountItem@Base" 0.10.0
  (c++)"vtable for Fm::PlacesModelVolumeItem@Base" 0.10.0
+ (c++)"vtable for Fm::PlacesProxyModel@Base" 0.13.0~
  (c++)"vtable for Fm::PlacesView@Base" 0.10.0
  (c++)"vtable for Fm::ProxyFolderModel@Base" 0.10.0
  (c++)"vtable for Fm::RenameDialog@Base" 0.10.0
  (c++)"vtable for Fm::SidePane@Base" 0.10.0
+ (c++)"vtable for Fm::Templates@Base" 0.13.0~
  (c++)"vtable for Fm::ThumbnailJob@Base" 0.12.0
  (c++)"vtable for Fm::TotalSizeJob@Base" 0.12.0
  (c++)"vtable for Fm::TrashJob@Base" 0.12.0
@@ -1403,7 +1485,7 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++)"vtable for Fm::UserInfoCache@Base" 0.12.0
  (c++)"vtable for Fm::VolumeManager::GetGVolumeMonitorJob@Base" 0.12.0
  (c++)"vtable for Fm::VolumeManager@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem const, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (optional|c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem const, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem const, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
@@ -1422,45 +1504,13 @@ libfm-qt.so.3 libfm-qt3 #MINVER#
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
+ (c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
+ (c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.0~
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- fm_search_add_dir@Base 0.10.0
- fm_search_add_mime_type@Base 0.10.0
- fm_search_dup_path@Base 0.10.0
- fm_search_free@Base 0.10.0
- fm_search_get_content_ci@Base 0.10.0
- fm_search_get_content_pattern@Base 0.10.0
- fm_search_get_content_regex@Base 0.10.0
- fm_search_get_dirs@Base 0.10.0
- fm_search_get_max_mtime@Base 0.10.0
- fm_search_get_max_size@Base 0.10.0
- fm_search_get_mime_types@Base 0.10.0
- fm_search_get_min_mtime@Base 0.10.0
- fm_search_get_min_size@Base 0.10.0
- fm_search_get_name_ci@Base 0.10.0
- fm_search_get_name_patterns@Base 0.10.0
- fm_search_get_name_regex@Base 0.10.0
- fm_search_get_recursive@Base 0.10.0
- fm_search_get_show_hidden@Base 0.10.0
- fm_search_new@Base 0.10.0
- fm_search_remove_dir@Base 0.10.0
- fm_search_remove_mime_type@Base 0.10.0
- fm_search_set_content_ci@Base 0.10.0
- fm_search_set_content_pattern@Base 0.10.0
- fm_search_set_content_regex@Base 0.10.0
- fm_search_set_max_mtime@Base 0.10.0
- fm_search_set_max_size@Base 0.10.0
- fm_search_set_min_mtime@Base 0.10.0
- fm_search_set_min_size@Base 0.10.0
- fm_search_set_name_ci@Base 0.10.0
- fm_search_set_name_patterns@Base 0.10.0
- fm_search_set_name_regex@Base 0.10.0
- fm_search_set_recursive@Base 0.10.0
- fm_search_set_show_hidden@Base 0.10.0

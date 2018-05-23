@@ -9,7 +9,7 @@ set(libfm_core_SRCS
     core/filemonitor.cpp
     # i/o jobs
     core/job.cpp
-    core/copyjob.cpp
+    core/filetransferjob.cpp
     core/deletejob.cpp
     core/dirlistjob.cpp
     core/filechangeattrjob.cpp
@@ -24,10 +24,13 @@ set(libfm_core_SRCS
     core/thumbnailjob.cpp
     # extra desktop services
     core/bookmarks.cpp
+    core/basicfilelauncher.cpp
     core/volumemanager.cpp
     core/userinfocache.cpp
     core/thumbnailer.cpp
     core/terminal.cpp
+    core/archiver.cpp
+    core/templates.cpp
     # custom actions
     customactions/fileaction.cpp
     customactions/fileactionprofile.cpp
@@ -39,7 +42,6 @@ set(libfm_SRCS
     libfmqt.cpp
     bookmarkaction.cpp
     sidepane.cpp
-    icontheme.cpp
     filelauncher.cpp
     foldermodel.cpp
     foldermodelitem.cpp
@@ -95,9 +97,6 @@ set(libfm_UIS
     filedialog.ui
 )
 
-qt5_wrap_ui(libfm_UIS_H ${libfm_UIS})
-
-
 set(LIBFM_QT_DATA_DIR "${CMAKE_INSTALL_FULL_DATADIR}/libfm-qt")
 set(LIBFM_QT_INTREE_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include")
 
@@ -114,7 +113,7 @@ lxqt_translate_ts(QM_FILES
 
 add_library(${LIBFM_QT_LIBRARY_NAME} SHARED
     ${libfm_SRCS}
-    ${libfm_UIS_H}
+    ${libfm_UIS}
     ${QM_FILES}
 )
 
@@ -154,6 +153,7 @@ target_include_directories(${LIBFM_QT_LIBRARY_NAME}
 
 target_compile_definitions(${LIBFM_QT_LIBRARY_NAME}
     PRIVATE "LIBFM_QT_DATA_DIR=\"${LIBFM_QT_DATA_DIR}\""
+            "QT_NO_FOREACH"
     PUBLIC "QT_NO_KEYWORDS"
 )
 
@@ -216,7 +216,7 @@ export(TARGETS ${LIBFM_QT_LIBRARY_NAME}
 set(REQUIRED_QT "Qt5Widgets >= ${REQUIRED_QT_VERSION} Qt5X11Extras >= ${REQUIRED_QT_VERSION}")
 configure_file(libfm-qt.pc.in lib${LIBFM_QT_LIBRARY_NAME}.pc @ONLY)
 # FreeBSD loves to install files to different locations
-# http://www.freebsd.org/doc/handbook/dirstructure.html
+# https://www.freebsd.org/doc/handbook/dirstructure.html
 if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
     install(FILES
         "${CMAKE_CURRENT_BINARY_DIR}/lib${LIBFM_QT_LIBRARY_NAME}.pc"

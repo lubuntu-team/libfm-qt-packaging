@@ -156,7 +156,7 @@ bool isCurrentPidClipboardData(const QMimeData& data) {
     return !clip_pid.isEmpty() && clip_pid == curr_pid;
 }
 
-void changeFileName(const Fm::FilePath& filePath, const QString& newName, QWidget* parent) {
+bool changeFileName(const Fm::FilePath& filePath, const QString& newName, QWidget* parent, bool showMessage) {
     auto dest = filePath.parent().child(newName.toLocal8Bit().constData());
     Fm::GErrorPtr err;
     if(!g_file_move(filePath.gfile().get(), dest.gfile().get(),
@@ -165,11 +165,15 @@ void changeFileName(const Fm::FilePath& filePath, const QString& newName, QWidge
                                    G_FILE_COPY_NOFOLLOW_SYMLINKS),
                     nullptr, /* make this cancellable later. */
                     nullptr, nullptr, &err)) {
-        QMessageBox::critical(parent, QObject::tr("Error"), err.message());
+        if (showMessage){
+            QMessageBox::critical(parent, QObject::tr("Error"), err.message());
+        }
+        return false;
     }
+    return true;
 }
 
-void renameFile(std::shared_ptr<const Fm::FileInfo> file, QWidget* parent) {
+bool renameFile(std::shared_ptr<const Fm::FileInfo> file, QWidget* parent) {
     FilenameDialog dlg(parent);
     dlg.setWindowTitle(QObject::tr("Rename File"));
     dlg.setLabelText(QObject::tr("Please enter a new name:"));
@@ -182,18 +186,19 @@ void renameFile(std::shared_ptr<const Fm::FileInfo> file, QWidget* parent) {
     }
 
     if(dlg.exec() != QDialog::Accepted) {
-        return;
+        return false; // stop multiple renaming
     }
 
     QString new_name = dlg.textValue();
     if(new_name == old_name) {
-        return;
+        return true; // let multiple renaming continue
     }
     changeFileName(file->path(), new_name, parent);
+    return true;
 }
 
 // templateFile is a file path used as a template of the new file.
-void createFileOrFolder(CreateFileType type, Fm::FilePath parentDir, FmTemplate* templ, QWidget* parent) {
+void createFileOrFolder(CreateFileType type, FilePath parentDir, const TemplateItem* templ, QWidget* parent) {
     QString defaultNewName;
     QString prompt;
     QString dialogTitle = type == CreateNewFolder ? QObject::tr("Create Folder")
@@ -211,9 +216,9 @@ void createFileOrFolder(CreateFileType type, Fm::FilePath parentDir, FmTemplate*
         break;
 
     case CreateWithTemplate: {
-        FmMimeType* mime = fm_template_get_mime_type(templ);
-        prompt = QObject::tr("Enter a name for the new %1:").arg(QString::fromUtf8(fm_mime_type_get_desc(mime)));
-        defaultNewName = QString::fromUtf8(fm_template_get_name(templ, nullptr));
+        auto mime = templ->mimeType();
+        prompt = QObject::tr("Enter a name for the new %1:").arg(mime->desc());
+        defaultNewName = QString::fromStdString(templ->name());
     }
     break;
     }
@@ -245,7 +250,8 @@ _retry:
         g_file_make_directory(dest.gfile().get(), nullptr, &err);
         break;
     case CreateWithTemplate:
-        fm_template_create_file(templ, dest.gfile().get(), &err, false);
+        // copy the template file to its destination
+        FileOperation::copyFile(templ->filePath(), dest, parent);
         break;
     }
     if(err) {
@@ -261,7 +267,7 @@ _retry:
 uid_t uidFromName(QString name) {
     uid_t ret;
     if(name.isEmpty()) {
-        return -1;
+        return INVALID_UID;
     }
     if(name.at(0).digitValue() != -1) {
         ret = uid_t(name.toUInt());
@@ -269,7 +275,7 @@ uid_t uidFromName(QString name) {
     else {
         struct passwd* pw = getpwnam(name.toLatin1());
         // FIXME: use getpwnam_r instead later to make it reentrant
-        ret = pw ? pw->pw_uid : -1;
+        ret = pw ? pw->pw_uid : INVALID_UID;
     }
 
     return ret;
@@ -292,7 +298,7 @@ QString uidToName(uid_t uid) {
 gid_t gidFromName(QString name) {
     gid_t ret;
     if(name.isEmpty()) {
-        return -1;
+        return INVALID_GID;
     }
     if(name.at(0).digitValue() != -1) {
         ret = gid_t(name.toUInt());
@@ -300,7 +306,7 @@ gid_t gidFromName(QString name) {
     else {
         // FIXME: use getgrnam_r instead later to make it reentrant
         struct group* grp = getgrnam(name.toLatin1());
-        ret = grp ? grp->gr_gid : -1;
+        ret = grp ? grp->gr_gid : INVALID_GID;
     }
 
     return ret;
@@ -332,8 +338,8 @@ int execModelessDialog(QDialog* dlg) {
 }
 
 // check if GVFS can support this uri scheme (lower case)
-// NOTE: this does not work reliably due to some problems in gio/gvfs and causes bug lxde/lxqt#512
-// https://github.com/lxde/lxqt/issues/512
+// NOTE: this does not work reliably due to some problems in gio/gvfs and causes bug lxqt/lxqt#512
+// https://github.com/lxqt/lxqt/issues/512
 // Use uriExists() whenever possible.
 bool isUriSchemeSupported(const char* uriScheme) {
     const gchar* const* schemes = g_vfs_get_supported_uri_schemes(g_vfs_get_default());

@@ -4,12 +4,12 @@
 
 namespace Fm {
 
-const char gfile_info_query_attribs[] = "standard::*,"
-                                        "unix::*,"
-                                        "time::*,"
-                                        "access::*,"
-                                        "id::filesystem,"
-                                        "metadata::emblems";
+const char defaultGFileInfoQueryAttribs[] = "standard::*,"
+                                            "unix::*,"
+                                            "time::*,"
+                                            "access::*,"
+                                            "id::filesystem,"
+                                            "metadata::emblems";
 
 FileInfo::FileInfo() {
     // FIXME: initialize numeric data members
@@ -28,7 +28,8 @@ void FileInfo::setFromGFileInfo(const GObjectPtr<GFileInfo>& inf, const FilePath
     GIcon* gicon;
     GFileType type;
 
-    name_ = g_file_info_get_name(inf.get());
+    if (const char * name = g_file_info_get_name(inf.get()))
+        name_ = name;
 
     dispName_ = g_file_info_get_display_name(inf.get());
 
@@ -118,6 +119,8 @@ void FileInfo::setFromGFileInfo(const GObjectPtr<GFileInfo>& inf, const FilePath
         isDeletable_ = true;
     }
 
+    isShortcut_ = false;
+
     /* special handling for symlinks */
     if(g_file_info_get_is_symlink(inf.get())) {
         mode_ &= ~S_IFMT; /* reset type */
@@ -125,11 +128,10 @@ void FileInfo::setFromGFileInfo(const GObjectPtr<GFileInfo>& inf, const FilePath
         goto _file_is_symlink;
     }
 
-    isShortcut_ = false;
-
     switch(type) {
     case G_FILE_TYPE_SHORTCUT:
         isShortcut_ = true;
+    /* Falls through. */
     case G_FILE_TYPE_MOUNTABLE:
         uri = g_file_info_get_attribute_string(inf.get(), G_FILE_ATTRIBUTE_STANDARD_TARGET_URI);
         if(uri) {
@@ -184,6 +186,7 @@ _file_is_symlink:
                 mimeType_ = MimeType::guessFromFileName(target_.c_str());
             }
         }
+    /* Falls through. */
     /* continue with absent mime type */
     default: /* G_FILE_TYPE_UNKNOWN G_FILE_TYPE_REGULAR G_FILE_TYPE_SPECIAL */
         if(G_UNLIKELY(!mimeType_)) {
@@ -211,7 +214,7 @@ _file_is_symlink:
             g_key_file_free(kf);
         }
      }
-    
+
     if(!icon_) {
         /* try file-specific icon first */
         gicon = g_file_info_get_icon(inf.get());
@@ -246,7 +249,11 @@ _file_is_symlink:
     atime_ = g_file_info_get_attribute_uint64(inf.get(), G_FILE_ATTRIBUTE_TIME_ACCESS);
     ctime_ = g_file_info_get_attribute_uint64(inf.get(), G_FILE_ATTRIBUTE_TIME_CHANGED);
     isHidden_ = g_file_info_get_is_hidden(inf.get());
-    isBackup_ = g_file_info_get_is_backup(inf.get());
+    // g_file_info_get_is_backup() does not cover ".bak" and ".old".
+    // NOTE: Here, dispName_ is not modified for desktop entries yet.
+    isBackup_ = g_file_info_get_is_backup(inf.get())
+                || dispName_.endsWith(QLatin1String(".bak"))
+                || dispName_.endsWith(QLatin1String(".old"));
     isNameChangeable_ = true; /* GVFS tends to ignore this attribute */
     isIconChangeable_ = isHiddenChangeable_ = false;
     if(g_file_info_has_attribute(inf.get(), G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME)) {
@@ -326,7 +333,31 @@ bool FileInfo::canThumbnail() const {
 
 /* full path of the file is required by this function */
 bool FileInfo::isExecutableType() const {
-    if(isText()) { /* g_content_type_can_be_executable reports text files as executables too */
+    if(isDesktopEntry()) {
+        /* treat desktop entries as executables if
+         they are native and have read permission */
+        if(isNative() && (mode_ & (S_IRUSR|S_IRGRP|S_IROTH))) {
+            if(isShortcut() && !target_.empty()) {
+                /* handle shortcuts from desktop to menu entries:
+                   first check for entries in /usr/share/applications and such
+                   which may be considered as a safe desktop entry path
+                   then check if that is a shortcut to a native file
+                   otherwise it is a link to a file under menu:// */
+                if (!g_str_has_prefix(target_.c_str(), "/usr/share/")) {
+                    auto target = FilePath::fromPathStr(target_.c_str());
+                    bool is_native = target.isNative();
+                    if (is_native) {
+                        return true;
+                    }
+                }
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+    else if(isText()) { /* g_content_type_can_be_executable reports text files as executables too */
         /* We don't execute remote files nor files in trash */
         if(isNative() && (mode_ & (S_IXOTH | S_IXGRP | S_IXUSR))) {
             /* it has executable bits so lets check shell-bang */

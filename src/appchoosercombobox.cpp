@@ -18,7 +18,6 @@
  */
 
 #include "appchoosercombobox.h"
-#include "icontheme.h"
 #include "appchooserdialog.h"
 #include "utilities.h"
 #include "core/iconinfo.h"
@@ -33,7 +32,7 @@ AppChooserComboBox::AppChooserComboBox(QWidget* parent):
 
     // the new Qt5 signal/slot syntax cannot handle overloaded methods by default
     // hence a type-casting is needed here. really ugly!
-    // reference: http://qt-project.org/forums/viewthread/21513
+    // reference: https://forum.qt.io/topic/20998/qt5-new-signals-slots-syntax-does-not-work-solved
     connect((QComboBox*)this, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &AppChooserComboBox::onCurrentIndexChanged);
 }
 
@@ -72,8 +71,10 @@ void AppChooserComboBox::setMimeType(std::shared_ptr<const Fm::MimeType> mimeTyp
 
 // returns the currently selected app.
 Fm::GAppInfoPtr AppChooserComboBox::selectedApp() const {
+    // the elements of appInfos_ and the combo indexes before "Customize"
+    // always have a one-to-one correspondence
     int idx = currentIndex();
-    return idx >= 0 ? appInfos_[idx] : Fm::GAppInfoPtr{};
+    return idx >= 0 && !appInfos_.empty() ? appInfos_[idx] : Fm::GAppInfoPtr{};
 }
 
 bool AppChooserComboBox::isChanged() const {

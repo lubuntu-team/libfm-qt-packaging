@@ -32,6 +32,7 @@
 
 #include "core/filepath.h"
 #include "core/fileinfo.h"
+#include "core/templates.h"
 
 class QDialog;
 
@@ -53,9 +54,9 @@ LIBFM_QT_API void cutFilesToClipboard(const Fm::FilePathList& files);
 
 LIBFM_QT_API bool isCurrentPidClipboardData(const QMimeData& data);
 
-LIBFM_QT_API void changeFileName(const Fm::FilePath& path, const QString& newName, QWidget* parent);
+LIBFM_QT_API bool changeFileName(const Fm::FilePath& path, const QString& newName, QWidget* parent, bool showMessage = true);
 
-LIBFM_QT_API void renameFile(std::shared_ptr<const Fm::FileInfo> file, QWidget* parent = 0);
+LIBFM_QT_API bool renameFile(std::shared_ptr<const Fm::FileInfo> file, QWidget* parent = 0);
 
 enum CreateFileType {
     CreateNewFolder,
@@ -63,11 +64,15 @@ enum CreateFileType {
     CreateWithTemplate
 };
 
-LIBFM_QT_API void createFileOrFolder(CreateFileType type, Fm::FilePath parentDir, FmTemplate* templ = nullptr, QWidget* parent = 0);
+LIBFM_QT_API void createFileOrFolder(CreateFileType type, FilePath parentDir, const TemplateItem* templ = nullptr, QWidget* parent = 0);
+
+constexpr uid_t INVALID_UID = uid_t(-1);
 
 LIBFM_QT_API uid_t uidFromName(QString name);
 
 LIBFM_QT_API QString uidToName(uid_t uid);
+
+constexpr gid_t INVALID_GID = gid_t(-1);
 
 LIBFM_QT_API gid_t gidFromName(QString name);
 

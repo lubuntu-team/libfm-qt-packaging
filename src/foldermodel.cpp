@@ -19,7 +19,6 @@
 
 
 #include "foldermodel.h"
-#include "icontheme.h"
 #include <iostream>
 #include <algorithm>
 #include <QtAlgorithms>
@@ -40,7 +39,6 @@ FolderModel::FolderModel():
 }
 
 FolderModel::~FolderModel() {
-    qDebug("delete FolderModel");
     // if the thumbnail requests list is not empty, cancel them
     for(auto job: pendingThumbnailJobs_) {
         job->cancel();
@@ -87,6 +85,7 @@ void FolderModel::onFilesAdded(const Fm::FileInfoList& files) {
         items.append(item);
     }
     endInsertRows();
+    Q_EMIT filesAdded(files);
 }
 
 void FolderModel::onFilesChanged(std::vector<Fm::FileInfoPair>& files) {
@@ -161,7 +160,8 @@ void FolderModel::setCutFiles(const QItemSelection& selection) {
         if(!selection.isEmpty()) {
             auto cutFilesHashSet = std::make_shared<HashSet>();
             folder_->setCutFiles(cutFilesHashSet);
-            for(const auto& index : selection.indexes()) {
+            const auto indexes = selection.indexes();
+            for(const auto& index : indexes) {
                 auto item = itemFromIndex(index);
                 item->bindCutFiles(cutFilesHashSet);
                 cutFilesHashSet->insert(item->info->path().hash());
@@ -230,6 +230,8 @@ QVariant FolderModel::data(const QModelIndex& index, int role/* = Qt::DisplayRol
             return item->displaySize();
         case ColumnFileOwner:
             return item->ownerName();
+        case ColumnFileGroup:
+            return item->ownerGroup();
         }
         break;
     }
@@ -274,6 +276,9 @@ QVariant FolderModel::headerData(int section, Qt::Orientation orientation, int r
                 break;
             case ColumnFileOwner:
                 title = tr("Owner");
+                break;
+            case ColumnFileGroup:
+                title = tr("Group");
                 break;
             }
             return QVariant(title);
@@ -361,12 +366,12 @@ QList< FolderModelItem >::iterator FolderModel::findItemByFileInfo(const Fm::Fil
 }
 
 QStringList FolderModel::mimeTypes() const {
-    qDebug("FolderModel::mimeTypes");
+    //qDebug("FolderModel::mimeTypes");
     QStringList types = QAbstractItemModel::mimeTypes();
     // now types contains "application/x-qabstractitemmodeldatalist"
 
     // add support for freedesktop Xdnd direct save (XDS) protocol.
-    // http://www.freedesktop.org/wiki/Specifications/XDS/#index4h2
+    // https://www.freedesktop.org/wiki/Specifications/XDS/#index4h2
     // the real implementation is in FolderView::childDropEvent().
     types << "XdndDirectSave0";
     types << "text/uri-list";
@@ -376,7 +381,7 @@ QStringList FolderModel::mimeTypes() const {
 
 QMimeData* FolderModel::mimeData(const QModelIndexList& indexes) const {
     QMimeData* data = QAbstractItemModel::mimeData(indexes);
-    qDebug("FolderModel::mimeData");
+    //qDebug("FolderModel::mimeData");
     // build a uri list
     QByteArray urilist;
     urilist.reserve(4096);
@@ -398,7 +403,7 @@ QMimeData* FolderModel::mimeData(const QModelIndexList& indexes) const {
 }
 
 bool FolderModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent) {
-    qDebug("FolderModel::dropMimeData");
+    //qDebug("FolderModel::dropMimeData");
     if(!folder_ || !data) {
         return false;
     }
@@ -413,7 +418,12 @@ bool FolderModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int
             info = fileInfoFromIndex(itemIndex);
         }
         if(info) {
-            destPath = info->path();
+            if (info->isDir()) {
+                destPath = info->path();
+            }
+            else {
+                destPath = path(); // don't drop on file
+            }
         }
         else {
             return false;
@@ -425,7 +435,7 @@ bool FolderModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int
 
     // FIXME: should we put this in dropEvent handler of FolderView instead?
     if(data->hasUrls()) {
-        qDebug("drop action: %d", action);
+        //qDebug("drop action: %d", action);
         auto srcPaths = pathListFromQUrls(data->urls());
         switch(action) {
         case Qt::CopyAction:
@@ -436,6 +446,7 @@ bool FolderModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int
             break;
         case Qt::LinkAction:
             FileOperation::symlinkFiles(srcPaths, destPath);
+        /* Falls through. */
         default:
             return false;
         }
@@ -448,7 +459,7 @@ bool FolderModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int
 }
 
 Qt::DropActions FolderModel::supportedDropActions() const {
-    qDebug("FolderModel::supportedDropActions");
+    //qDebug("FolderModel::supportedDropActions");
     return Qt::CopyAction | Qt::MoveAction | Qt::LinkAction;
 }
 
