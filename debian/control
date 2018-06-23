@@ -35,6 +35,7 @@ Multi-Arch: same
 Section: libs
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+         libglib2.0-bin,
          shared-mime-info
 Recommends: libfm-qt-l10n
 Pre-Depends: ${misc:Pre-Depends}
