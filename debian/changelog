@@ -1,6 +1,12 @@
+libfm-qt (0.13.1-4) experimental; urgency=medium
+
+  * Fixed some more symbols in architectures
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 29 Jun 2018 19:34:00 +0200
+
 libfm-qt (0.13.1-3) experimental; urgency=medium
 
-  * fixed some powerpcspe symbols
+  * Fixed some powerpcspe symbols
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 28 Jun 2018 01:22:45 +0200
 
