@@ -3,6 +3,7 @@ libfm-qt (0.13.1-5ubuntu1) UNRELEASED; urgency=medium
   * Update Vcs-* and maintainer for maintaining by Lubuntu.
   * Add LXQt Archiver integration.
   * Fix failure to open smb:// caused by incorrect file info handling.
+  * Use the window text color for the places pane.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 13 Jul 2018 23:59:59 -0500
 
