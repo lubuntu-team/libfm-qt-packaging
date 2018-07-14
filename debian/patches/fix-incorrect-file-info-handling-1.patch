@@ -1,0 +1,251 @@
+Description: Fix failure to open smb:// caused by incorrect file info handling
+Author: "Hong Jen Yee (PCMan)" <pcman.tw@gmail.com>
+Origin: upstream
+Applied-Upstream: commit:1a6fa26
+Last-Update: 2018-07-14
+--- a/src/core/basicfilelauncher.cpp
++++ b/src/core/basicfilelauncher.cpp
+@@ -27,11 +27,13 @@ bool BasicFileLauncher::launchFiles(cons
+     FilePathList pathsToLaunch;
+     // classify files according to different mimetypes
+     for(auto& fileInfo : fileInfos) {
+-        // qDebug("path: %s, target: %s", fileInfo->path().toString().get(), fileInfo->target().c_str());
+-        if(fileInfo->isDir()) {
+-            folderInfos.emplace_back(fileInfo);
+-        }
+-        else if(fileInfo->isMountable()) {
++        /*
++        qDebug("path: %s, type: %s, target: %s, isDir: %i, isDesktopEntry: %i",
++               fileInfo->path().toString().get(), fileInfo->mimeType()->name(), fileInfo->target().c_str(),
++               fileInfo->isDir(), fileInfo->isDesktopEntry());
++        */
++
++        if(fileInfo->isMountable()) {
+             if(fileInfo->target().empty()) {
+                 // the mountable is not yet mounted so we have no target URI.
+                 GErrorPtr err{G_IO_ERROR, G_IO_ERROR_NOT_MOUNTED,
+@@ -65,6 +67,9 @@ bool BasicFileLauncher::launchFiles(cons
+                 pathsToLaunch.emplace_back(path);
+             }
+         }
++        else if(fileInfo->isDir()) {
++            folderInfos.emplace_back(fileInfo);
++        }
+         else {
+             auto& mimeType = fileInfo->mimeType();
+             mimeTypeToFiles[mimeType->name()].emplace_back(fileInfo);
+@@ -101,16 +106,27 @@ bool BasicFileLauncher::launchFiles(cons
+ bool BasicFileLauncher::launchPaths(FilePathList paths, GAppLaunchContext* ctx) {
+     // FIXME: blocking with an event loop is not a good design :-(
+     QEventLoop eventLoop;
+-
+     auto job = new FileInfoJob{paths};
+     job->setAutoDelete(false);  // do not automatically delete the job since we want its results later.
+ 
+     GObjectPtr<GAppLaunchContext> ctxPtr{ctx};
++
++    // error handling (for example: handle path not mounted error)
++    QObject::connect(job, &FileInfoJob::error,
++            &eventLoop, [this, job, ctx](const GErrorPtr & err, Job::ErrorSeverity /* severity */ , Job::ErrorAction &act) {
++        auto path = job->currentPath();
++        if(showError(ctx, err, path, nullptr)) {
++            // the user handled the error and ask for retry
++            act = Job::ErrorAction::RETRY;
++        }
++    }, Qt::BlockingQueuedConnection);  // BlockingQueuedConnection is required here to pause the job and wait for user response
++
+     QObject::connect(job, &FileInfoJob::finished,
+             [&eventLoop]() {
+         // exit the event loop when the job is done
+         eventLoop.exit();
+     });
++
+     // run the job in another thread to not block the UI
+     job->runAsync();
+ 
+@@ -143,7 +159,7 @@ BasicFileLauncher::ExecAction BasicFileL
+     return ExecAction::DIRECT_EXEC;
+ }
+ 
+-bool BasicFileLauncher::showError(GAppLaunchContext* /* ctx */, GErrorPtr& /* err */, const FilePath& /* path */, const FileInfoPtr& /* info */) {
++bool BasicFileLauncher::showError(GAppLaunchContext* /* ctx */, const GErrorPtr & /* err */, const FilePath& /* path */, const FileInfoPtr& /* info */) {
+     return false;
+ }
+ 
+@@ -247,13 +263,21 @@ bool BasicFileLauncher::launchDesktopEnt
+ 
+ FilePath BasicFileLauncher::handleShortcut(const FileInfoPtr& fileInfo, GAppLaunchContext* ctx) {
+     auto target = fileInfo->target();
++
++    // if we know the target is a dir, we are not going to open it using other apps
++    // for example: `network:///smb-root' is a shortcut targeting `smb:///' and it's also a dir
++    if(fileInfo->isDir()) {
++        return FilePath::fromPathStr(target.c_str());
++    }
++
+     auto scheme = CStrPtr{g_uri_parse_scheme(target.c_str())};
+     if(scheme) {
+         // collect the uri schemes we support
+         if(strcmp(scheme.get(), "file") == 0
+                 || strcmp(scheme.get(), "trash") == 0
+                 || strcmp(scheme.get(), "network") == 0
+-                || strcmp(scheme.get(), "computer") == 0) {
++                || strcmp(scheme.get(), "computer") == 0
++                || strcmp(scheme.get(), "menu") == 0) {
+             return FilePath::fromUri(fileInfo->target().c_str());
+         }
+         else {
+--- a/src/core/basicfilelauncher.h
++++ b/src/core/basicfilelauncher.h
+@@ -53,7 +53,7 @@ protected:
+ 
+     virtual bool openFolder(GAppLaunchContext* ctx, const FileInfoList& folderInfos, GErrorPtr& err);
+ 
+-    virtual bool showError(GAppLaunchContext* ctx, GErrorPtr& err, const FilePath& path = FilePath{}, const FileInfoPtr& info = FileInfoPtr{});
++    virtual bool showError(GAppLaunchContext* ctx, const GErrorPtr& err, const FilePath& path = FilePath{}, const FileInfoPtr& info = FileInfoPtr{});
+ 
+     virtual ExecAction askExecFile(const FileInfoPtr& file);
+ 
+--- a/src/core/fileinfo.cpp
++++ b/src/core/fileinfo.cpp
+@@ -36,10 +36,9 @@ void FileInfo::setFromGFileInfo(const GO
+     size_ = g_file_info_get_size(inf.get());
+ 
+     tmp = g_file_info_get_content_type(inf.get());
+-    if(!tmp) {
+-        tmp = "application/octet-stream";
++    if(tmp) {
++        mimeType_ = MimeType::fromName(tmp);
+     }
+-    mimeType_ = MimeType::fromName(tmp);
+ 
+     mode_ = g_file_info_get_attribute_uint32(inf.get(), G_FILE_ATTRIBUTE_UNIX_MODE);
+ 
+@@ -196,6 +195,10 @@ _file_is_symlink:
+         }
+     }
+ 
++    if(!mimeType_) {
++        mimeType_ = MimeType::fromName("application/octet-stream");
++    }
++
+     /* if there is a custom folder icon, use it */
+     if(isNative() && type == G_FILE_TYPE_DIRECTORY) {
+         auto local_path = path().localPath();
+--- a/src/core/fileinfojob.cpp
++++ b/src/core/fileinfojob.cpp
+@@ -13,31 +13,41 @@ FileInfoJob::FileInfoJob(FilePathList pa
+ 
+ void FileInfoJob::exec() {
+     for(const auto& path: paths_) {
+-        if(!isCancelled()) {
++        if(isCancelled()) {
++            break;
++        }
++        currentPath_ = path;
++
++        bool retry;
++        do {
++            retry = false;
+             GErrorPtr err;
+             GFileInfoPtr inf{
+                 g_file_query_info(path.gfile().get(), defaultGFileInfoQueryAttribs,
+                                   G_FILE_QUERY_INFO_NONE, cancellable().get(), &err),
+                 false
+             };
+-            if(!inf) {
+-                continue;
+-            }
+-
+-            // Reuse the same dirPath object when the path remains the same (optimize for files in the same dir)
+-            auto dirPath = commonDirPath_.isValid() ? commonDirPath_ : path.parent();
+-            FileInfo fileInfo(inf, dirPath);
++            if(inf) {
++                // Reuse the same dirPath object when the path remains the same (optimize for files in the same dir)
++                auto dirPath = commonDirPath_.isValid() ? commonDirPath_ : path.parent();
++                auto fileInfoPtr = std::make_shared<FileInfo>(inf, dirPath);
++
++                // FIXME: this is not elegant
++                if(cutFilesHashSet_
++                        && cutFilesHashSet_->count(path.hash())) {
++                    fileInfoPtr->bindCutFiles(cutFilesHashSet_);
++                }
+ 
+-            if(cutFilesHashSet_
+-                    && cutFilesHashSet_->count(fileInfo.path().hash())) {
+-                fileInfo.bindCutFiles(cutFilesHashSet_);
++                results_.push_back(fileInfoPtr);
++                Q_EMIT gotInfo(path, results_.back());
+             }
+-
+-            auto fileInfoPtr = std::make_shared<const FileInfo>(fileInfo);
+-
+-            results_.push_back(fileInfoPtr);
+-            Q_EMIT gotInfo(path, fileInfoPtr);
+-        }
++            else {
++                auto act = emitError(err);
++                if(act == Job::ErrorAction::RETRY) {
++                    retry = true;
++                }
++            }
++        } while(retry && !isCancelled());
+     }
+ }
+ 
+--- a/src/core/fileinfojob.h
++++ b/src/core/fileinfojob.h
+@@ -27,6 +27,10 @@ public:
+         return results_;
+     }
+ 
++    const FilePath& currentPath() const {
++        return currentPath_;
++    }
++
+ Q_SIGNALS:
+     void gotInfo(const FilePath& path, std::shared_ptr<const FileInfo>& info);
+ 
+@@ -39,6 +43,7 @@ private:
+     FileInfoList results_;
+     FilePath commonDirPath_;
+     const std::shared_ptr<const HashSet> cutFilesHashSet_;
++    FilePath currentPath_;
+ };
+ 
+ } // namespace Fm
+--- a/src/core/gioptrs.h
++++ b/src/core/gioptrs.h
+@@ -112,6 +112,10 @@ public:
+         return err_;
+     }
+ 
++    const GError* operator->() const {
++        return err_;
++    }
++
+     bool operator == (const GErrorPtr& other) const {
+         return err_ == other.err_;
+     }
+--- a/src/filelauncher.cpp
++++ b/src/filelauncher.cpp
+@@ -76,7 +76,7 @@ bool FileLauncher::openFolder(GAppLaunch
+     return BasicFileLauncher::openFolder(ctx, folderInfos, err);
+ }
+ 
+-bool FileLauncher::showError(GAppLaunchContext* /*ctx*/, GErrorPtr &err, const FilePath &path, const FileInfoPtr &info) {
++bool FileLauncher::showError(GAppLaunchContext* /*ctx*/, const GErrorPtr &err, const FilePath &path, const FileInfoPtr &info) {
+     /* ask for mount if trying to launch unmounted path */
+     if(err->domain == G_IO_ERROR) {
+         if(path && err->code == G_IO_ERROR_NOT_MOUNTED) {
+--- a/src/filelauncher.h
++++ b/src/filelauncher.h
+@@ -43,7 +43,7 @@ protected:
+ 
+     bool openFolder(GAppLaunchContext* ctx, const FileInfoList& folderInfos, GErrorPtr& err) override;
+ 
+-    bool showError(GAppLaunchContext* ctx, GErrorPtr& err, const FilePath& path = FilePath{}, const FileInfoPtr& info = FileInfoPtr{}) override;
++    bool showError(GAppLaunchContext* ctx, const GErrorPtr &err, const FilePath& path = FilePath{}, const FileInfoPtr& info = FileInfoPtr{}) override;
+ 
+     ExecAction askExecFile(const FileInfoPtr& file) override;
+ 

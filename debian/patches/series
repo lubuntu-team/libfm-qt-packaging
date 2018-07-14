@@ -1,1 +1,3 @@
 add-lxqt-archiver-integration.patch
+fix-incorrect-file-info-handling-1.patch
+fix-incorrect-file-info-handling-2.patch
