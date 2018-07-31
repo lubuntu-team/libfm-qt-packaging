@@ -5,7 +5,7 @@ libfm-qt (0.13.1-5ubuntu4) cosmic; urgency=medium
   * Move in the file dialog from lxqt-qtplugin for better platform
     integration.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 30 Jul 2018 19:14:35 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 30 Jul 2018 19:25:14 -0500
 
 libfm-qt (0.13.1-5ubuntu3) cosmic; urgency=medium
 
