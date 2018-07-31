@@ -1,4 +1,4 @@
-libfm-qt (0.13.1-5ubuntu3) cosmic; urgency=medium
+libfm-qt (0.13.1-5ubuntu4) cosmic; urgency=medium
 
   * Change Uploaders to Ubuntu uploaders.
   * Change the debhelper dependency to 11.
@@ -6,6 +6,18 @@ libfm-qt (0.13.1-5ubuntu3) cosmic; urgency=medium
     integration.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 30 Jul 2018 19:14:35 -0500
+
+libfm-qt (0.13.1-5ubuntu3) cosmic; urgency=medium
+
+  * Update symbols from build logs.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 18 Jul 2018 04:32:54 -0500
+
+libfm-qt (0.13.1-5ubuntu2) cosmic; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-11-0.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 18 Jul 2018 03:18:08 -0500
 
 libfm-qt (0.13.1-5ubuntu1) cosmic; urgency=medium
 
