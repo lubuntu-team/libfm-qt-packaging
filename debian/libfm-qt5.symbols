@@ -1050,6 +1050,50 @@ libfm-qt.so.5 libfm-qt5 #MINVER#
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
  (optional=gcc7|c++)"QMetaObject::Connection QObject::connect<void (QTimer::*)(QTimer::QPrivateSignal), void (Fm::FolderView::*)()>(QtPrivate::FunctionPointer<void (QTimer::*)(QTimer::QPrivateSignal)>::Object const*, void (QTimer::*)(QTimer::QPrivateSignal), QtPrivate::FunctionPointer<void (Fm::FolderView::*)()>::Object const*, void (Fm::FolderView::*)(), Qt::ConnectionType)@Base" 0.13.0~
+ createFileDialogHelper@Base 0.13.1
+ (c++)"Fm::FileDialogHelper::selectFile(QUrl const&)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::qt_metacast(char const*)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::applyOptions()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::loadSettings()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::saveSettings()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::setDirectory(QUrl const&)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::selectNameFilter(QString const&)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::staticMetaObject@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::selectMimeTypeFilter(QString const&)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::exec()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::hide()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::show(QFlags<Qt::WindowType>, Qt::WindowModality, QWindow*)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::setFilter()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::FileDialogHelper()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::FileDialogHelper()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::~FileDialogHelper()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::~FileDialogHelper()@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::~FileDialogHelper()@Base" 0.13.1
+ (c++)"Fm::FileMenu::addTrustAction()@Base" 0.13.1
+ (c++)"Fm::FileMenu::onTrustToggled(bool)@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::metaObject() const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::selectedFiles() const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::isSupportedUrl(QUrl const&) const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::selectedNameFilter() const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::selectedMimeTypeFilter() const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::defaultNameFilterDisables() const@Base" 0.13.1
+ (c++)"Fm::FileDialogHelper::directory() const@Base" 0.13.1
+ (c++)"Fm::FileInfo::isTrustable() const@Base" 0.13.1
+ (c++)"Fm::FileInfo::setTrustable(bool) const@Base" 0.13.1
+ (c++)"std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, false, true>)@Base" 0.13.1
+ (c++)"std::pair<std::__detail::_Node_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*>, false, true>, bool> std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, char const*> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_emplace<std::pair<char const*, char const*> >(std::integral_constant<bool, true>, std::pair<char const*, char const*>&&)@Base" 0.13.1
+ (c++)"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::UserInfo const> >, false>*, unsigned long)@Base" 0.13.1
+ (c++)"std::_Hashtable<unsigned int, std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, std::allocator<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> > >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, std::shared_ptr<Fm::GroupInfo const> >, false>*, unsigned long)@Base" 0.13.1
+ (c++)"std::unique_ptr<Fm::LibFmQt, std::default_delete<Fm::LibFmQt> >::~unique_ptr()@Base" 0.13.1
+ (c++)"std::unique_ptr<Fm::LibFmQt, std::default_delete<Fm::LibFmQt> >::~unique_ptr()@Base" 0.13.1
+ (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::reserve(unsigned long)@Base" 0.13.1
+ (c++)"void std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::emplace_back<Fm::DirTreeModelItem*>(Fm::DirTreeModelItem*&&)@Base" 0.13.1
+ (c++)"void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)@Base" 0.13.1
+ (c++)"void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@Base" 0.13.1
+ (c++)"typeinfo for Fm::FileDialogHelper@Base" 0.13.1
+ (c++)"typeinfo name for Fm::FileDialogHelper@Base" 0.13.1
+ (c++)"vtable for Fm::FileDialogHelper@Base" 0.13.1
  (c++)"Fm::FileLauncher::showError(_GAppLaunchContext*, Fm::GErrorPtr const&, Fm::FilePath const&, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.1
  (c++)"Fm::BasicFileLauncher::showError(_GAppLaunchContext*, Fm::GErrorPtr const&, Fm::FilePath const&, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.13.1
  (c++)"non-virtual thunk to Fm::AppChooserComboBox::~AppChooserComboBox()@Base" 0.10.0
