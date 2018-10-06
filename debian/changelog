@@ -1,3 +1,9 @@
+libfm-qt (0.13.1-5ubuntu5) cosmic; urgency=medium
+
+  * Support adding metadata for trusting executables (LP: #1795537). 
+
+ -- Walter Lapchynski <wxl@ubuntu.com>  Sat, 06 Oct 2018 08:55:46 -0700
+
 libfm-qt (0.13.1-5ubuntu4) cosmic; urgency=medium
 
   * Change Uploaders to Ubuntu uploaders.
