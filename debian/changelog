@@ -1,3 +1,9 @@
+libfm-qt (0.13.1-5ubuntu6) cosmic; urgency=medium
+
+  * Update symbols from build logs.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 09 Oct 2018 13:57:26 -0500
+
 libfm-qt (0.13.1-5ubuntu5) cosmic; urgency=medium
 
   * Support adding metadata for trusting executables (LP: #1795537).
