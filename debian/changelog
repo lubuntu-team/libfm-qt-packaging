@@ -1,8 +1,8 @@
-libfm-qt (0.13.1-5ubuntu7) UNRELEASED; urgency=medium
+libfm-qt (0.13.1-5ubuntu7) cosmic; urgency=medium
 
   * Check (and set) metadata::trusted instead of metadata::trust.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 15 Oct 2018 10:11:30 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 15 Oct 2018 10:11:59 -0500
 
 libfm-qt (0.13.1-5ubuntu6) cosmic; urgency=medium
 
