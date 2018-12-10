@@ -1,3 +1,9 @@
+libfm-qt (0.13.1-5ubuntu8) disco; urgency=medium
+
+  * Fix launching desktop files.
+
+ -- Dan Simmons <monetaryabyss@protonmail.com>  Wed, 21 Nov 2018 23:40:15 -0500
+
 libfm-qt (0.13.1-5ubuntu7) cosmic; urgency=medium
 
   * Check (and set) metadata::trusted instead of metadata::trust.

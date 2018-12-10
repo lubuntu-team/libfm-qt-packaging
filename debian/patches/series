@@ -4,3 +4,4 @@ fix-incorrect-file-info-handling-2.patch
 fix-places-font-color.patch
 move-in-file-dialog.patch
 add-metadata-for-trusting-executables.patch
+fix-launching-desktop-files.patch
