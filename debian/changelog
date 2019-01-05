@@ -1,3 +1,58 @@
+libfm-qt (0.13.1-10ubuntu1) disco; urgency=medium
+
+  * Merge with Debian unstable, remaining changes:
+    - debian/control:
+      + Update Vcs-* and maintainer for maintaining by Lubuntu.
+    - debian/patches/add-lxqt-archiver-integration.patch:
+      + Add LXQt Archiver integration.
+    - debian/patches/add-metadata-for-trusting-executables.patch:
+      + Support adding metadata for trusting executables.
+    - debian/patches/fix-incorrect-file-info-handling-1.patch,
+      debian/patches/fix-incorrect-file-info-handling-2.patch:
+      + Fix failure to open smb:// caused by incorrect file info handling.
+    - debian/patches/fix-launching-desktop-files.patch:
+      + Fix launching desktop files.
+    - debian/patches/fix-places-font-color.patch:
+      + Use the window text color for the places pane.
+    - debian/patches/move-in-file-dialog.patch:
+      + Move in the file dialog from lxqt-qtplugin for better platform
+        integration.
+  * Update debian/libfm-qt5.symbols from the current build logs.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 04 Jan 2019 14:47:29 +0300
+
+libfm-qt (0.13.1-10) unstable; urgency=medium
+
+  * Added Build-Depends-Package: libfm-qt-dev to libfm-qt-dev.symbols
+  * Bumped Standards to 4.2.1
+  * Fixed the first symbols (Closes: #916158)
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 28 Dec 2018 16:41:09 +0100
+
+libfm-qt (0.13.1-9) unstable; urgency=medium
+
+  * Fixed armel and riscv symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 31 Aug 2018 19:35:35 +0200
+
+libfm-qt (0.13.1-8) unstable; urgency=medium
+
+  * Fixed missed blank in symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 31 Aug 2018 00:51:51 +0200
+
+libfm-qt (0.13.1-7) unstable; urgency=medium
+
+  * Fixed another bunch of symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 30 Aug 2018 22:36:25 +0200
+
+libfm-qt (0.13.1-6) unstable; urgency=medium
+
+  * Fixed a bunch of symbols
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 31 Jul 2018 18:15:12 +0200
+
 libfm-qt (0.13.1-5ubuntu9) disco; urgency=medium
 
   * Fix launching desktop files.
