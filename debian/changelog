@@ -2,6 +2,7 @@ libfm-qt (0.14.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - Remove reverse-applicable patches.
+    - Bump build dependencies.
   * Bump Standards-version to 4.3.0, no changes needed.
   * Bump debhelper compat to 12, no changes needed.
 
