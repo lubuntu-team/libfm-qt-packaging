@@ -69,7 +69,7 @@ Multi-Arch: foreign
 Section: localization
 Depends: ${misc:Depends},
          qttranslations5-l10n
-Breaks: libfm-qt3 (<< 0.11.1)
-Replaces: libfm-qt3 (<< 0.11.1)
+Breaks: libfm-qt3 (<< 0.11.1), libfm-qt-l10n (<< 0.14.0)
+Replaces: libfm-qt3 (<< 0.11.1), libfm-qt-l10n (<< 0.14.0)
 Description: Language package for libfm-qt
  This package contains the l10n files needed by the libfm-qt.
