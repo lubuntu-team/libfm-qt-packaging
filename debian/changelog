@@ -1,3 +1,10 @@
+libfm-qt (0.14.0-0ubuntu3) disco; urgency=medium
+
+  * Fix metadata for trusting executables.
+    - Use Ubuntu standard for trusting executables.
+
+ -- Dan Simmons <monetaryabyss@protonmail.com>  Tue, 29 Jan 2019 20:32:19 -0500
+
 libfm-qt (0.14.0-0ubuntu2) disco; urgency=medium
 
   * Add Breaks/Replaces on old libfm-qt-l10n.

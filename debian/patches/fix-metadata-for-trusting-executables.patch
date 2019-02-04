@@ -1,0 +1,49 @@
+Description: Fix metadata for trusting executables
+ To conform with the Ubuntu standard use metadata::trusted instead of metadata::trust. This patch must be applied after any upstream version changes since they refuse to conform.
+Author: Dan Simmons <monetaryabyss@protonmail.com>
+Bug: https://bugs.launchpad.net/bugs/1813687
+Last-Update: 2019-01-29
+--- a/src/core/fileinfo.cpp
++++ b/src/core/fileinfo.cpp
+@@ -10,7 +10,7 @@ const char defaultGFileInfoQueryAttribs[
+                                             "access::*,"
+                                             "id::filesystem,"
+                                             "metadata::emblems,"
+-                                            "metadata::trust";
++                                            "metadata::trusted";
+ 
+ FileInfo::FileInfo() {
+     // FIXME: initialize numeric data members
+@@ -391,8 +391,8 @@ bool FileInfo::isExecutableType() const
+ bool FileInfo::isTrustable() const {
+     if(isExecutableType()) {
+         /* to avoid GIO assertion warning: */
+-        if(g_file_info_get_attribute_type(inf_.get(), "metadata::trust") == G_FILE_ATTRIBUTE_TYPE_STRING) {
+-            if(const auto data = g_file_info_get_attribute_string(inf_.get(), "metadata::trust")) {
++        if(g_file_info_get_attribute_type(inf_.get(), "metadata::trusted") == G_FILE_ATTRIBUTE_TYPE_STRING) {
++            if(const auto data = g_file_info_get_attribute_string(inf_.get(), "metadata::trusted")) {
+                 return (strcmp(data, "true") == 0);
+             }
+         }
+@@ -402,16 +402,16 @@ bool FileInfo::isTrustable() const {
+ 
+ void FileInfo::setTrustable(bool trust) const {
+     if(!isExecutableType()) {
+-        return; // "metadata::trust" is only for executables
++        return; // "metadata::trusted" is only for executables
+     }
+     GObjectPtr<GFileInfo> info {g_file_info_new()}; // used to set only this attribute
+     if(trust) {
+-        g_file_info_set_attribute_string(info.get(), "metadata::trust", "true");
+-        g_file_info_set_attribute_string(inf_.get(), "metadata::trust", "true");
++        g_file_info_set_attribute_string(info.get(), "metadata::trusted", "true");
++        g_file_info_set_attribute_string(inf_.get(), "metadata::trusted", "true");
+     }
+     else {
+-        g_file_info_set_attribute(info.get(), "metadata::trust", G_FILE_ATTRIBUTE_TYPE_INVALID, nullptr);
+-        g_file_info_set_attribute(inf_.get(), "metadata::trust", G_FILE_ATTRIBUTE_TYPE_INVALID, nullptr);
++        g_file_info_set_attribute(info.get(), "metadata::trusted", G_FILE_ATTRIBUTE_TYPE_INVALID, nullptr);
++        g_file_info_set_attribute(inf_.get(), "metadata::trusted", G_FILE_ATTRIBUTE_TYPE_INVALID, nullptr);
+     }
+     g_file_set_attributes_from_info(path().gfile().get(),
+                                     info.get(),
