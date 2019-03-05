@@ -1,3 +1,10 @@
+libfm-qt (0.14.0-0ubuntu4) UNRELEASED; urgency=medium
+
+  * Update standard executable trusting patch to use the new upstream macro
+    instead of individual inline replacements.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 04 Mar 2019 18:59:59 -0600
+
 libfm-qt (0.14.0-0ubuntu3) disco; urgency=medium
 
   * Fix metadata for trusting executables.
