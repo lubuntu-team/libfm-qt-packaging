@@ -1,5 +1,6 @@
-libfm-qt (0.14.0-0ubuntu4) UNRELEASED; urgency=medium
+libfm-qt (0.14.1-0ubuntu1) UNRELEASED; urgency=medium
 
+  * New upstream release.
   * Update standard executable trusting patch to use the new upstream macro
     instead of individual inline replacements.
 
