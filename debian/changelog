@@ -1,6 +1,7 @@
 libfm-qt (0.14.1-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Update symbols from build logs.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 11:04:14 -0600
 
