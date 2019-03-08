@@ -3,8 +3,9 @@ libfm-qt (0.14.1-0ubuntu1) UNRELEASED; urgency=medium
   * New upstream release.
   * Update standard executable trusting patch to use the new upstream macro
     instead of individual inline replacements.
+  * Update symbols from build logs.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 04 Mar 2019 18:59:59 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 11:04:14 -0600
 
 libfm-qt (0.14.0-0ubuntu3) disco; urgency=medium
 
