@@ -1,8 +1,9 @@
 usr/include/libfm-qt/*.h
 usr/include/libfm-qt/customactions/*.h
 usr/include/libfm-qt/core/*.h
-usr/include/libfm-qt/core/vfs/*.h
 usr/include/libfm-qt/core/legacy/*.h
+usr/include/libfm-qt/core/vfs/*.h
+
 usr/lib/*/*.so
 usr/lib/*/pkgconfig/*
 
