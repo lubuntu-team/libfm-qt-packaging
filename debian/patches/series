@@ -1,5 +1,1 @@
 fix-metadata-for-trusting-executables.patch
-fix-smb-recursive-copy.patch
-fix-license-headers.patch
-dont-ignore-crea-del-sequences.patch
-workaround-glib-recursive-moving-error.patch
