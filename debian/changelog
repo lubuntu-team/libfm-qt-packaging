@@ -8,6 +8,28 @@ libfm-qt (0.14.1-8ubuntu2) UNRELEASED; urgency=medium
 
  -- apt-ghetto <apt-ghetto@protonmail.com>  Thu, 30 May 2019 18:12:35 +0200
 
+libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - debian/control:
+      + Update Vcs-* and maintainer for maintaining by Lubuntu.
+      + Add Breaks/Replaces on old libfm-qt-l10n.
+    - debian/libfmqt-qt6.symbols
+      + Retain and update Lubuntu generated symbols file.
+    - debian/patches: fix-metadata-for-trusting-executables.patch
+      + Fix metadata for trusting executables. Use Ubuntu standard for
+        trusting executables. 
+
+ -- Rik Mills <rikmills@kubuntu.org>  Sun, 09 Jun 2019 22:20:26 +0100
+
+libfm-qt (0.14.1-9) unstable; urgency=medium
+
+  * Added upstream patch workaround-missed-file-monitoring.patch
+    (Closes: #926803)
+  * Added two new symbols - internal use only
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 08 Jun 2019 16:39:11 +0200
+
 libfm-qt (0.14.1-8ubuntu1) eoan; urgency=medium
 
   * Merge from Debian unstable. Remaining changes:

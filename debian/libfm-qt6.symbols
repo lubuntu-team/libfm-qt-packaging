@@ -1119,6 +1119,8 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
+ _ZN2Fm6Folder10findByPathERKNS_8FilePathE@Base 0.14.1
+ _ZNK2Fm6Folder14hasFileMonitorEv@Base 0.14.1
  (optional=templinst)_ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.14.1
  createFileDialogHelper@Base 0.13.2~
  fm_config@Base 0.13.1~

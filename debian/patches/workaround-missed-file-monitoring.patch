@@ -1,0 +1,143 @@
+Description: Realod folder after transfer job if it lacks file monitoring
+ Closes https://github.com/lxqt/pcmanfm-qt/issues/933 and closes
+ https://github.com/lxqt/libfm-qt/issues/280. After a file transfer job is
+ finished inside a directory, if it is the path of an open folder that lacks
+ file monitoring, this patch reloads its corresponding folder. In this way, the
+ lack of file monitoring is partially compensated for.
+ Please note that this doesn't work with `search://` because the files inside
+ `search://` don't belong to it. By covering file creation, renaming, moving
+ from one shared folder to another and deleting after trying to move into Trash.
+
+Last-Update: 2019-06-08
+
+--- libfm-qt-0.14.1.orig/src/core/folder.cpp
++++ libfm-qt-0.14.1/src/core/folder.cpp
+@@ -112,6 +112,20 @@ std::shared_ptr<Folder> Folder::fromPath
+     return folder;
+ }
+ 
++// static
++// Checks if this is the path of a folder in use.
++std::shared_ptr<Folder> Folder::findByPath(const FilePath& path) {
++    std::lock_guard<std::mutex> lock{mutex_};
++    auto it = cache_.find(path);
++    if(it != cache_.end()) {
++        auto folder = it->second.lock();
++        if(folder) {
++            return folder;
++        }
++    }
++    return nullptr;
++}
++
+ bool Folder::makeDirectory(const char* /*name*/, GError** /*error*/) {
+     // TODO:
+     // FIXME: what the API is used for in the original libfm C API?
+@@ -142,6 +156,10 @@ bool Folder::isEmpty() const {
+     return files_.empty();
+ }
+ 
++bool Folder::hasFileMonitor() const {
++    return (dirMonitor_ != nullptr);
++}
++
+ FileInfoList Folder::files() const {
+     FileInfoList ret;
+     ret.reserve(files_.size());
+--- libfm-qt-0.14.1.orig/src/core/folder.h
++++ libfm-qt-0.14.1/src/core/folder.h
+@@ -56,6 +56,8 @@ public:
+ 
+     static std::shared_ptr<Folder> fromPath(const FilePath& path);
+ 
++    static std::shared_ptr<Folder> findByPath(const FilePath& path);
++
+     bool makeDirectory(const char* name, GError** error);
+ 
+     void queryFilesystemInfo();
+@@ -74,6 +76,8 @@ public:
+ 
+     bool isEmpty() const;
+ 
++    bool hasFileMonitor() const;
++
+     FileInfoList files() const;
+ 
+     const FilePath& path() const;
+--- libfm-qt-0.14.1.orig/src/fileoperation.cpp
++++ libfm-qt-0.14.1/src/fileoperation.cpp
+@@ -298,6 +298,8 @@ void FileOperation::onJobFinish() {
+     }
+     Q_EMIT finished();
+ 
++    bool tryReload = true;
++
+     // special handling for trash job
+     if(type_ == Trash && !job_->isCancelled()) {
+         auto trashJob = static_cast<Fm::TrashJob*>(job_);
+@@ -313,6 +315,26 @@ void FileOperation::onJobFinish() {
+                                         "Do you want to delete them instead?")) == QMessageBox::Yes) {
+                 deleteFiles(std::move(unsupportedFiles), false);
+             }
++            tryReload = false;
++        }
++    }
++
++    // reload the containing folder if it is in use but does not have a file monitor
++    if(tryReload) {
++        if(!srcPaths_.empty() && (type_ == Trash || type_ == Delete || type_ == Move)) {
++            auto parent_path = srcPaths_[0].parent();
++            if(parent_path != destPath_) { // otherwise, it will be done below
++                auto folder = Fm::Folder::findByPath(parent_path);
++                if(folder && folder->isValid() && folder->isLoaded() && !folder->hasFileMonitor()) {
++                    folder->reload();
++                }
++            }
++        }
++        if(destPath_) {
++            auto folder = Fm::Folder::findByPath(destPath_);
++            if(folder && folder->isValid() && folder->isLoaded() && !folder->hasFileMonitor()) {
++                folder->reload();
++            }
+         }
+     }
+ 
+--- libfm-qt-0.14.1.orig/src/utilities.cpp
++++ libfm-qt-0.14.1/src/utilities.cpp
+@@ -157,7 +157,8 @@ bool isCurrentPidClipboardData(const QMi
+ }
+ 
+ bool changeFileName(const Fm::FilePath& filePath, const QString& newName, QWidget* parent, bool showMessage) {
+-    auto dest = filePath.parent().child(newName.toLocal8Bit().constData());
++    auto parent_path = filePath.parent();
++    auto dest = parent_path.child(newName.toLocal8Bit().constData());
+     Fm::GErrorPtr err;
+     if(!g_file_move(filePath.gfile().get(), dest.gfile().get(),
+                     GFileCopyFlags(G_FILE_COPY_ALL_METADATA |
+@@ -170,6 +171,13 @@ bool changeFileName(const Fm::FilePath&
+         }
+         return false;
+     }
++
++    // reload the containing folder if it is in use but does not have a file monitor
++    auto folder = Fm::Folder::findByPath(parent_path);
++    if(folder && folder->isValid() && folder->isLoaded() && !folder->hasFileMonitor()) {
++        folder->reload();
++    }
++
+     return true;
+ }
+ 
+@@ -263,6 +271,12 @@ _retry:
+ 
+         QMessageBox::critical(parent ? parent->window() : nullptr, QObject::tr("Error"), err.message());
+     }
++    else { // reload the containing folder if it is in use but does not have a file monitor
++        auto folder = Fm::Folder::findByPath(parentDir);
++        if(folder && folder->isValid() && folder->isLoaded() && !folder->hasFileMonitor()) {
++            folder->reload();
++        }
++    }
+ }
+ 
+ uid_t uidFromName(QString name) {
