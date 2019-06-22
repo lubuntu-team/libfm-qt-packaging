@@ -5,8 +5,9 @@ libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
     - Remove fix-license-headers.patch
     - Remove fix-smb-recursive-copy.patch
     - Remove workaround-glib-recursive-moving-error.patch
+    - Remove workaround-missed-file-monitoring.patch
 
- -- apt-ghetto <apt-ghetto@lubuntu.me>  Sat, 22 Jun 2019 16:36:54 +0200
+ -- apt-ghetto <apt-ghetto@lubuntu.me>  Sat, 22 Jun 2019 16:48:37 +0200
 
 libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
 
