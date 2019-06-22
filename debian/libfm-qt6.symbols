@@ -1032,7 +1032,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::ThumbnailJob::qt_metacast(char const*)@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::ThumbnailJob::readImageFromStream(_GInputStream*, unsigned int)@Base" 0.12.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::ThumbnailJob::readImageFromStream(_GInputStream*, unsigned long)@Base" 0.12.0
- (c++)"Fm::ThumbnailJob::readJpegExif(_GInputStream*, QImage&, int&)@Base" 0.12.0
  (c++)"Fm::ThumbnailJob::setLocalFilesOnly(bool)@Base" 0.13.1~
  (c++)"Fm::ThumbnailJob::setMaxThumbnailFileSize(int)@Base" 0.13.1~
  (c++)"Fm::ThumbnailJob::staticMetaObject@Base" 0.12.0
@@ -1119,7 +1118,11 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
+ _ZN2Fm12ThumbnailJob12readJpegExifEP13_GInputStreamR6QImageR7QMatrix@Base 0.14.1
  _ZN2Fm6Folder10findByPathERKNS_8FilePathE@Base 0.14.1
+ _ZNK2Fm10FileDialog6suffixEb@Base 0.14.1
+ _ZNK2Fm11FolderModel11makeTooltipEPNS_15FolderModelItemE@Base 0.14.1
+ _ZNK2Fm15FolderModelItem12displayDtimeEv@Base 0.14.1
  _ZNK2Fm6Folder14hasFileMonitorEv@Base 0.14.1
  (optional=templinst)_ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.14.1
  createFileDialogHelper@Base 0.13.2~
