@@ -1,3 +1,9 @@
+libfm-qt (0.14.1-0ubuntu2.1) UNRELEASED; urgency=medium
+
+  * Don't show non-existent temporary files on the desktop (LP: #1825587).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 29 Jun 2019 17:24:10 -0500
+
 libfm-qt (0.14.1-0ubuntu2) disco; urgency=medium
 
   * Rebuild against qtbase-abi-5-12-2.

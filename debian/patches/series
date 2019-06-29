@@ -1,1 +1,2 @@
 fix-metadata-for-trusting-executables.patch
+dont-ignore-crea-del-sequences.patch
