@@ -1,3 +1,10 @@
+libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
+
+  * Rebuild against Qt 5.12.4.
+  * Update symbols files from the current build logs.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 12 Jul 2019 23:28:09 +0300
+
 libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
 
   * Merge from Debian unstable. Remaining changes:
