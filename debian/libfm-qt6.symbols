@@ -836,7 +836,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::PathBar::updateScrollButtonVisibility()@Base" 0.11.2
  (c++)"Fm::PathBar::wheelEvent(QWheelEvent*)@Base" 0.11.2
  (c++)"Fm::PathEdit::PathEdit(QWidget*)@Base" 0.10.0
- (c++)"Fm::PathEdit::autoComplete()@Base" 0.11.0
  (c++)"Fm::PathEdit::event(QEvent*)@Base" 0.11.0
  (c++)"Fm::PathEdit::focusInEvent(QFocusEvent*)@Base" 0.10.0
  (c++)"Fm::PathEdit::focusOutEvent(QFocusEvent*)@Base" 0.10.0
@@ -1120,11 +1119,14 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
  _ZN2Fm12ThumbnailJob12readJpegExifEP13_GInputStreamR6QImageR7QMatrix@Base 0.14.1
  _ZN2Fm6Folder10findByPathERKNS_8FilePathE@Base 0.14.1
+ _ZN2Fm8PathEdit23selectNextCompletionRowEb@Base 0.14.1
  _ZNK2Fm10FileDialog6suffixEb@Base 0.14.1
  _ZNK2Fm11FolderModel11makeTooltipEPNS_15FolderModelItemE@Base 0.14.1
  _ZNK2Fm15FolderModelItem12displayDtimeEv@Base 0.14.1
  _ZNK2Fm6Folder14hasFileMonitorEv@Base 0.14.1
  (optional=templinst)_ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.14.1
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EED1Ev@Base 0.14.1
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EED2Ev@Base 0.14.1
  _ZNSt8_Rb_treeIjjSt9_IdentityIjESt4lessIjESaIjEE16_M_insert_uniqueIjEESt4pairISt17_Rb_tree_iteratorIjEbEOT_@Base 0.14.1
  createFileDialogHelper@Base 0.13.2~
  fm_config@Base 0.13.1~
