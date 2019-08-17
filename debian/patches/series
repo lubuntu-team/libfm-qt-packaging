@@ -4,3 +4,4 @@ fix-license-headers.patch
 dont-ignore-crea-del-sequences.patch
 workaround-glib-recursive-moving-error.patch
 workaround-missed-file-monitoring.patch
+fix-dnd-mtp.patch

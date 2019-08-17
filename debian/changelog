@@ -1,3 +1,9 @@
+libfm-qt (0.14.1-9ubuntu3) eoan; urgency=medium
+
+  * Fixed DND not working for mtp:// mounted folders
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Sat, 17 Aug 2019 10:11:52 +0530
+
 libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
 
   * Rebuild against Qt 5.12.4.
