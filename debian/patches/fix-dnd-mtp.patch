@@ -46,3 +46,4 @@ Last-Update: 2019-08-17
          switch(action) {
          case Qt::CopyAction:
              FileOperation::copyFiles(srcPaths, destPath);
+
