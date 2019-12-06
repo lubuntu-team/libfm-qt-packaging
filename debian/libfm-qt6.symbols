@@ -144,9 +144,11 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::DirTreeModel::DirTreeModel(QObject*)@Base" 0.10.0
  (c++)"Fm::DirTreeModel::addRoot(std::shared_ptr<Fm::FileInfo const>)@Base" 0.12.0
  (c++)"Fm::DirTreeModel::addRoots(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >)@Base" 0.12.0
+ (c++)"Fm::DirTreeModel::canDropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&) const@Base" 0.14.1+git20191206
  (c++)"Fm::DirTreeModel::columnCount(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::DirTreeModel::data(QModelIndex const&, int) const@Base" 0.10.0
  (c++)"Fm::DirTreeModel::dispName(QModelIndex const&)@Base" 0.10.0
+ (c++)"Fm::DirTreeModel::dropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&)@Base" 0.14.1+git20191206
  (c++)"Fm::DirTreeModel::fileInfo(QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::DirTreeModel::filePath(QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::DirTreeModel::flags(QModelIndex const&) const@Base" 0.10.0
@@ -164,6 +166,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::DirTreeModel::parent(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::DirTreeModel::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::DirTreeModel::qt_metacast(char const*)@Base" 0.10.0
+ (c++)"Fm::DirTreeModel::rootsAdded()@Base" 0.14.1+git20191206
  (c++)"Fm::DirTreeModel::rowCount(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::DirTreeModel::rowLoaded(QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::DirTreeModel::setShowHidden(bool)@Base" 0.10.0
@@ -290,6 +293,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FileDialog::setViewMode(Fm::FolderView::ViewMode)@Base" 0.12.0
  (c++)"Fm::FileDialog::splitterPos() const@Base" 0.12.0
  (c++)"Fm::FileDialog::staticMetaObject@Base" 0.12.0
+ (c++)"Fm::FileDialog::suffix(bool) const@Base" 0.14.1+git20191206
  (c++)"Fm::FileDialog::updateAcceptButtonState()@Base" 0.12.0
  (c++)"Fm::FileDialog::updateSaveButtonText(bool)@Base" 0.12.0
  (c++)"Fm::FileDialog::updateSelectionMode()@Base" 0.12.0
@@ -520,6 +524,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::Folder::cache_@Base" 0.12.0
  (c++)"Fm::Folder::changed()@Base" 0.12.0
  (c++)"Fm::Folder::contentChanged()@Base" 0.12.0
+ (optional|c++)"Fm::Folder::cutFilesChanged(std::vector<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> > > >&)@Base" 0.14.1+git20191206
  (c++)"Fm::Folder::cutFilesDirPath_@Base" 0.12.0
  (c++)"Fm::Folder::cutFilesHashSet_@Base" 0.12.0
  (c++)"Fm::Folder::error(Fm::GErrorPtr const&, Fm::Job::ErrorSeverity, Fm::Job::ErrorAction&)@Base" 0.12.0
@@ -532,12 +537,14 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::Folder::filesAdded(Fm::FileInfoList&)@Base" 0.12.0
  (c++)"Fm::Folder::filesChanged(std::vector<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> > > >&)@Base" 0.12.0
  (c++)"Fm::Folder::filesRemoved(Fm::FileInfoList&)@Base" 0.12.0
+ (optional|c++)"Fm::Folder::findByPath(Fm::FilePath const&)@Base" 0.14.1+git20191206
  (c++)"Fm::Folder::finishLoading()@Base" 0.12.0
  (c++)"Fm::Folder::fromPath(Fm::FilePath const&)@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::Folder::getFilesystemInfo(unsigned long long*, unsigned long long*) const@Base" 0.12.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::Folder::getFilesystemInfo(unsigned long*, unsigned long*) const@Base" 0.12.0
- (c++)"Fm::Folder::hadCutFilesUnset()@Base" 0.12.0
- (c++)"Fm::Folder::hasCutFiles()@Base" 0.12.0
+ (optional|c++)"Fm::Folder::hadCutFiles()@Base" 0.14.1+git20191206
+ (optional|c++)"Fm::Folder::hasCutFiles() const@Base" 0.14.1+git20191206
+ (optional|c++)"Fm::Folder::hasFileMonitor() const@Base" 0.14.1+git20191206
  (c++)"Fm::Folder::info() const@Base" 0.12.0
  (c++)"Fm::Folder::isEmpty() const@Base" 0.12.0
  (c++)"Fm::Folder::isIncremental() const@Base" 0.12.0
@@ -568,6 +575,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::Folder::startLoading()@Base" 0.12.0
  (c++)"Fm::Folder::staticMetaObject@Base" 0.12.0
  (c++)"Fm::Folder::unmount()@Base" 0.12.0
+ (optional|c++)"Fm::Folder::updateCutFiles()@Base" 0.14.1+git20191206
  (c++)"Fm::Folder::~Folder()@Base" 0.12.0
  (c++)"Fm::FolderConfig::FolderConfig()@Base" 0.13.1~
  (c++)"Fm::FolderConfig::FolderConfig(Fm::FilePath const&)@Base" 0.13.1~
@@ -621,6 +629,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderMenu::onCaseSensitiveActionTriggered(bool)@Base" 0.10.0
  (c++)"Fm::FolderMenu::onCustomActionTrigerred()@Base" 0.11.0
  (c++)"Fm::FolderMenu::onFolderFirstActionTriggered(bool)@Base" 0.10.0
+ (c++)"Fm::FolderMenu::onHiddenLastActionTriggered(bool)@Base" 0.14.1+git20191206
  (c++)"Fm::FolderMenu::onInvertSelectionActionTriggered()@Base" 0.10.0
  (c++)"Fm::FolderMenu::onPasteActionTriggered()@Base" 0.10.0
  (c++)"Fm::FolderMenu::onPropertiesActionTriggered()@Base" 0.10.0
@@ -638,20 +647,23 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderModel::data(QModelIndex const&, int) const@Base" 0.10.0
  (c++)"Fm::FolderModel::dropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&)@Base" 0.10.0
  (c++)"Fm::FolderModel::fileInfoFromIndex(QModelIndex const&) const@Base" 0.10.0
+ (c++)"Fm::FolderModel::fileInfoFromPath(Fm::FilePath const&) const@Base" 0.14.1+git20191206
  (c++)"Fm::FolderModel::fileSizeChanged(QModelIndex const&)@Base" 0.12.0
  (c++)"Fm::FolderModel::filesAdded(Fm::FileInfoList)@Base" 0.13.0~
  (c++)"Fm::FolderModel::findItemByFileInfo(Fm::FileInfo const*, int*)@Base" 0.12.0
  (c++)"Fm::FolderModel::findItemByName(char const*, int*)@Base" 0.10.0
- (c++)"Fm::FolderModel::findItemByPath(Fm::FilePath const&, int*)@Base" 0.12.0
  (c++)"Fm::FolderModel::flags(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::FolderModel::headerData(int, Qt::Orientation, int) const@Base" 0.10.0
  (c++)"Fm::FolderModel::index(int, int, QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::FolderModel::insertFiles(int, Fm::FileInfoList const&)@Base" 0.12.0
  (c++)"Fm::FolderModel::itemFromIndex(QModelIndex const&) const@Base" 0.10.0
  (c++)"Fm::FolderModel::loadPendingThumbnails()@Base" 0.12.0
+ (optional|c++)"Fm::FolderModel::makeTooltip(Fm::FolderModelItem*) const@Base" 0.14.1+git20191206
  (c++)"Fm::FolderModel::metaObject() const@Base" 0.10.0
  (c++)"Fm::FolderModel::mimeData(QList<QModelIndex> const&) const@Base" 0.10.0
  (c++)"Fm::FolderModel::mimeTypes() const@Base" 0.10.0
+ (optional|c++)"Fm::FolderModel::onClipboardDataChange()@Base" 0.14.1+git20191206
+ (optional|c++)"Fm::FolderModel::onCutFilesChanged(std::vector<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> > > >&)@Base" 0.14.1+git20191206
  (c++)"Fm::FolderModel::onFilesAdded(Fm::FileInfoList const&)@Base" 0.12.0
  (c++)"Fm::FolderModel::onFilesChanged(std::vector<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::shared_ptr<Fm::FileInfo const>, std::shared_ptr<Fm::FileInfo const> > > >&)@Base" 0.12.0
  (c++)"Fm::FolderModel::onFilesRemoved(Fm::FileInfoList const&)@Base" 0.12.0
@@ -666,7 +678,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderModel::releaseThumbnails(int)@Base" 0.10.0
  (c++)"Fm::FolderModel::removeAll()@Base" 0.10.0
  (c++)"Fm::FolderModel::rowCount(QModelIndex const&) const@Base" 0.10.0
- (c++)"Fm::FolderModel::setCutFiles(QItemSelection const&)@Base" 0.12.0
+ (optional|c++)"Fm::FolderModel::setCutFiles(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.14.1+git20191206
  (c++)"Fm::FolderModel::setFolder(std::shared_ptr<Fm::Folder> const&)@Base" 0.12.0
  (c++)"Fm::FolderModel::staticMetaObject@Base" 0.10.0
  (c++)"Fm::FolderModel::supportedDropActions() const@Base" 0.10.0
@@ -675,7 +687,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderModel::~FolderModel()@Base" 0.12.0
  (c++)"Fm::FolderModelItem::FolderModelItem(Fm::FolderModelItem const&)@Base" 0.10.0
  (c++)"Fm::FolderModelItem::FolderModelItem(std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.12.0
- (c++)"Fm::FolderModelItem::bindCutFiles(std::shared_ptr<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > const> const&)@Base" 0.12.0
+ (c++)"Fm::FolderModelItem::displayDtime() const@Base" 0.14.1+git20191206
  (c++)"Fm::FolderModelItem::displayMtime() const@Base" 0.12.0
  (c++)"Fm::FolderModelItem::displaySize() const@Base" 0.12.0
  (c++)"Fm::FolderModelItem::findThumbnail(int, bool)@Base" 0.12.0
@@ -707,7 +719,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderView::metaObject() const@Base" 0.10.0
  (c++)"Fm::FolderView::model() const@Base" 0.10.0
  (c++)"Fm::FolderView::onAutoSelectionTimeout()@Base" 0.10.0
- (c++)"Fm::FolderView::onClipboardDataChange()@Base" 0.12.0
  (c++)"Fm::FolderView::onClosingEditor(QWidget*, QAbstractItemDelegate::EndEditHint)@Base" 0.12.0
  (c++)"Fm::FolderView::onFileClicked(int, std::shared_ptr<Fm::FileInfo const> const&)@Base" 0.12.0
  (c++)"Fm::FolderView::onItemActivated(QModelIndex)@Base" 0.10.0
@@ -727,6 +738,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::FolderView::selectedRows(int) const@Base" 0.10.0
  (c++)"Fm::FolderView::selectionModel() const@Base" 0.10.0
  (c++)"Fm::FolderView::setAutoSelectionDelay(int)@Base" 0.10.0
+ (c++)"Fm::FolderView::setCtrlRightClick(bool)@Base" 0.14.1+git20191206
  (c++)"Fm::FolderView::setCustomColumnWidths(QList<int> const&)@Base" 0.14.1
  (c++)"Fm::FolderView::setHiddenColumns(QList<int> const&)@Base" 0.14.1
  (c++)"Fm::FolderView::setIconSize(Fm::FolderView::ViewMode, QSize)@Base" 0.10.0
@@ -836,7 +848,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::PathBar::updateScrollButtonVisibility()@Base" 0.11.2
  (c++)"Fm::PathBar::wheelEvent(QWheelEvent*)@Base" 0.11.2
  (c++)"Fm::PathEdit::PathEdit(QWidget*)@Base" 0.10.0
- (c++)"Fm::PathEdit::autoComplete()@Base" 0.11.0
  (c++)"Fm::PathEdit::event(QEvent*)@Base" 0.11.0
  (c++)"Fm::PathEdit::focusInEvent(QFocusEvent*)@Base" 0.10.0
  (c++)"Fm::PathEdit::focusOutEvent(QFocusEvent*)@Base" 0.10.0
@@ -848,6 +859,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::PathEdit::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.10.0
  (c++)"Fm::PathEdit::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::PathEdit::reloadCompleter(bool)@Base" 0.10.0
+ (c++)"Fm::PathEdit::selectNextCompletionRow(bool)@Base" 0.14.1+git20191206
  (c++)"Fm::PathEdit::staticMetaObject@Base" 0.10.0
  (c++)"Fm::PathEdit::~PathEdit()@Base" 0.10.0
  (c++)"Fm::PlacesModel::PlacesModel(QObject*)@Base" 0.10.0
@@ -955,8 +967,8 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::ProxyFolderModel::qt_metacast(char const*)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::removeFilter(Fm::ProxyFolderModelFilter*)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::setBackupAsHidden(bool)@Base" 0.12.1~
- (c++)"Fm::ProxyFolderModel::setCutFiles(QItemSelection const&)@Base" 0.12.0
  (c++)"Fm::ProxyFolderModel::setFolderFirst(bool)@Base" 0.10.0
+ (c++)"Fm::ProxyFolderModel::setHiddenLast(bool)@Base" 0.14.1+git20191206
  (c++)"Fm::ProxyFolderModel::setShowHidden(bool)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::setShowThumbnails(bool)@Base" 0.10.0
  (c++)"Fm::ProxyFolderModel::setSortCaseSensitivity(Qt::CaseSensitivity)@Base" 0.12.0
@@ -1032,7 +1044,7 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::ThumbnailJob::qt_metacast(char const*)@Base" 0.12.0
  (c++|arch= !amd64 !arm64 !mips64el !ppc64el !s390x !alpha !ia64 !kfreebsd-amd64 !ppc64 !riscv64 !sparc64 )"Fm::ThumbnailJob::readImageFromStream(_GInputStream*, unsigned int)@Base" 0.12.0
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::ThumbnailJob::readImageFromStream(_GInputStream*, unsigned long)@Base" 0.12.0
- (c++)"Fm::ThumbnailJob::readJpegExif(_GInputStream*, QImage&, int&)@Base" 0.12.0
+ (c++)"Fm::ThumbnailJob::readJpegExif(_GInputStream*, QImage&, QMatrix&)@Base" 0.14.1+git20191206
  (c++)"Fm::ThumbnailJob::setLocalFilesOnly(bool)@Base" 0.13.1~
  (c++)"Fm::ThumbnailJob::setMaxThumbnailFileSize(int)@Base" 0.13.1~
  (c++)"Fm::ThumbnailJob::staticMetaObject@Base" 0.12.0
@@ -1106,7 +1118,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++|arch= !armel !armhf !i386 !mips !mipsel !hppa !hurd-i386 !kfreebsd-i386 !m68k !powerpc !sh4 !x32 )"Fm::formatFileSize(unsigned long, bool)@Base" 0.12.0
  (c++)"Fm::gidFromName(QString)@Base" 0.10.0
  (c++)"Fm::gidToName(unsigned int)@Base" 0.10.0
- (c++)"Fm::isCurrentPidClipboardData(QMimeData const&)@Base" 0.12.0
  (c++)"Fm::isUriSchemeSupported(char const*)@Base" 0.10.0
  (c++)"Fm::launchTerminal(char const*, Fm::FilePath const&, Fm::GErrorPtr&)@Base" 0.12.0
  (c++)"Fm::parseClipboardData(QMimeData const&)@Base" 0.12.0
@@ -1119,8 +1130,6 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
- _ZN2Fm6Folder10findByPathERKNS_8FilePathE@Base 0.14.1
- _ZNK2Fm6Folder14hasFileMonitorEv@Base 0.14.1
  (optional=templinst)_ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.14.1
  createFileDialogHelper@Base 0.13.2~
  fm_config@Base 0.13.1~
@@ -1300,11 +1309,11 @@ libfm-qt.so.6 libfm-qt6 #MINVER#
  (optional|c++|arch= !amd64 !arm64 !armel !armhf !i386 !mips !mipsel !ppc64el !s390x !alpha !hppa !kfreebsd-amd64 !kfreebsd-i386 !m68k !powerpc !ppc64 !sh4 !x32 )"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, void*), unsigned long, char const*, ...)@Base" 0.12.0
  (c++)"std::__detail::_Map_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::shared_ptr<Fm::FileInfo const> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, true>::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&&)@Base" 0.13.2~
  (c++)"std::__detail::_Map_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Fm::FileInfoList>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Fm::FileInfoList> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, true>::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)@Base" 0.12.1~
- (optional=templinst|c++)"std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int>(unsigned int&&)@Base" 0.14.1
  (c++)"std::unique_ptr<Fm::LibFmQt, std::default_delete<Fm::LibFmQt> >::~unique_ptr()@Base" 0.13.2~
  (c++)"std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::BrowseHistoryItem*, std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> > >)@Base" 0.12.0
  (optional|c++|arch= !i386 )"std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::DirTreeModelItem**, std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> > >)@Base" 0.13.2~
  (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, __gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >)@Base" 0.12.0
+ (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::~vector()@Base" 0.14.1+git20191206
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_erase(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const>*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >)@Base" 0.12.0
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_insert_rval(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const> const*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >, std::shared_ptr<Fm::BookmarkItem const>&&)@Base" 0.12.0
  (c++)"std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > >::operator=(std::vector<std::shared_ptr<Fm::FileInfo const>, std::allocator<std::shared_ptr<Fm::FileInfo const> > > const&)@Base" 0.12.0

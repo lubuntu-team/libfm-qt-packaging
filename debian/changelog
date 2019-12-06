@@ -1,4 +1,4 @@
-libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
+libfm-qt (0.14.1-9ubuntu2) focal; urgency=medium
 
   * Remove patches applied upstream:
     - Remove dont-ignore-crea-del-sequences.patch
@@ -8,7 +8,7 @@ libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
     - Remove workaround-missed-file-monitoring.patch
   * Update symbols from buildlog
 
- -- apt-ghetto <apt-ghetto@lubuntu.me>  Sat, 22 Jun 2019 17:16:28 +0200
+ -- apt-ghetto <apt-ghetto@lubuntu.me>  Fri, 06 Dec 2019 20:19:18 +0100
 
 libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
 
