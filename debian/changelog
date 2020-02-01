@@ -1,3 +1,39 @@
+libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - debian/control:
+      + Update Vcs-* and maintainer for maintaining by Lubuntu.
+      + Additional Breaks/Replaces on old libfm-qt-l10n.
+    - debian/libfmqt-qt6.symbols
+      + Retain Lubuntu generated symbols file.
+    - debian/patches: fix-metadata-for-trusting-executables.patch
+      + Fix metadata for trusting executables. Use Ubuntu standard for
+        trusting executables.
+    - debian/patches: fix-dnd-mtp.patch
+      + Fix drag-and-drop from mtp:// mounted folders.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 01 Feb 2020 09:48:17 +0000
+
+libfm-qt (0.14.1-12) unstable; urgency=medium
+
+  * Fixed symbol QRegEx -> QRegularExpression
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 22 Oct 2019 23:52:39 +0200
+
+libfm-qt (0.14.1-11) unstable; urgency=medium
+
+  * Bumped Standards to 4.4.1, no changes needed
+  * Switched to gbp, gbp.conf added
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 05 Oct 2019 12:56:09 +0200
+
+libfm-qt (0.14.1-10) unstable; urgency=medium
+
+  * Fixed symbols for gcc 9.2.1 (Closes: #925742)
+  * Bumped Standards to 4.4.0, no changes needed
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 17 Aug 2019 13:00:08 +0200
+
 libfm-qt (0.14.1-9ubuntu4) focal; urgency=medium
 
   * No-change rebuild against qtbase-abi-5-12-5.
