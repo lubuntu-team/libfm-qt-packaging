@@ -1,6 +1,7 @@
 libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
+    - Update upstream signing key.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 17:31:38 -0500
 
