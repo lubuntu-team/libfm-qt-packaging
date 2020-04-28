@@ -2,6 +2,7 @@ libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
     - Update upstream signing key.
+    - Bump LXQt build dependencies.
   * Bump Standards-version to 4.5.0, no changes needed.
   * Run wrap-and-sort.
   * Full copyright update.

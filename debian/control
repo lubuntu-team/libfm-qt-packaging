@@ -11,7 +11,7 @@ Build-Depends: debhelper-compat (= 12),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev,
-               lxqt-build-tools (>= 0.6.0~),
+               lxqt-build-tools (>= 0.7.0),
                qtbase5-private-dev
 Standards-Version: 4.5.0
 Vcs-Browser: https://phab.lubuntu.me/source/libfm-qt/
