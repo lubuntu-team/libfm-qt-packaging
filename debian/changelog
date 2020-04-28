@@ -4,6 +4,7 @@ libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
     - Update upstream signing key.
   * Bump Standards-version to 4.5.0, no changes needed.
   * Run wrap-and-sort.
+  * Full copyright update.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 17:31:38 -0500
 
