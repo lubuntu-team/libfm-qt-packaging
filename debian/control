@@ -23,21 +23,12 @@ Homepage: https://github.com/lxqt/libfm-qt
 Package: libfm-qt6
 Provides: libfm-qt
 Conflicts: libfm-qt
-Replaces: libfm-qt5-2,
-          libfm-qt5,
-          libfm-qt3,
-          libfm-qt2
-Breaks: libfm-qt5-2,
-        libfm-qt5,
-        libfm-qt3,
-        libfm-qt2
+Replaces: libfm-qt2, libfm-qt3, libfm-qt5, libfm-qt5-2
+Breaks: libfm-qt2, libfm-qt3, libfm-qt5, libfm-qt5-2
 Architecture: any
 Multi-Arch: same
 Section: libs
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         libglib2.0-bin,
-         shared-mime-info
+Depends: libglib2.0-bin, shared-mime-info, ${misc:Depends}, ${shlibs:Depends}
 Recommends: libfm-qt-l10n
 Pre-Depends: ${misc:Pre-Depends}
 Description: file management support for pcmanfm-qt
@@ -51,10 +42,10 @@ Replaces: libfm-qt5-dev
 Breaks: libfm-qt5-dev
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends},
-         libexif-dev,
+Depends: libexif-dev,
          libfm-qt6 (= ${binary:Version}),
-         libmenu-cache-dev
+         libmenu-cache-dev,
+         ${misc:Depends}
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
@@ -65,10 +56,9 @@ Package: libfm-qt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: ${misc:Depends},
-         qttranslations5-l10n
-Breaks: libfm-qt3 (<< 0.11.1), libfm-qt-l10n (<< 0.14.0)
-Replaces: libfm-qt3 (<< 0.11.1), libfm-qt-l10n (<< 0.14.0)
+Depends: qttranslations5-l10n, ${misc:Depends}
+Breaks: libfm-qt-l10n (<< 0.14.0), libfm-qt3 (<< 0.11.1)
+Replaces: libfm-qt-l10n (<< 0.14.0), libfm-qt3 (<< 0.11.1)
 Description: Language package for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
