@@ -1,3 +1,21 @@
+libfm-qt (0.14.1-12ubuntu4) groovy; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-14-2.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 16 May 2020 08:51:17 +0000
+
+libfm-qt (0.14.1-12ubuntu3) focal; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-12-8.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 10 Apr 2020 20:02:47 +0100
+
+libfm-qt (0.14.1-12ubuntu2) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sun, 22 Mar 2020 16:45:48 +0100
+
 libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
 
   * Merge from Debian unstable. Remaining changes:
@@ -11,7 +29,7 @@ libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
         trusting executables.
     - debian/patches: fix-dnd-mtp.patch
       + Fix drag-and-drop from mtp:// mounted folders.
-
+  
  -- Rik Mills <rikmills@kde.org>  Sat, 01 Feb 2020 09:48:17 +0000
 
 libfm-qt (0.14.1-12) unstable; urgency=medium
@@ -606,3 +624,4 @@ libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
   * Add Breaks for old library name libfm-qt5-2.
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 05 Nov 2015 00:28:39 +0100
+
