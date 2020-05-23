@@ -1,5 +1,15 @@
 libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ apt-ghetto ]
+  * Remove patches applied upstream:
+    - Remove dont-ignore-crea-del-sequences.patch
+    - Remove fix-license-headers.patch
+    - Remove fix-smb-recursive-copy.patch
+    - Remove workaround-glib-recursive-moving-error.patch
+    - Remove workaround-missed-file-monitoring.patch
+  * Update symbols from buildlog
+
+  [ Simon Quigley ]
   * New upstream release.
     - Update upstream signing key.
     - Bump LXQt build dependencies.
@@ -9,17 +19,23 @@ libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 17:31:38 -0500
 
+libfm-qt (0.14.1-12ubuntu4) groovy; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-14-2.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 16 May 2020 08:51:17 +0000
+
+libfm-qt (0.14.1-12ubuntu3) focal; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-12-8.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 10 Apr 2020 20:02:47 +0100
+
 libfm-qt (0.14.1-12ubuntu2) focal; urgency=medium
 
-  * Remove patches applied upstream:
-    - Remove dont-ignore-crea-del-sequences.patch
-    - Remove fix-license-headers.patch
-    - Remove fix-smb-recursive-copy.patch
-    - Remove workaround-glib-recursive-moving-error.patch
-    - Remove workaround-missed-file-monitoring.patch
-  * Update symbols from buildlog
+  * No-change rebuild for libgcc-s1 package name change.
 
- -- apt-ghetto <apt-ghetto@lubuntu.me>  Fri, 06 Dec 2019 20:19:18 +0100
+ -- Matthias Klose <doko@ubuntu.com>  Sun, 22 Mar 2020 16:45:48 +0100
 
 libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
 
@@ -34,7 +50,7 @@ libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
         trusting executables.
     - debian/patches: fix-dnd-mtp.patch
       + Fix drag-and-drop from mtp:// mounted folders.
-
+  
  -- Rik Mills <rikmills@kde.org>  Sat, 01 Feb 2020 09:48:17 +0000
 
 libfm-qt (0.14.1-12) unstable; urgency=medium
@@ -629,3 +645,4 @@ libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
   * Add Breaks for old library name libfm-qt5-2.
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 05 Nov 2015 00:28:39 +0100
+
