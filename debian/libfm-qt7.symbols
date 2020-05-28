@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 0.14.1 amd64 arm64 armhf i386 ppc64el s390x
-libfm-qt.so.6 libfm-qt6 #MINVER#
+libfm-qt.so.7 libfm-qt7 #MINVER#
 * Build-Depends-Package: libfm-qt-dev
  (c++)"Fm::AppChooserComboBox::AppChooserComboBox(QWidget*)@Base" 0.10.0
  (c++)"Fm::AppChooserComboBox::isChanged() const@Base" 0.12.0
