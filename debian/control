@@ -41,7 +41,7 @@ Package: libfm-qt-dev
 Architecture: any
 Section: libdevel
 Depends: libexif-dev,
-         libfm-qt6 (= ${binary:Version}),
+         libfm-qt7 (= ${binary:Version}),
          libmenu-cache-dev,
          ${misc:Depends}
 Description: file management support library for pcmanfm-qt (development files)
