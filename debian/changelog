@@ -14,6 +14,7 @@ libfm-qt (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
     - Update upstream signing key.
     - Bump LXQt build dependencies.
     - Rename libfm-qt6 -> libfm-qt7 for SONAME bump.
+    - Update symbols from amd64 build logs.
   * Bump Standards-version to 4.5.0, no changes needed.
   * Run wrap-and-sort.
   * Full copyright update.
