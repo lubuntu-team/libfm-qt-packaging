@@ -1,4 +1,4 @@
-libfm-qt (0.15.1-0ubuntu1) UNRELEASED; urgency=medium
+libfm-qt (0.15.1-0ubuntu1) groovy; urgency=medium
 
   [ apt-ghetto ]
   * Remove patches applied upstream:
@@ -19,7 +19,7 @@ libfm-qt (0.15.1-0ubuntu1) UNRELEASED; urgency=medium
   * Run wrap-and-sort.
   * Full copyright update.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 17:31:38 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 04 Jun 2020 00:03:35 -0500
 
 libfm-qt (0.14.1-12ubuntu4) groovy; urgency=medium
 
