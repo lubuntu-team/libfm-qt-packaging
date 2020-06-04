@@ -1191,18 +1191,18 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
- (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
@@ -1228,45 +1228,52 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::GroupInfo, std::allocator<Fm::GroupInfo>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::GroupInfo, std::allocator<Fm::GroupInfo>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.15.1
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.15.1
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.15.1
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.0
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.15.1
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.15.1
+ (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.15.1
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.15.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
- (optional=new|c++|arch= armel )"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::_M_get_deleter(std::type_info const&)@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()@Base" 0.13.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()@Base" 0.13.1~
- (c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.1~
+ (optional|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::_M_get_deleter(std::type_info const&)@Base" 0.12.1~
  (optional=new|c++)"std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>::~_Sp_counted_ptr_inplace()@Base" 0.13.1~
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::_M_destroy()@Base" 0.12.0
  (c++|arch=  armel riscv64 )"std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>::_M_dispose()@Base" 0.12.0
@@ -1317,6 +1324,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++)"std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::BrowseHistoryItem*, std::vector<Fm::BrowseHistoryItem, std::allocator<Fm::BrowseHistoryItem> > >)@Base" 0.12.0
  (optional|c++|arch= !i386 )"std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::DirTreeModelItem**, std::vector<Fm::DirTreeModelItem*, std::allocator<Fm::DirTreeModelItem*> > >)@Base" 0.13.2~
  (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::_M_erase(__gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >, __gnu_cxx::__normal_iterator<Fm::FilePath*, std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > >)@Base" 0.12.0
+ (optional|c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::vector(std::vector<Fm::FilePath, std::allocator<Fm::FilePath> > const&)@Base" 0.15.1
  (c++)"std::vector<Fm::FilePath, std::allocator<Fm::FilePath> >::~vector()@Base" 0.14.1+git20191206
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_erase(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const>*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >)@Base" 0.12.0
  (c++)"std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > >::_M_insert_rval(__gnu_cxx::__normal_iterator<std::shared_ptr<Fm::BookmarkItem const> const*, std::vector<std::shared_ptr<Fm::BookmarkItem const>, std::allocator<std::shared_ptr<Fm::BookmarkItem const> > > >, std::shared_ptr<Fm::BookmarkItem const>&&)@Base" 0.12.0
@@ -1398,7 +1406,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Folder, std::allocator<Fm::Folder>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
@@ -1407,16 +1415,17 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::GroupInfo, std::allocator<Fm::GroupInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (optional=new|c++|arch= armel )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch=armel)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch=armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
  (c++|arch=  armel riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
@@ -1499,7 +1508,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Folder, std::allocator<Fm::Folder>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
@@ -1512,14 +1521,15 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (optional=new|c++|arch= armel )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.1~
- (optional=new|c++|arch= armel )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.15.1~
  (optional=new|c++)"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
  (c++|arch=  armel riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"typeinfo name for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
@@ -1619,7 +1629,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::BookmarkItem, std::allocator<Fm::BookmarkItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Bookmarks, std::allocator<Fm::Bookmarks>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
+ (optional|c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::FileInfo const, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::FileInfo, std::allocator<Fm::FileInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Folder, std::allocator<Fm::Folder>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
@@ -1630,19 +1640,19 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::IconInfo, std::allocator<Fm::IconInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::MimeType, std::allocator<Fm::MimeType>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (optional=new|c++|arch= armel )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesModel, std::allocator<Fm::PlacesModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
- (optional=new|c++|arch= armel )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::PlacesProxyModel, std::allocator<Fm::PlacesProxyModel>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch=armel)"vtable for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
- (c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.1~
- (optional=new|c++|arch= armel )"vtable for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch=armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional|c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::TemplateItem, std::allocator<Fm::TemplateItem>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.1~
+ (optional=new|c++|arch= armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::Templates, std::allocator<Fm::Templates>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
- (optional=new|c++|arch= armel )"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
+ (optional=new|c++|arch= armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)1>@Base" 0.13.1~
  (optional=new|c++)"vtable for std::_Sp_counted_ptr_inplace<Fm::Thumbnailer, std::allocator<Fm::Thumbnailer>, (__gnu_cxx::_Lock_policy)2>@Base" 0.13.1~
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::UserInfo, std::allocator<Fm::UserInfo>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
  (c++|arch= !armel !riscv64 )"vtable for std::_Sp_counted_ptr_inplace<Fm::VolumeManager, std::allocator<Fm::VolumeManager>, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
  (c++|arch=  armel riscv64 )"vtable for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)1>@Base" 0.12.0
- (c++)"vtable for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0
+ (optional|c++)"vtable for std::_Sp_counted_ptr_inplace<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> >, std::allocator<std::set<unsigned int, std::less<unsigned int>, std::allocator<unsigned int> > >, (__gnu_cxx::_Lock_policy)2>@Base" 0.12.0

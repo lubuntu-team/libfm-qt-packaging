@@ -1,3 +1,9 @@
+libfm-qt (0.15.1-0ubuntu2) groovy; urgency=medium
+
+  * Refresh symbol files for riscv64
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 04 Jun 2020 08:46:45 +0200
+
 libfm-qt (0.15.1-0ubuntu1) groovy; urgency=medium
 
   [ apt-ghetto ]
