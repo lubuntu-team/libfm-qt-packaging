@@ -1128,6 +1128,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
+ (c++)"Fm::SidePane::event(QEvent*)@Base" 0.15.1+git20200619
  (c++)"Fm::PlacesView::keyPressEvent(QKeyEvent*)@Base" 0.15.0
  (c++)"Fm::Folder::findByPath(Fm::FilePath const&)@Base" 0.14.1
  (c++)"Fm::PlacesModel::canDropMimeData(QMimeData const*, Qt::DropAction, int, int, QModelIndex const&) const@Base" 0.15.0
