@@ -1128,6 +1128,17 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
+ (c++)"Fm::FileDialog::setShowHidden(bool)@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::setSortHiddenLast(bool)@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::setSortFolderFirst(bool)@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::setSortCaseSensitive(bool)@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sort(int, Qt::SortOrder)@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::showHidden() const@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sortColumn() const@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sortHiddenLast() const@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sortFolderFirst() const@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sortCaseSensitive() const@Base" 0.15.1+git20200711
+ (c++)"Fm::FileDialog::sortOrder() const@Base" 0.15.1+git20200711
  (c++)"Fm::SidePane::event(QEvent*)@Base" 0.15.1+git20200619
  (c++)"Fm::PlacesView::keyPressEvent(QKeyEvent*)@Base" 0.15.0
  (c++)"Fm::Folder::findByPath(Fm::FilePath const&)@Base" 0.14.1
