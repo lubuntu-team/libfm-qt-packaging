@@ -1128,7 +1128,7 @@ libfm-qt.so.7 libfm-qt7 #MINVER#
  (c++)"Fm::uidFromName(QString)@Base" 0.10.0
  (c++)"Fm::uidToName(unsigned int)@Base" 0.10.0
  (c++)"Fm::uriExists(char const*)@Base" 0.10.0
- (optional|c++|arch= armhf s390x)"Fm::FileDialog::eventFilter(QObject*, QEvent*)@Base 0.15.1+git20200812
+ (optional|c++|arch= armhf s390x)"Fm::FileDialog::eventFilter(QObject*, QEvent*)@Base" 0.15.1+git20200812
  (c++)"Fm::FileDialog::setHiddenPlaces(QSet<QString> const&)@Base" 0.15.1+git20200811
  (c++)"Fm::FileDialog::onSettingHiddenPlace(QString const&, bool)@Base" 0.15.1+git20200811
  (c++)"Fm::setDefaultAppForType(Fm::GObjectPtr<_GAppInfo>, std::shared_ptr<Fm::MimeType const>)@Base" 0.15.1+git20200811
