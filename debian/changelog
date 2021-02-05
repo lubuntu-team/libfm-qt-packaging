@@ -1,3 +1,50 @@
+libfm-qt (0.16.0-3ubuntu1) hirsute; urgency=medium
+
+  * New upstream release.
+  * Updated standards to 4.5.1.
+  * Tighten debhelper-compat dependency.
+
+ -- Raman Sarda <theloudspeaker@disroot.org>  Fri, 05 Feb 2021 18:39:36 +0530
+
+libfm-qt (0.16.0-3) unstable; urgency=high
+
+  * Update symbols for armel, armhf, i386, mipsel and s390x to fit FTBFS.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 09 Jan 2021 03:15:46 +0800
+
+libfm-qt (0.16.0-2) unstable; urgency=medium
+
+  * Source only upload.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 21:31:49 +0800
+
+libfm-qt (0.16.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #978219)
+  * Drop fixed upstream patches.
+  * Bump to libfm-qt8 to match soname changes.
+  * Refresh debian/libfm-qt8.symbols file.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 04:30:38 +0800
+
+libfm-qt (0.15.1-0ubuntu5) hirsute; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-15-2.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 27 Nov 2020 14:08:55 +0300
+
+libfm-qt (0.15.1-0ubuntu4) hirsute; urgency=medium
+
+  * No-change rebuild against qtbase-abi-5-15-1.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 30 Oct 2020 15:40:36 +0300
+
+libfm-qt (0.15.1-0ubuntu3) groovy; urgency=medium
+
+  * Update debian/libfm-qt7.symbols for GCC 10 (fixes FTBFS).
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Wed, 14 Oct 2020 21:39:52 +0300
+
 libfm-qt (0.15.1-0ubuntu2) groovy; urgency=medium
 
   * Refresh symbol files for riscv64
@@ -26,6 +73,20 @@ libfm-qt (0.15.1-0ubuntu1) groovy; urgency=medium
   * Full copyright update.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 04 Jun 2020 00:03:35 -0500
+
+libfm-qt (0.14.1-12.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update symbols files from buildds’ logs to fix FTBFS on armel.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 23 Oct 2020 20:28:57 +0300
+
+libfm-qt (0.14.1-12.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update symbols files for GCC 10 (closes: #957436).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 17 Oct 2020 20:11:39 +0300
 
 libfm-qt (0.14.1-12ubuntu4) groovy; urgency=medium
 
