@@ -1,3 +1,9 @@
+libfm-qt (0.16.0-3ubuntu2) hirsute; urgency=medium
+
+  * Fixed s390x and riscv64 architecture fails.
+
+ -- Raman Sarda <theloudspeaker@disroot.org>  Thu, 18 Feb 2021 18:36:40 +0530
+
 libfm-qt (0.16.0-3ubuntu1) hirsute; urgency=medium
 
   * New upstream release.
