@@ -1,4 +1,5 @@
-libfm-qt.so.8 libfm-qt8 #MINVER#
+libfm-qt.so.9 libfm-qt9 #MINVER#
+* Build-Depends-Package: libfm-qt-dev
  _ZN2Fm10DirListJob10filesFoundERNS_12FileInfoListE@Base 0.16.0
  _ZN2Fm10DirListJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0
  _ZN2Fm10DirListJob11qt_metacastEPKc@Base 0.16.0
@@ -404,7 +405,7 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZN2Fm12ThumbnailJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0
  _ZN2Fm12ThumbnailJob11qt_metacastEPKc@Base 0.16.0
  _ZN2Fm12ThumbnailJob11threadPool_E@Base 0.16.0
- _ZN2Fm12ThumbnailJob12readJpegExifEP13_GInputStreamR6QImageR7QMatrix@Base 0.16.0
+ _ZN2Fm12ThumbnailJob12readJpegExifEP13_GInputStreamR6QImageR10QTransform@Base 0.17.1
  _ZN2Fm12ThumbnailJob15localFilesOnly_E@Base 0.16.0
  _ZN2Fm12ThumbnailJob15thumbnailLoadedERKSt10shared_ptrIKNS_8FileInfoEEi6QImage@Base 0.16.0
  _ZN2Fm12ThumbnailJob16staticMetaObjectE@Base 0.16.0
@@ -413,6 +414,8 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZN2Fm12ThumbnailJob19readImageFromStreamEP13_GInputStreamm@Base 0.16.0
  _ZN2Fm12ThumbnailJob21maxThumbnailFileSize_E@Base 0.16.0
  _ZN2Fm12ThumbnailJob23setMaxThumbnailFileSizeEi@Base 0.16.0
+ _ZN2Fm12ThumbnailJob29maxExternalThumbnailFileSize_E@Base 0.17.1
+ _ZN2Fm12ThumbnailJob31setMaxExternalThumbnailFileSizeEi@Base 0.17.1
  _ZN2Fm12ThumbnailJob4execEv@Base 0.16.0
  _ZN2Fm12ThumbnailJobC1ENS_12FileInfoListEi@Base 0.16.0
  _ZN2Fm12ThumbnailJobC2ENS_12FileInfoListEi@Base 0.16.0
@@ -820,6 +823,13 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZN2Fm19FileOperationDialog11qt_metacastEPKc@Base 0.16.0
  _ZN2Fm19FileOperationDialog11setDestPathERKNS_8FilePathE@Base 0.16.0
  _ZN2Fm19FileOperationDialog11setPreparedEv@Base 0.16.0
+ _ZN2Fm19FileOperationDialog14setSourceFilesERKSt6vectorINS_8FilePathESaIS2_EE@Base 0.16.0
+ _ZN2Fm19FileOperationDialog16setRemainingTimeEj@Base 0.16.0
+ _ZN2Fm19FileOperationDialog16staticMetaObjectE@Base 0.16.0
+ _ZN2Fm19FileOperationDialog17setFilesProcessedEmm@Base 0.16.0
+ _ZN2Fm19FileOperationDialog18setDataTransferredEmm@Base 0.16.0
+ _ZN2Fm19FileOperationDialog3askE7QStringPKPc@Base 0.16.0
+ _ZN2Fm19FileOperationDialog5errorEP7_GErrorNS_3Job13ErrorSeverityE@Base 0.16.0
  _ZN2Fm19FileOperationDialog6rejectEv@Base 0.16.0
  _ZN2Fm19FileOperationDialog9askRenameERKNS_8FileInfoES3_RNS_8FilePathE@Base 0.16.0
  _ZN2Fm19FileOperationDialogC1EPNS_13FileOperationE@Base 0.16.0
@@ -1208,6 +1218,7 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZNK2Fm15FolderModelItem11displaySizeEv@Base 0.16.0
  _ZNK2Fm15FolderModelItem12displayDtimeEv@Base 0.16.0
  _ZNK2Fm15FolderModelItem12displayMtimeEv@Base 0.16.0
+ _ZNK2Fm15FolderModelItem13displayCrtimeEv@Base 0.17.1
  _ZNK2Fm15FolderModelItem9ownerNameEv@Base 0.16.0
  _ZNK2Fm15PlacesModelItem4dataEi@Base 0.16.0
  _ZNK2Fm16AppChooserDialog10metaObjectEv@Base 0.16.0
@@ -1222,10 +1233,10 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZNK2Fm16FileDialogHelper9directoryEv@Base 0.16.0
  _ZNK2Fm16FileOperationJob10metaObjectEv@Base 0.16.0
  _ZNK2Fm16FileOperationJob11currentFileEv@Base 0.16.0
- _ZNK2Fm16FileOperationJob8progressEv@Base 0.16.0
  _ZNK2Fm16FileOperationJob11totalAmountERmS1_@Base 0.16.0
  _ZNK2Fm16FileOperationJob14finishedAmountERmS1_@Base 0.16.0
  _ZNK2Fm16FileOperationJob19currentFileProgressERNS_8FilePathERmS3_@Base 0.16.0
+ _ZNK2Fm16FileOperationJob8progressEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog10nameRegexpEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog13contentRegexpEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog13searchhHiddenEv@Base 0.16.0
@@ -1282,11 +1293,44 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZNK2Fm8SidePane10metaObjectEv@Base 0.16.0
  _ZNK2Fm8TrashJob10metaObjectEv@Base 0.16.0
  _ZNK2Fm9Bookmarks10metaObjectEv@Base 0.16.0
+ _ZNK2Fm9Bookmarks13bookmarksFileEv@Base 0.16.0
+ _ZNK2Fm9DeleteJob10metaObjectEv@Base 0.16.0
+ _ZNK2Fm9Templates10metaObjectEv@Base 0.16.0
+ _ZNKSt10_HashtableIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS6_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS6_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_find_before_nodeEmRS6_m@Base 0.16.0
+ _ZNSt10_HashtableIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS6_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS6_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv@Base 0.16.0
+ _ZNSt14_Fwd_list_baseISt10shared_ptrIKN2Fm8IconInfoEESaIS4_EE14_M_erase_afterEPSt19_Fwd_list_node_baseS8_@Base 0.16.0
+ _ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorI6QImageSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm17BrowseHistoryItemESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm17BrowseHistoryItemESaIS1_EE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPS1_S3_EE@Base 0.16.0
+ _ZNSt6vectorIN2Fm5MountESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm6VolumeESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE12emplace_backIJRS1_EEEvDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE12emplace_backIJS1_EEEvDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE17_M_realloc_insertIJRKS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE17_M_realloc_insertIJRS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIN2Fm8FilePathESaIS1_EE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPS1_S3_EES7_@Base 0.16.0
+ _ZNSt6vectorIPN2Fm12ThumbnailJobESaIS2_EE17_M_realloc_insertIJRKS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIPN2Fm16DirTreeModelItemESaIS2_EE17_M_realloc_insertIJS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorIPN2Fm16DirTreeModelItemESaIS2_EE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPS2_S4_EE@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm12BookmarkItemEESaIS4_EE14_M_insert_rvalEN9__gnu_cxx17__normal_iteratorIPKS4_S6_EEOS4_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm12BookmarkItemEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm12BookmarkItemEESaIS4_EE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPS4_S6_EE@Base 0.16.0
  _ZNSt6vectorISt10shared_ptrIKN2Fm8FileInfoEESaIS4_EE12emplace_backIJRKS4_EEEvDpOT_@Base 0.16.0
- _ZNSt6vectorISt10shared_ptrIKN2Fm8MimeTypeEESaIS4_EE12emplace_backIJRKS4_EEEvDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm8FileInfoEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm8FileInfoEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIKN2Fm8MimeTypeEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIN2Fm11ThumbnailerEESaIS3_EE17_M_realloc_insertIJS3_EEEvN9__gnu_cxx17__normal_iteratorIPS3_S5_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIN2Fm12TemplateItemEESaIS3_EE17_M_realloc_insertIJS3_EEEvN9__gnu_cxx17__normal_iteratorIPS3_S5_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIN2Fm12TemplateItemEESaIS3_EE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPS3_S5_EES9_@Base 0.16.0
+ _ZNSt6vectorISt10shared_ptrIN2Fm6FolderEESaIS3_EE17_M_realloc_insertIJS3_EEEvN9__gnu_cxx17__normal_iteratorIPS3_S5_EEDpOT_@Base 0.16.0
+ _ZNSt6vectorISt10unique_ptrIN2Fm8ArchiverESt14default_deleteIS2_EESaIS5_EE17_M_realloc_insertIJS5_EEEvN9__gnu_cxx17__normal_iteratorIPS5_S7_EEDpOT_@Base 0.17.1
+ _ZNSt6vectorISt4pairISt10shared_ptrIKN2Fm8FileInfoEES5_ESaIS6_EE12emplace_backIJS6_EEEvDpOT_@Base 0.16.0
+ _ZNSt6vectorISt4pairISt10shared_ptrIKN2Fm8FileInfoEES5_ESaIS6_EE17_M_realloc_insertIJS6_EEEvN9__gnu_cxx17__normal_iteratorIPS6_S8_EEDpOT_@Base 0.16.0
  _ZNSt8__detail9_Map_baseIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS7_St10shared_ptrIKN2Fm8FileInfoEEESaISE_ENS_10_Select1stESt8equal_toIS7_ESt4hashIS6_ENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb1ELb0ELb1EEELb1EEixEOS7_@Base 0.16.0
- _ZNSt8__detail9_Map_baseIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS7_St10shared_ptrIKN2Fm8FileInfoEEESaISE_ENS_10_Select1stESt8equal_toIS7_ESt4hashIS6_ENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb1ELb0ELb1EEELb1EEixEOS7_@Base 0.16.0
- _ZNSt8__detail9_Map_baseINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS6_N2Fm12FileInfoListEESaISB_ENS_10_Select1stESt8equal_toIS6_ESt4hashIS6_ENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb1ELb0ELb1EEELb1EEixEOS6_@Base 0.16.0
+ _ZNSt8__detail9_Map_baseIjSt4pairIKjSt10shared_ptrIKN2Fm8UserInfoEEESaIS8_ENS_10_Select1stESt8equal_toIjESt4hashIjENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb0ELb0ELb1EEELb1EEixERS2_@Base 0.16.0
+ _ZNSt8__detail9_Map_baseIjSt4pairIKjSt10shared_ptrIKN2Fm9GroupInfoEEESaIS8_ENS_10_Select1stESt8equal_toIjESt4hashIjENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb0ELb0ELb1EEELb1EEixERS2_@Base 0.16.0
  _ZTIN2Fm10DirListJobE@Base 0.16.0
  _ZTIN2Fm10FileDialog16FileDialogFilterE@Base 0.16.0
  _ZTIN2Fm10FileDialogE@Base 0.16.0
@@ -1350,23 +1394,23 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZTIN2Fm9BookmarksE@Base 0.16.0
  _ZTIN2Fm9DeleteJobE@Base 0.16.0
  _ZTIN2Fm9TemplatesE@Base 0.16.0
- _ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTISt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTISt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  _ZTSN2Fm10DirListJobE@Base 0.16.0
  _ZTSN2Fm10FileDialog16FileDialogFilterE@Base 0.16.0
  _ZTSN2Fm10FileDialogE@Base 0.16.0
@@ -1430,24 +1474,24 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZTSN2Fm9BookmarksE@Base 0.16.0
  _ZTSN2Fm9DeleteJobE@Base 0.16.0
  _ZTSN2Fm9TemplatesE@Base 0.16.0
- _ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  _ZTSSt19_Sp_make_shared_tag@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTSSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  _ZTVN2Fm10DirListJobE@Base 0.16.0
  _ZTVN2Fm10FileDialog16FileDialogFilterE@Base 0.16.0
  _ZTVN2Fm10FileDialogE@Base 0.16.0
@@ -1510,25 +1554,110 @@ libfm-qt.so.8 libfm-qt8 #MINVER#
  _ZTVN2Fm9BookmarksE@Base 0.16.0
  _ZTVN2Fm9DeleteJobE@Base 0.16.0
  _ZTVN2Fm9TemplatesE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIKN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm11PlacesModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm11ThumbnailerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm12BookmarkItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm12TemplateItemESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm13VolumeManagerESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm16PlacesProxyModelESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm6FolderESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8FileInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8IconInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8MimeTypeESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm8UserInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
+ (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  _ZThn16_N2Fm10FileDialogD0Ev@Base 0.16.0
  _ZThn16_N2Fm10FileDialogD1Ev@Base 0.16.0
  _ZThn16_N2Fm10FolderMenuD0Ev@Base 0.16.0
  _ZThn16_N2Fm10FolderMenuD1Ev@Base 0.16.0
+ _ZThn16_N2Fm10FolderViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10FolderViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm10FontButtonD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10FontButtonD1Ev@Base 0.16.0
+ _ZThn16_N2Fm10PlacesViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10PlacesViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11AppMenuViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11AppMenuViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11ColorButtonD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11ColorButtonD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11DirTreeViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11DirTreeViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm12RenameDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm12RenameDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm12ThumbnailJobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm12ThumbnailJobD1Ev@Base 0.16.0
+ _ZThn16_N2Fm13CreateNewMenuD0Ev@Base 0.16.0
+ _ZThn16_N2Fm13CreateNewMenuD1Ev@Base 0.16.0
+ _ZThn16_N2Fm15FilePropsDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm15FilePropsDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm16AppChooserDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm16AppChooserDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm16FileSearchDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm16FileSearchDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm18AppChooserComboBoxD0Ev@Base 0.16.0
+ _ZThn16_N2Fm18AppChooserComboBoxD1Ev@Base 0.16.0
+ _ZThn16_N2Fm19EditBookmarksDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm19EditBookmarksDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm19FileOperationDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm19FileOperationDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm3Job3runEv@Base 0.16.0
+ _ZThn16_N2Fm3JobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm3JobD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8FileMenuD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8FileMenuD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8PathEditD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8PathEditD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8SidePaneD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8SidePaneD1Ev@Base 0.16.0
+ _ZThn16_N2Fm9DeleteJobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm9DeleteJobD1Ev@Base 0.16.0
  _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0.16.0
+ _ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits@Base 0.16.0
+ _ZThn16_N2Fm10FolderViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10FolderViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm10FontButtonD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10FontButtonD1Ev@Base 0.16.0
+ _ZThn16_N2Fm10PlacesViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm10PlacesViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11AppMenuViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11AppMenuViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11ColorButtonD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11ColorButtonD1Ev@Base 0.16.0
+ _ZThn16_N2Fm11DirTreeViewD0Ev@Base 0.16.0
+ _ZThn16_N2Fm11DirTreeViewD1Ev@Base 0.16.0
+ _ZThn16_N2Fm12RenameDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm12RenameDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm12ThumbnailJobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm12ThumbnailJobD1Ev@Base 0.16.0
+ _ZThn16_N2Fm13CreateNewMenuD0Ev@Base 0.16.0
+ _ZThn16_N2Fm13CreateNewMenuD1Ev@Base 0.16.0
+ _ZThn16_N2Fm15FilePropsDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm15FilePropsDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm16AppChooserDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm16AppChooserDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm16FileSearchDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm16FileSearchDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm18AppChooserComboBoxD0Ev@Base 0.16.0
+ _ZThn16_N2Fm18AppChooserComboBoxD1Ev@Base 0.16.0
+ _ZThn16_N2Fm19EditBookmarksDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm19EditBookmarksDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm19FileOperationDialogD0Ev@Base 0.16.0
+ _ZThn16_N2Fm19FileOperationDialogD1Ev@Base 0.16.0
+ _ZThn16_N2Fm3Job3runEv@Base 0.16.0
+ _ZThn16_N2Fm3JobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm3JobD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8FileMenuD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8FileMenuD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8PathEditD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8PathEditD1Ev@Base 0.16.0
+ _ZThn16_N2Fm8SidePaneD0Ev@Base 0.16.0
+ _ZThn16_N2Fm8SidePaneD1Ev@Base 0.16.0
+ _ZThn16_N2Fm9DeleteJobD0Ev@Base 0.16.0
+ _ZThn16_N2Fm9DeleteJobD1Ev@Base 0.16.0
+ _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0.16.0
+ _ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits@Base 0.16.0
  createFileDialogHelper@Base 0.16.0
  fm_config@Base 0.16.0
