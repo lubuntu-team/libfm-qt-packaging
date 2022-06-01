@@ -4,6 +4,7 @@ libfm-qt (1.1.0-0ubuntu1) UNRELEASED; urgency=medium
   * Bump package name from libfm-qt9 to libfm-qt11. Tried to be somewhat
     consistent with the upstream versioning scheme.
   * Symbols. ❤️
+  * Note: Breaks/Replaces dropped because 22.04 was an LTS.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 31 May 2022 19:29:56 -0500
 
