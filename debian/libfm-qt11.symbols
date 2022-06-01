@@ -1,3 +1,4 @@
+# SymbolsHelper-Confirmed: 1.1.0 amd64
 libfm-qt.so.11 libfm-qt11 #MINVER#
 * Build-Depends-Package: libfm-qt-dev
  _ZN2Fm10DirListJob10filesFoundERNS_12FileInfoListE@Base 0.16.0
@@ -35,10 +36,12 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm10FileDialog16directoryEnteredERK4QUrl@Base 0.16.0
  _ZN2Fm10FileDialog16selectNameFilterERK7QString@Base 0.16.0
  _ZN2Fm10FileDialog16setDirectoryPathENS_8FilePathES1_b@Base 0.16.0
+ _ZN2Fm10FileDialog16setHiddenColumnsERK5QListIiE@Base 1.1.0
  _ZN2Fm10FileDialog16setNoItemTooltipEb@Base 0.16.0
  _ZN2Fm10FileDialog16setSmallIconSizeEi@Base 0.16.0
  _ZN2Fm10FileDialog16staticMetaObjectE@Base 0.16.0
  _ZN2Fm10FileDialog17onViewModeToggledEb@Base 0.16.0
+ _ZN2Fm10FileDialog17setScrollPerPixelEb@Base 1.1.0
  _ZN2Fm10FileDialog17setShowThumbnailsEb@Base 0.16.0
  _ZN2Fm10FileDialog17setSortHiddenLastEb@Base 0.16.0
  _ZN2Fm10FileDialog18onSelectionChangedERK14QItemSelectionS3_@Base 0.16.0
@@ -100,6 +103,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm10FolderView11setViewModeENS0_8ViewModeE@Base 0.16.0
  _ZN2Fm10FolderView11sortChangedEv@Base 0.16.0
  _ZN2Fm10FolderView13emitClickedAtENS0_9ClickTypeERK6QPoint@Base 0.16.0
+ _ZN2Fm10FolderView13inlineRenamedERK7QStringS3_@Base 1.1.0
  _ZN2Fm10FolderView13onFileClickedEiRKSt10shared_ptrIKNS_8FileInfoEE@Base 0.16.0
  _ZN2Fm10FolderView14childDropEventEP10QDropEvent@Base 0.16.0
  _ZN2Fm10FolderView14clickedForwardEv@Base 0.16.0
@@ -115,6 +119,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm10FolderView16staticMetaObjectE@Base 0.16.0
  _ZN2Fm10FolderView17prepareFolderMenuEPNS_10FolderMenuE@Base 0.16.0
  _ZN2Fm10FolderView17setCtrlRightClickEb@Base 0.16.0
+ _ZN2Fm10FolderView17setScrollPerPixelEb@Base 1.1.0
  _ZN2Fm10FolderView18childDragMoveEventEP14QDragMoveEvent@Base 0.16.0
  _ZN2Fm10FolderView18columnHiddenByUserEv@Base 0.16.0
  _ZN2Fm10FolderView18onSelectionChangedERK14QItemSelectionS3_@Base 0.16.0
@@ -350,6 +355,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm12FileLauncher11askExecFileERKSt10shared_ptrIKNS_8FileInfoEE@Base 0.16.0
  _ZN2Fm12FileLauncher11launchFilesEP7QWidgetRKNS_12FileInfoListE@Base 0.16.0
  _ZN2Fm12FileLauncher11launchPathsEP7QWidgetRKSt6vectorINS_8FilePathESaIS4_EE@Base 0.16.0
+ _ZN2Fm12FileLauncher13launchWithAppEP7QWidgetP9_GAppInfoRKSt6vectorINS_8FilePathESaIS6_EE@Base 1.1.0
  _ZN2Fm12FileLauncher3askEPKcPKPci@Base 0.16.0
  _ZN2Fm12FileLauncher9chooseAppERKNS_12FileInfoListEPKcRNS_9GErrorPtrE@Base 0.16.0
  _ZN2Fm12FileLauncher9showErrorEP18_GAppLaunchContextRKNS_9GErrorPtrERKNS_8FilePathERKSt10shared_ptrIKNS_8FileInfoEE@Base 0.16.0
@@ -534,12 +540,14 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm14MountOperation14prepareUnmountEP7_GMount@Base 0.16.0
  _ZN2Fm14MountOperation15onShowProcessesEP16_GMountOperationPcP7_GArrayPS3_PS0_@Base 0.16.0
  _ZN2Fm14MountOperation16staticMetaObjectE@Base 0.16.0
+ _ZN2Fm14MountOperation19onEjectFileFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 1.1.0
  _ZN2Fm14MountOperation19onMountFileFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation20mountEnclosingVolumeERKNS_8FilePathE@Base 0.16.0
  _ZN2Fm14MountOperation20onEjectMountFinishedEP7_GMountP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation21onEjectVolumeFinishedEP8_GVolumeP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation21onMountVolumeFinishedEP8_GVolumeP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation21onShowUnmountProgressEP16_GMountOperationPcllPS0_@Base 0.16.0
+ _ZN2Fm14MountOperation21onUnmountFileFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 1.1.0
  _ZN2Fm14MountOperation22onUnmountMountFinishedEP7_GMountP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation24onMountMountableFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation4waitEv@Base 0.16.0
@@ -560,8 +568,10 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm15FilePropsDialog16staticMetaObjectE@Base 0.16.0
  _ZN2Fm15FilePropsDialog19initPermissionsPageEv@Base 0.16.0
  _ZN2Fm15FilePropsDialog19onIconButtonclickedEv@Base 0.16.0
+ _ZN2Fm15FilePropsDialog21onEmblemButtonclickedEv@Base 1.1.0
  _ZN2Fm15FilePropsDialog22onDeepCountJobFinishedEv@Base 0.16.0
  _ZN2Fm15FilePropsDialog22onFileSizeTimerTimeoutEv@Base 0.16.0
+ _ZN2Fm15FilePropsDialog26onClearEmblemButtonclickedEv@Base 1.1.0
  _ZN2Fm15FilePropsDialog6acceptEv@Base 0.16.0
  _ZN2Fm15FilePropsDialog9initOwnerEv@Base 0.16.0
  _ZN2Fm15FilePropsDialogC1ENS_12FileInfoListEP7QWidget6QFlagsIN2Qt10WindowTypeEE@Base 0.16.0
@@ -842,6 +852,9 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm20PlacesModelMountItem6updateEv@Base 0.16.0
  _ZN2Fm20PlacesModelMountItemC1EP7_GMount@Base 0.16.0
  _ZN2Fm20PlacesModelMountItemC2EP7_GMount@Base 0.16.0
+ _ZN2Fm20PlacesModelMountItemD0Ev@Base 1.1.0
+ _ZN2Fm20PlacesModelMountItemD1Ev@Base 1.1.0
+ _ZN2Fm20PlacesModelMountItemD2Ev@Base 1.1.0
  _ZN2Fm20copyFilesToClipboardERKSt6vectorINS_8FilePathESaIS1_EE@Base 0.16.0
  _ZN2Fm20isUriSchemeSupportedEPKc@Base 0.16.0
  _ZN2Fm20setDefaultAppForTypeENS_10GObjectPtrI9_GAppInfoEESt10shared_ptrIKNS_8MimeTypeEE@Base 0.16.0
@@ -849,6 +862,9 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm21PlacesModelVolumeItem9isMountedEv@Base 0.16.0
  _ZN2Fm21PlacesModelVolumeItemC1EP8_GVolume@Base 0.16.0
  _ZN2Fm21PlacesModelVolumeItemC2EP8_GVolume@Base 0.16.0
+ _ZN2Fm21PlacesModelVolumeItemD0Ev@Base 1.1.0
+ _ZN2Fm21PlacesModelVolumeItemD1Ev@Base 1.1.0
+ _ZN2Fm21PlacesModelVolumeItemD2Ev@Base 1.1.0
  _ZN2Fm23PlacesModelBookmarkItemC1ESt10shared_ptrIKNS_12BookmarkItemEE@Base 0.16.0
  _ZN2Fm23PlacesModelBookmarkItemC2ESt10shared_ptrIKNS_12BookmarkItemEE@Base 0.16.0
  _ZN2Fm23pasteFilesFromClipboardERKNS_8FilePathEP7QWidget@Base 0.16.0
@@ -878,6 +894,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm6Folder12onDirChangedE17GFileMonitorEvent@Base 0.16.0
  _ZN2Fm6Folder12onIdleReloadEv@Base 0.16.0
  _ZN2Fm6Folder12onMountAddedERKNS_5MountE@Base 0.16.0
+ _ZN2Fm6Folder12reallyReloadEv@Base 1.1.0
  _ZN2Fm6Folder12startLoadingEv@Base 0.16.0
  _ZN2Fm6Folder13finishLoadingEv@Base 0.16.0
  _ZN2Fm6Folder13makeDirectoryEPKcPP7_GError@Base 0.16.0
@@ -1126,6 +1143,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm10FileDialog15sortFolderFirstEv@Base 0.16.0
  _ZNK2Fm10FileDialog16FileDialogFilter16filterAcceptsRowEPKNS_16ProxyFolderModelERKSt10shared_ptrIKNS_8FileInfoEE@Base 0.16.0
  _ZNK2Fm10FileDialog16firstSelectedDirEv@Base 0.16.0
+ _ZNK2Fm10FileDialog16getHiddenColumnsEv@Base 1.1.0
  _ZNK2Fm10FileDialog17sortCaseSensitiveEv@Base 0.16.0
  _ZNK2Fm10FileDialog17thumbnailIconSizeEv@Base 0.16.0
  _ZNK2Fm10FileDialog22selectedMimeTypeFilterEv@Base 0.16.0
@@ -1198,6 +1216,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm12DirTreeModel8rowCountERK11QModelIndex@Base 0.16.0
  _ZNK2Fm12FileInfoList10isSameTypeEv@Base 0.16.0
  _ZNK2Fm12FileInfoList16isSameFilesystemEv@Base 0.16.0
+ _ZNK2Fm12FileLauncher13launchedFilesERKNS_12FileInfoListE@Base 1.1.0
+ _ZNK2Fm12FileLauncher13launchedPathsERKSt6vectorINS_8FilePathESaIS2_EE@Base 1.1.0
  _ZNK2Fm12FolderConfig8isOpenedEv@Base 0.16.0
  _ZNK2Fm12RenameDialog10metaObjectEv@Base 0.16.0
  _ZNK2Fm12TemplateItem8filePathEv@Base 0.16.0
@@ -1285,6 +1305,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm8FileInfo12canThumbnailEv@Base 0.16.0
  _ZNK2Fm8FileInfo12setTrustableEb@Base 0.16.0
  _ZNK2Fm8FileInfo16isExecutableTypeEv@Base 0.16.0
+ _ZNK2Fm8FileInfo9setEmblemERK7QStringb@Base 1.1.0
  _ZNK2Fm8FileMenu10metaObjectEv@Base 0.16.0
  _ZNK2Fm8IconInfo13internalQiconEv@Base 0.16.0
  _ZNK2Fm8IconInfo5qiconEv@Base 0.16.0
@@ -1296,8 +1317,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm9Bookmarks13bookmarksFileEv@Base 0.16.0
  _ZNK2Fm9DeleteJob10metaObjectEv@Base 0.16.0
  _ZNK2Fm9Templates10metaObjectEv@Base 0.16.0
- _ZNKSt10_HashtableIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS6_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS6_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_find_before_nodeEmRS6_m@Base 0.16.0
- _ZNSt10_HashtableIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS6_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS6_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv@Base 0.16.0
+ (optional=templinst)_ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_find_before_nodeEmRS7_m@Base 1.1.0
+ (optional=templinst)_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv@Base 1.1.0
  _ZNSt14_Fwd_list_baseISt10shared_ptrIKN2Fm8IconInfoEESaIS4_EE14_M_erase_afterEPSt19_Fwd_list_node_baseS8_@Base 0.16.0
  _ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.16.0
  _ZNSt6vectorI6QImageSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.16.0
@@ -1328,7 +1349,7 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNSt6vectorISt10unique_ptrIN2Fm8ArchiverESt14default_deleteIS2_EESaIS5_EE17_M_realloc_insertIJS5_EEEvN9__gnu_cxx17__normal_iteratorIPS5_S7_EEDpOT_@Base 0.17.1
  _ZNSt6vectorISt4pairISt10shared_ptrIKN2Fm8FileInfoEES5_ESaIS6_EE12emplace_backIJS6_EEEvDpOT_@Base 0.16.0
  _ZNSt6vectorISt4pairISt10shared_ptrIKN2Fm8FileInfoEES5_ESaIS6_EE17_M_realloc_insertIJS6_EEEvN9__gnu_cxx17__normal_iteratorIPS6_S8_EEDpOT_@Base 0.16.0
- _ZNSt8__detail9_Map_baseIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIS7_St10shared_ptrIKN2Fm8FileInfoEEESaISE_ENS_10_Select1stESt8equal_toIS7_ESt4hashIS6_ENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb1ELb0ELb1EEELb1EEixEOS7_@Base 0.16.0
+ (optional=templinst)_ZNSt8__detail9_Map_baseINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS6_St10shared_ptrIKN2Fm8FileInfoEEESaISE_ENS_10_Select1stESt8equal_toIS6_ESt4hashIS6_ENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb1ELb0ELb1EEELb1EEixEOS6_@Base 1.1.0
  _ZNSt8__detail9_Map_baseIjSt4pairIKjSt10shared_ptrIKN2Fm8UserInfoEEESaIS8_ENS_10_Select1stESt8equal_toIjESt4hashIjENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb0ELb0ELb1EEELb1EEixERS2_@Base 0.16.0
  _ZNSt8__detail9_Map_baseIjSt4pairIKjSt10shared_ptrIKN2Fm9GroupInfoEEESaIS8_ENS_10_Select1stESt8equal_toIjESt4hashIjENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb0ELb0ELb1EEELb1EEixERS2_@Base 0.16.0
  _ZTIN2Fm10DirListJobE@Base 0.16.0
@@ -1569,95 +1590,30 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9BookmarksESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9GroupInfoESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
- _ZThn16_N2Fm10FileDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FileDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm10FolderMenuD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FolderMenuD1Ev@Base 0.16.0
- _ZThn16_N2Fm10FolderViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FolderViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm10FontButtonD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FontButtonD1Ev@Base 0.16.0
- _ZThn16_N2Fm10PlacesViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm10PlacesViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm11AppMenuViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm11AppMenuViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm11ColorButtonD0Ev@Base 0.16.0
- _ZThn16_N2Fm11ColorButtonD1Ev@Base 0.16.0
- _ZThn16_N2Fm11DirTreeViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm11DirTreeViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm12RenameDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm12RenameDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm12ThumbnailJobD0Ev@Base 0.16.0
- _ZThn16_N2Fm12ThumbnailJobD1Ev@Base 0.16.0
- _ZThn16_N2Fm13CreateNewMenuD0Ev@Base 0.16.0
- _ZThn16_N2Fm13CreateNewMenuD1Ev@Base 0.16.0
- _ZThn16_N2Fm15FilePropsDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm15FilePropsDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm16AppChooserDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm16AppChooserDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm16FileSearchDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm16FileSearchDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm18AppChooserComboBoxD0Ev@Base 0.16.0
- _ZThn16_N2Fm18AppChooserComboBoxD1Ev@Base 0.16.0
- _ZThn16_N2Fm19EditBookmarksDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm19EditBookmarksDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm19FileOperationDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm19FileOperationDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm3Job3runEv@Base 0.16.0
- _ZThn16_N2Fm3JobD0Ev@Base 0.16.0
- _ZThn16_N2Fm3JobD1Ev@Base 0.16.0
- _ZThn16_N2Fm8FileMenuD0Ev@Base 0.16.0
- _ZThn16_N2Fm8FileMenuD1Ev@Base 0.16.0
- _ZThn16_N2Fm8PathEditD0Ev@Base 0.16.0
- _ZThn16_N2Fm8PathEditD1Ev@Base 0.16.0
- _ZThn16_N2Fm8SidePaneD0Ev@Base 0.16.0
- _ZThn16_N2Fm8SidePaneD1Ev@Base 0.16.0
- _ZThn16_N2Fm9DeleteJobD0Ev@Base 0.16.0
- _ZThn16_N2Fm9DeleteJobD1Ev@Base 0.16.0
- _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0.16.0
- _ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits@Base 0.16.0
- _ZThn16_N2Fm10FolderViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FolderViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm10FontButtonD0Ev@Base 0.16.0
- _ZThn16_N2Fm10FontButtonD1Ev@Base 0.16.0
- _ZThn16_N2Fm10PlacesViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm10PlacesViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm11AppMenuViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm11AppMenuViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm11ColorButtonD0Ev@Base 0.16.0
- _ZThn16_N2Fm11ColorButtonD1Ev@Base 0.16.0
- _ZThn16_N2Fm11DirTreeViewD0Ev@Base 0.16.0
- _ZThn16_N2Fm11DirTreeViewD1Ev@Base 0.16.0
- _ZThn16_N2Fm12RenameDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm12RenameDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm12ThumbnailJobD0Ev@Base 0.16.0
- _ZThn16_N2Fm12ThumbnailJobD1Ev@Base 0.16.0
- _ZThn16_N2Fm13CreateNewMenuD0Ev@Base 0.16.0
- _ZThn16_N2Fm13CreateNewMenuD1Ev@Base 0.16.0
- _ZThn16_N2Fm15FilePropsDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm15FilePropsDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm16AppChooserDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm16AppChooserDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm16FileSearchDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm16FileSearchDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm18AppChooserComboBoxD0Ev@Base 0.16.0
- _ZThn16_N2Fm18AppChooserComboBoxD1Ev@Base 0.16.0
- _ZThn16_N2Fm19EditBookmarksDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm19EditBookmarksDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm19FileOperationDialogD0Ev@Base 0.16.0
- _ZThn16_N2Fm19FileOperationDialogD1Ev@Base 0.16.0
- _ZThn16_N2Fm3Job3runEv@Base 0.16.0
- _ZThn16_N2Fm3JobD0Ev@Base 0.16.0
- _ZThn16_N2Fm3JobD1Ev@Base 0.16.0
- _ZThn16_N2Fm8FileMenuD0Ev@Base 0.16.0
- _ZThn16_N2Fm8FileMenuD1Ev@Base 0.16.0
- _ZThn16_N2Fm8PathEditD0Ev@Base 0.16.0
- _ZThn16_N2Fm8PathEditD1Ev@Base 0.16.0
- _ZThn16_N2Fm8SidePaneD0Ev@Base 0.16.0
- _ZThn16_N2Fm8SidePaneD1Ev@Base 0.16.0
- _ZThn16_N2Fm9DeleteJobD0Ev@Base 0.16.0
- _ZThn16_N2Fm9DeleteJobD1Ev@Base 0.16.0
  _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0.16.0
  _ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits@Base 0.16.0
  createFileDialogHelper@Base 0.16.0
  fm_config@Base 0.16.0
+ (c++)"non-virtual thunk to Fm::AppChooserComboBox::~AppChooserComboBox()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::AppChooserDialog::~AppChooserDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::AppMenuView::~AppMenuView()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::ColorButton::~ColorButton()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::CreateNewMenu::~CreateNewMenu()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::DeleteJob::~DeleteJob()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::DirTreeView::~DirTreeView()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::EditBookmarksDialog::~EditBookmarksDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FileDialog::~FileDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FileMenu::~FileMenu()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FileOperationDialog::~FileOperationDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FilePropsDialog::~FilePropsDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FileSearchDialog::~FileSearchDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FolderMenu::~FolderMenu()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FolderView::~FolderView()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::FontButton::~FontButton()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::Job::run()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::Job::~Job()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::PathEdit::~PathEdit()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::PlacesView::~PlacesView()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::RenameDialog::~RenameDialog()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::SidePane::~SidePane()@Base" 0.16.0
+ (c++)"non-virtual thunk to Fm::ThumbnailJob::~ThumbnailJob()@Base" 0.16.0
