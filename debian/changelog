@@ -1,8 +1,8 @@
-libfm-qt (1.1.0-0ubuntu4) UNRELEASED; urgency=medium
+libfm-qt (1.1.0-0ubuntu4) kinetic; urgency=medium
 
   * Split common files out into a different package.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 06 Jun 2022 15:55:43 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 06 Jun 2022 16:02:24 -0500
 
 libfm-qt (1.1.0-0ubuntu3) kinetic; urgency=medium
 
