@@ -1,3 +1,9 @@
+libfm-qt (1.1.0-0ubuntu5) kinetic; urgency=medium
+
+  * Add some missing Breaks/Replaces.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 08 Jun 2022 19:19:31 -0500
+
 libfm-qt (1.1.0-0ubuntu4) kinetic; urgency=medium
 
   * Split common files out into a different package.
