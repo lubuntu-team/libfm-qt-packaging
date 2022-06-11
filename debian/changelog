@@ -1,4 +1,4 @@
-libfm-qt (1.1.0-0ubuntu6) UNRELEASED; urgency=medium
+libfm-qt (1.1.0-0ubuntu6) kinetic; urgency=medium
 
   * Backport upstream patches:
     - Fixed crash with empty URI scheme of folder path
@@ -8,7 +8,7 @@ libfm-qt (1.1.0-0ubuntu6) UNRELEASED; urgency=medium
       + https://github.com/lxqt/libfm-qt/commit/f66aa2
       + https://github.com/lxqt/libfm-qt/pull/806
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 11 Jun 2022 14:02:20 -0400
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 11 Jun 2022 14:08:19 -0400
 
 libfm-qt (1.1.0-0ubuntu5) kinetic; urgency=medium
 
