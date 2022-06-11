@@ -44,8 +44,8 @@ Architecture: all
 Multi-Arch: foreign
 Section: libs
 Depends: ${misc:Depends}
-Breaks: libfm-qt11 (<< 1.1.0-0ubuntu4)
-Replaces: libfm-qt11 (<< 1.1.0-0ubuntu4)
+Breaks: libfm-qt11 (<< 1.1.0-0ubuntu4), libfm-qt9
+Replaces: libfm-qt11 (<< 1.1.0-0ubuntu4), libfm-qt9
 Description: Common files for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
