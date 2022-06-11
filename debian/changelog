@@ -1,3 +1,12 @@
+libfm-qt (1.1.0-0ubuntu6) UNRELEASED; urgency=medium
+
+  * Backport upstream patches:
+    - Fixed crash with empty URI scheme of folder path
+      + https://github.com/lxqt/libfm-qt/commit/472128
+      + https://github.com/lxqt/libfm-qt/pull/808
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 11 Jun 2022 14:02:20 -0400
+
 libfm-qt (1.1.0-0ubuntu5) kinetic; urgency=medium
 
   * Add some missing Breaks/Replaces.
