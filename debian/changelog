@@ -2,9 +2,9 @@ libfm-qt (1.1.0-0ubuntu7~ppa2) jammy; urgency=medium
 
   * Backport to Jammy.
   * Updated Lubuntu Developers copyright to 2021-2022.
-  * Updated symbols file
+  * Updated symbols file.
   * Removed Repository-Browser field from debian/upstream/metadata.
-  * Removed "-Wl,--as-needed" linker flag.
+  * Removed obsolete "-Wl,--as-needed" linker flag.
   * Bumped Standards-Version to 4.6.1, no changes necessary.
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Thu, 23 Jun 2022 21:47:05 -0500
