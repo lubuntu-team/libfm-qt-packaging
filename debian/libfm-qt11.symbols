@@ -368,6 +368,10 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm12FolderConfig10getIntegerEPKcPi@Base 0.16.0
  _ZN2Fm12FolderConfig10setBooleanEPKcb@Base 0.16.0
  _ZN2Fm12FolderConfig10setIntegerEPKci@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm12FolderConfig13getStringListEPKcPj@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm12FolderConfig13getStringListEPKcPm@Base 1.1.0
+ (arch=i386 armhf)_ZN2Fm12FolderConfig13setStringListEPKcPKS2_j@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm12FolderConfig13setStringListEPKcPKS2_m@Base 1.1.0
  _ZN2Fm12FolderConfig17globalConfigFile_E@Base 0.16.0
  _ZN2Fm12FolderConfig4initEPKc@Base 0.16.0
  _ZN2Fm12FolderConfig4openERKNS_8FilePathE@Base 0.16.0
@@ -377,10 +381,14 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm12FolderConfig8finalizeEv@Base 0.16.0
  _ZN2Fm12FolderConfig9getDoubleEPKcPd@Base 0.16.0
  _ZN2Fm12FolderConfig9getStringEPKc@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm12FolderConfig9getUint64EPKcPy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm12FolderConfig9getUint64EPKcPm@Base 1.1.0
  _ZN2Fm12FolderConfig9removeKeyEPKc@Base 0.16.0
  _ZN2Fm12FolderConfig9saveCacheEv@Base 0.16.0
  _ZN2Fm12FolderConfig9setDoubleEPKcd@Base 0.16.0
  _ZN2Fm12FolderConfig9setStringEPKcS2_@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm12FolderConfig9setUint64EPKcy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm12FolderConfig9setUint64EPKcm@Base 1.1.0
  _ZN2Fm12FolderConfigC1ERKNS_8FilePathE@Base 0.16.0
  _ZN2Fm12FolderConfigC1Ev@Base 0.16.0
  _ZN2Fm12FolderConfigC2ERKNS_8FilePathE@Base 0.16.0
@@ -413,6 +421,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm12ThumbnailJob16staticMetaObjectE@Base 0.16.0
  _ZN2Fm12ThumbnailJob17generateThumbnailERKSt10shared_ptrIKNS_8FileInfoEERKNS_8FilePathEPKcRK7QString@Base 0.16.0
  _ZN2Fm12ThumbnailJob17setLocalFilesOnlyEb@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm12ThumbnailJob19readImageFromStreamEP13_GInputStreamj@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm12ThumbnailJob19readImageFromStreamEP13_GInputStreamm@Base 1.1.0
  _ZN2Fm12ThumbnailJob21maxThumbnailFileSize_E@Base 0.16.0
  _ZN2Fm12ThumbnailJob23setMaxThumbnailFileSizeEi@Base 0.16.0
  _ZN2Fm12ThumbnailJob29maxExternalThumbnailFileSize_E@Base 0.17.1
@@ -541,6 +551,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm14MountOperation20onEjectMountFinishedEP7_GMountP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation21onEjectVolumeFinishedEP8_GVolumeP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation21onMountVolumeFinishedEP8_GVolumeP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm14MountOperation21onShowUnmountProgressEP16_GMountOperationPcxxPS0_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm14MountOperation21onShowUnmountProgressEP16_GMountOperationPcllPS0_@Base 1.1.0
  _ZN2Fm14MountOperation21onUnmountFileFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 1.1.0
  _ZN2Fm14MountOperation22onUnmountMountFinishedEP7_GMountP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
  _ZN2Fm14MountOperation24onMountMountableFinishedEP6_GFileP13_GAsyncResultP8QPointerIS0_E@Base 0.16.0
@@ -553,6 +565,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm14MountOperationD1Ev@Base 0.16.0
  _ZN2Fm14MountOperationD2Ev@Base 0.16.0
  _ZN2Fm14changeFileNameERKNS_8FilePathERK7QStringP7QWidgetb@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm14formatFileSizeEyb@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm14formatFileSizeEmb@Base 1.1.0
  _ZN2Fm14launchTerminalEPKcRKNS_8FilePathERNS_9GErrorPtrE@Base 0.16.0
  _ZN2Fm15FilePropsDialog11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0
  _ZN2Fm15FilePropsDialog11qt_metacastEPKc@Base 0.16.0
@@ -586,6 +600,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm15FileTransferJob15copyRegularFileERKNS_8FilePathERKNS_10GObjectPtrI10_GFileInfoEERS1_@Base 0.16.0
  _ZN2Fm15FileTransferJob15copySpecialFileERKNS_8FilePathERKNS_10GObjectPtrI10_GFileInfoEERS1_@Base 0.16.0
  _ZN2Fm15FileTransferJob16staticMetaObjectE@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm15FileTransferJob25gfileCopyProgressCallbackExxPS0_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm15FileTransferJob25gfileCopyProgressCallbackEllPS0_@Base 1.1.0
  _ZN2Fm15FileTransferJob4execEv@Base 0.16.0
  _ZN2Fm15FileTransferJob7makeDirERKNS_8FilePathENS_10GObjectPtrI10_GFileInfoEERS1_@Base 0.16.0
  _ZN2Fm15FileTransferJob8copyFileERKNS_8FilePathERKNS_10GObjectPtrI10_GFileInfoEES3_PKcb@Base 0.16.0
@@ -679,15 +695,25 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm16FileOperationJob11qt_metacastEPKc@Base 0.16.0
  _ZN2Fm16FileOperationJob13preparedToRunEv@Base 0.16.0
  _ZN2Fm16FileOperationJob14setCurrentFileERKNS_8FilePathE@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm16FileOperationJob14setTotalAmountEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm16FileOperationJob14setTotalAmountEmm@Base 1.1.0
  _ZN2Fm16FileOperationJob16staticMetaObjectE@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm16FileOperationJob17addFinishedAmountEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm16FileOperationJob17addFinishedAmountEmm@Base 1.1.0
+ (arch=i386 armhf)_ZN2Fm16FileOperationJob17setFinishedAmountEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm16FileOperationJob17setFinishedAmountEmm@Base 1.1.0
+ (arch=i386 armhf)_ZN2Fm16FileOperationJob22setCurrentFileProgressEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm16FileOperationJob22setCurrentFileProgressEmm@Base 1.1.0
  _ZN2Fm16FileOperationJob9askRenameERKNS_8FileInfoES3_RNS_8FilePathE@Base 0.16.0
  _ZN2Fm16FileOperationJobC1Ev@Base 0.16.0
  _ZN2Fm16FileOperationJobC2Ev@Base 0.16.0
  _ZN2Fm16FileSearchDialog12onRemovePathEv@Base 0.16.0
  _ZN2Fm16FileSearchDialog12setRecursiveEb@Base 0.16.0
  _ZN2Fm16FileSearchDialog13setNameRegexpEb@Base 0.16.0
+ (arch=!riscv64)_ZN2Fm16FileSearchDialog15addNamePatternsERK11QStringList@Base 1.1.0
  _ZN2Fm16FileSearchDialog16setContentRegexpEb@Base 0.16.0
  _ZN2Fm16FileSearchDialog16setSearchhHiddenEb@Base 0.16.0
+ (arch=!riscv64)_ZN2Fm16FileSearchDialog18addContentPatternsERK11QStringList@Base 1.1.0
  _ZN2Fm16FileSearchDialog22setNameCaseInsensitiveEb@Base 0.16.0
  _ZN2Fm16FileSearchDialog25setContentCaseInsensitiveEb@Base 0.16.0
  _ZN2Fm16FileSearchDialog6acceptEv@Base 0.16.0
@@ -824,6 +850,10 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZN2Fm19FileOperationDialog14setSourceFilesERKSt6vectorINS_8FilePathESaIS2_EE@Base 0.16.0
  _ZN2Fm19FileOperationDialog16setRemainingTimeEj@Base 0.16.0
  _ZN2Fm19FileOperationDialog16staticMetaObjectE@Base 0.16.0
+ (arch=i386 armhf)_ZN2Fm19FileOperationDialog17setFilesProcessedEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm19FileOperationDialog17setFilesProcessedEmm@Base 1.1.0
+ (arch=i386 armhf)_ZN2Fm19FileOperationDialog18setDataTransferredEyy@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZN2Fm19FileOperationDialog18setDataTransferredEmm@Base 1.1.0
  _ZN2Fm19FileOperationDialog3askE7QStringPKPc@Base 0.16.0
  _ZN2Fm19FileOperationDialog5errorEP7_GErrorNS_3Job13ErrorSeverityE@Base 0.16.0
  _ZN2Fm19FileOperationDialog6rejectEv@Base 0.16.0
@@ -1239,10 +1269,18 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm16FileDialogHelper9directoryEv@Base 0.16.0
  _ZNK2Fm16FileOperationJob10metaObjectEv@Base 0.16.0
  _ZNK2Fm16FileOperationJob11currentFileEv@Base 0.16.0
+ (arch=i386 armhf)_ZNK2Fm16FileOperationJob11totalAmountERyS1_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZNK2Fm16FileOperationJob11totalAmountERmS1_@Base 1.1.0
+ (arch=i386 armhf)_ZNK2Fm16FileOperationJob14finishedAmountERyS1_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZNK2Fm16FileOperationJob14finishedAmountERmS1_@Base 1.1.0
+ (arch=i386 armhf)_ZNK2Fm16FileOperationJob19currentFileProgressERNS_8FilePathERyS3_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZNK2Fm16FileOperationJob19currentFileProgressERNS_8FilePathERmS3_@Base 1.1.0
  _ZNK2Fm16FileOperationJob8progressEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog10nameRegexpEv@Base 0.16.0
+ (arch=!riscv64)_ZNK2Fm16FileSearchDialog11namePatternEv@Base 1.1.0
  _ZNK2Fm16FileSearchDialog13contentRegexpEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog13searchhHiddenEv@Base 0.16.0
+ (arch=!riscv64)_ZNK2Fm16FileSearchDialog14contentPatternEv@Base 1.1.0
  _ZNK2Fm16FileSearchDialog19nameCaseInsensitiveEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog22contentCaseInsensitiveEv@Base 0.16.0
  _ZNK2Fm16FileSearchDialog9recursiveEv@Base 0.16.0
@@ -1276,6 +1314,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm6Folder10metaObjectEv@Base 0.16.0
  _ZNK2Fm6Folder13isIncrementalEv@Base 0.16.0
  _ZNK2Fm6Folder14hasFileMonitorEv@Base 0.16.0
+ (arch=i386 armhf)_ZNK2Fm6Folder17getFilesystemInfoEPyS1_@Base 1.1.0
+ (arch=!riscv64 !i386 !armhf)_ZNK2Fm6Folder17getFilesystemInfoEPmS1_@Base 1.1.0
  _ZNK2Fm6Folder4infoEv@Base 0.16.0
  _ZNK2Fm6Folder4pathEv@Base 0.16.0
  _ZNK2Fm6Folder5filesEv@Base 0.16.0
@@ -1299,6 +1339,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  _ZNK2Fm9Bookmarks13bookmarksFileEv@Base 0.16.0
  _ZNK2Fm9DeleteJob10metaObjectEv@Base 0.16.0
  _ZNK2Fm9Templates10metaObjectEv@Base 0.16.0
+ (optional=templinst|arch=i386 armhf)_ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_find_before_nodeEjRS7_j@Base 1.1.0
+ (optional=templinst|arch=!riscv64 !i386 !armhf)_ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_find_before_nodeEmRS7_m@Base 1.1.0
  (optional=templinst)_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10shared_ptrIKN2Fm8FileInfoEEESaISD_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSF_18_Mod_range_hashingENSF_20_Default_ranged_hashENSF_20_Prime_rehash_policyENSF_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv@Base 1.1.0
  _ZNSt14_Fwd_list_baseISt10shared_ptrIKN2Fm8IconInfoEESaIS4_EE14_M_erase_afterEPSt19_Fwd_list_node_baseS8_@Base 0.16.0
  _ZNSt6vectorI18QRegularExpressionSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_@Base 0.16.0
@@ -1626,6 +1668,8 @@ libfm-qt.so.11 libfm-qt11 #MINVER#
  (arch=riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE1EE@Base 1.1.0
  (arch=!riscv64)_ZTVSt23_Sp_counted_ptr_inplaceIN2Fm9TemplatesESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE@Base 0.16.0
  _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0.16.0
+ (optional=templinst|arch=i386 armhf)_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits@Base 1.1.0
+ (optional=templinst|arch=!riscv64 !i386 !armhf)_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits@Base 1.1.0
  createFileDialogHelper@Base 0.16.0
  fm_config@Base 0.16.0
  (c++)"non-virtual thunk to Fm::AppChooserComboBox::~AppChooserComboBox()@Base" 0.16.0

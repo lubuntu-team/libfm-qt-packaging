@@ -2,6 +2,7 @@ libfm-qt (1.1.0-0ubuntu7~ppa1) jammy; urgency=medium
 
   * Backport to Jammy.
   * Updated Lubuntu Developers copyright.
+  * Updated symbols file
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Thu, 23 Jun 2022 21:47:05 -0500
 
