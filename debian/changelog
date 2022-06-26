@@ -214,7 +214,7 @@ libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
         trusting executables.
     - debian/patches: fix-dnd-mtp.patch
       + Fix drag-and-drop from mtp:// mounted folders.
-  
+
  -- Rik Mills <rikmills@kde.org>  Sat, 01 Feb 2020 09:48:17 +0000
 
 libfm-qt (0.14.1-12) unstable; urgency=medium
@@ -266,7 +266,7 @@ libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
       + Retain and update Lubuntu generated symbols file.
     - debian/patches: fix-metadata-for-trusting-executables.patch
       + Fix metadata for trusting executables. Use Ubuntu standard for
-        trusting executables. 
+        trusting executables.
 
  -- Rik Mills <rikmills@kubuntu.org>  Sun, 09 Jun 2019 22:20:26 +0100
 
@@ -809,4 +809,3 @@ libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
   * Add Breaks for old library name libfm-qt5-2.
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 05 Nov 2015 00:28:39 +0100
-
