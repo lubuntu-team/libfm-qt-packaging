@@ -6,6 +6,7 @@ libfm-qt (1.1.0-0ubuntu7~ppa2) jammy; urgency=medium
   * Removed redundant Repository-Browser field from d/upstream/metadata.
   * Removed obsolete "-Wl,--as-needed" linker flag.
   * Bumped Standards-Version to 4.6.1, no changes necessary.
+  * Updated symbols file AGAIN (RISC-V 64 overhaul)
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Thu, 26 Jun 2022 03:24:00 -0500
 
