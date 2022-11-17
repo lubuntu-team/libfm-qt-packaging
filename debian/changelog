@@ -1,3 +1,9 @@
+libfm-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 18:39:37 -0600
+
 libfm-qt (1.1.0-3ubuntu1) kinetic; urgency=medium
 
   * Revert the previous upload.
