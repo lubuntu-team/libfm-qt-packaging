@@ -2,8 +2,6 @@ From 472128c3bfc301f3258bd99501a88ef4097d0429 Mon Sep 17 00:00:00 2001
 From: tsujan <tsujan2000@gmail.com>
 Date: Thu, 9 Jun 2022 01:35:27 +0430
 Subject: [PATCH] Fixed crash with empty URI scheme of folder path (#808)
-Bug: https://github.com/lxqt/lxqt-session/issues/439
-Applied-Upstream: https://github.com/lxqt/libfm-qt/pull/808
 
 An empty URI scheme is possible when trying to open a folder with an empty path (like when the desktop path is empty and pcmanfm-qt's desktop module is started).
 

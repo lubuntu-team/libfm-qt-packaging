@@ -1,22 +1,16 @@
-libfm-qt (1.1.0-3) unstable; urgency=medium
+libfm-qt (1.1.0-3ubuntu1) kinetic; urgency=medium
 
-  * Team upload
-  * Bump libfm-qt8 to libfm-qt11
-    - Restored Breaks+Replaces: libfm-qt8 (Closes: #1016514)
-  * debian/control:
-    - Bump Standards-Version to 4.6.1
-    - Bump debhelper to 13
-    - debian/control: Add Rules-Requires-Root: no
-  * debian/rules: Remove "-Wl,--as-needed" in linker options
-  * debian/patches:
-    - Fix crash with empty URI scheme of folder path
-    - Support adding of pattern lists to entries of search dialog
-  * debian/*.symbols, debian/libfm-qt11.shlibs: Remove all symbols files and
-    use shlibs file to declare linking dependencies
-  * debian/upstream/metadata: Change Repository-Browser field to
-    Repository-Browse
+  * Revert the previous upload.
+  * Make Breaks/Replaces stricter for libfm-qt11 on libfm-qt-common due to the
+    nature of the reverted upload.
 
- -- Yao Wei (魏銘廷) <mwei@debian.org>  Sat, 08 Oct 2022 18:01:29 +0800
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 10 Oct 2022 11:06:03 -0500
+
+libfm-qt (1.1.0-2ubuntu1) kinetic; urgency=medium
+
+  * Update debian/libfm-qt11.symbols for GCC 12.
+
+ -- Dmitry Shachnev <mitya57@ubuntu.com>  Sat, 13 Aug 2022 21:37:11 +0300
 
 libfm-qt (1.1.0-2) experimental; urgency=medium
 
