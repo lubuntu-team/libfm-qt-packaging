@@ -3,42 +3,34 @@ Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
 Uploaders: Alf Gaida <agaida@siduction.org>,
            ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
            Andrew Lee (李健秋) <ajqlee@debian.org>,
-           Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+           Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>,
+           Simon Quigley <tsimonq2@debian.org>,
+           Aaron Rainbolt <arraybolt3@gmail.com>
 Section: x11
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: debhelper-compat (= 13),
                libexif-dev,
                libkf5windowsystem-dev,
                libmenu-cache-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev,
-               lxqt-build-tools (>= 0.11.0~),
+               lxqt-build-tools (>= 0.11.0),
                qtbase5-private-dev
-Standards-Version: 4.4.1
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/lxqt-team/libfm-qt
 Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
+Rules-Requires-Root: no
 
 Package: libfm-qt11
-Provides: libfm-qt
-Conflicts: libfm-qt
-Replaces: libfm-qt8,
-          libfm-qt6,
-          libfm-qt5-2,
-          libfm-qt5,
-          libfm-qt3,
-          libfm-qt2
-Breaks: libfm-qt8,
-        libfm-qt6,
-        libfm-qt5-2,
-        libfm-qt5,
-        libfm-qt3,
-        libfm-qt2
+Replaces: libfm-qt9
+Breaks: libfm-qt9
 Architecture: any
 Multi-Arch: same
 Section: libs
-Depends: ${misc:Depends},
+Depends: libfm-qt-common,
+         ${misc:Depends},
          ${shlibs:Depends},
          libglib2.0-bin,
          shared-mime-info
@@ -50,9 +42,20 @@ Description: file management support for pcmanfm-qt
  .
  This package contains helper library libfm-qt for pcmanfm-qt.
 
+Package: libfm-qt-common
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Breaks: libfm-qt11 (<< 1.1.0-1), libfm-qt9
+Replaces: libfm-qt11 (<< 1.1.0-1), libfm-qt9
+Description: Common files for libfm-qt
+ Libfm-Qt is a companion library providing components to build desktop file
+ managers.
+ .
+ This package contains common files for libfm-qt.
+
 Package: libfm-qt-dev
-Replaces: libfm-qt5-dev
-Breaks: libfm-qt5-dev
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends},
@@ -69,10 +72,7 @@ Package: libfm-qt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: ${misc:Depends},
-         qttranslations5-l10n
-Breaks: libfm-qt3 (<< 0.11.1)
-Replaces: libfm-qt3 (<< 0.11.1)
+Depends: ${misc:Depends}, qttranslations5-l10n
 Description: Language package for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.

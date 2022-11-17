@@ -1,0 +1,25 @@
+From 472128c3bfc301f3258bd99501a88ef4097d0429 Mon Sep 17 00:00:00 2001
+From: tsujan <tsujan2000@gmail.com>
+Date: Thu, 9 Jun 2022 01:35:27 +0430
+Subject: [PATCH] Fixed crash with empty URI scheme of folder path (#808)
+
+An empty URI scheme is possible when trying to open a folder with an empty path (like when the desktop path is empty and pcmanfm-qt's desktop module is started).
+
+Fixes https://github.com/lxqt/lxqt-session/issues/439
+---
+ src/core/folder.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/core/folder.cpp b/src/core/folder.cpp
+index 5bb40137..710a9132 100644
+--- a/src/core/folder.cpp
++++ b/src/core/folder.cpp
+@@ -532,7 +532,7 @@ void Folder::onDirListFinished() {
+     const auto& infos = job->files();
+ 
+     // with "search://", there is no update for infos and all of them should be added
+-    if(strcmp(dirPath_.uriScheme().get(), "search") == 0) {
++    if(dirPath_.hasUriScheme("search")) {
+         files_to_add = infos;
+         for(auto& file: files_to_add) {
+             files_[file->path().baseName().get()] = file;
