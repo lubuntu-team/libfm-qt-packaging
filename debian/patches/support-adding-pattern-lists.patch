@@ -3,6 +3,8 @@ From: tsujan <tsujan2000@gmail.com>
 Date: Sat, 14 May 2022 01:17:14 +0430
 Subject: [PATCH] Support adding of pattern lists to entries of search dialog
  (#806)
+Applied-Upstream: https://github.com/lxqt/libfm-qt/pull/806
+
 
 Such lists will be used later for adding search history to `pcmanfm-qt`.
 ---
