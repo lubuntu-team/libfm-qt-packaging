@@ -1,100 +1,21 @@
-libfm-qt (1.1.0-0ubuntu7) kinetic; urgency=medium
+libfm-qt (1.1.0-1) experimental; urgency=medium
 
-  * Fix upgrades from 22.04 by providing an additional Breaks/Replaces on
-    libfm-qt9.
+  * debian/changelog: fix a typo.
+  * New upstream version 1.0.0
+  * Add debian/salsa-ci.yml file.
+  * Update debian/upstream/signing-key.asc.
+  * New upstream version 1.1.0
+  * debian/control: build-deps on lxqt-build-tools (>=0.11.0~).
+  * Bump to libfm-qt11 to match soname changes.
+  * debian/libfm-qt11.shlibs: Added, restrict to latest upstream version.
+  * Drop C++ symbols according to
+    https://wiki.debian.org/UsingSymbolsFiles.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 11 Jun 2022 16:28:09 -0400
-
-libfm-qt (1.1.0-0ubuntu6) kinetic; urgency=medium
-
-  * Backport upstream patches:
-    - Fixed crash with empty URI scheme of folder path
-      + https://github.com/lxqt/libfm-qt/commit/472128
-      + https://github.com/lxqt/libfm-qt/pull/808
-    - Support adding of pattern lists to entries of search dialog
-      + https://github.com/lxqt/libfm-qt/commit/f66aa2
-      + https://github.com/lxqt/libfm-qt/pull/806
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 11 Jun 2022 14:08:19 -0400
-
-libfm-qt (1.1.0-0ubuntu5) kinetic; urgency=medium
-
-  * Add some missing Breaks/Replaces.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 08 Jun 2022 19:19:31 -0500
-
-libfm-qt (1.1.0-0ubuntu4) kinetic; urgency=medium
-
-  * Split common files out into a different package.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 06 Jun 2022 16:02:24 -0500
-
-libfm-qt (1.1.0-0ubuntu3) kinetic; urgency=medium
-
-  * Even moar symbols. 😦
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 01 Jun 2022 13:24:18 -0500
-
-libfm-qt (1.1.0-0ubuntu2) kinetic; urgency=medium
-
-  * Symbols. ❤️
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 01 Jun 2022 10:17:27 -0500
-
-libfm-qt (1.1.0-0ubuntu1) kinetic; urgency=medium
-
-  * New upstream release.
-  * Bump package name from libfm-qt9 to libfm-qt11. Tried to be somewhat
-    consistent with the upstream versioning scheme.
-  * Symbols. ❤️
-  * Note: Breaks/Replaces dropped because 22.04 was an LTS.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 31 May 2022 19:45:37 -0500
-
-libfm-qt (0.17.1-0ubuntu3) kinetic; urgency=medium
-
-  * No-change rebuild against Qt 5.15.4.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Tue, 17 May 2022 13:01:28 +0300
-
-libfm-qt (0.17.1-0ubuntu2) jammy; urgency=medium
-
-  * No-change rebuild against Qt 5.15.3.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Thu, 17 Mar 2022 18:37:08 +0300
-
-libfm-qt (0.17.1-0ubuntu1) impish; urgency=medium
-
-  * New upstream release 0.17.1
-  * Update debian/control
-    - Use lxqt-build-tools 0.9.0
-    - Bump to libfm-qt9 to match soname changes
-  * Update symbols
-    - Add new symbols
-    - Remove unused symbols
-    - Add Build-Depends-Package metadata field
-  * Update debian/copyright
-  * Run wrap-and-sort
-
- -- apt-ghetto <apt-ghetto@protonmail.com>  Tue, 10 Aug 2021 15:01:31 +0200
-
-libfm-qt (0.16.0-3ubuntu2) hirsute; urgency=medium
-
-  * Fixed s390x and riscv64 architecture fails.
-
- -- Raman Sarda <theloudspeaker@disroot.org>  Thu, 18 Feb 2021 18:36:40 +0530
-
-libfm-qt (0.16.0-3ubuntu1) hirsute; urgency=medium
-
-  * New upstream release.
-  * Updated standards to 4.5.1.
-  * Tighten debhelper-compat dependency.
-
- -- Raman Sarda <theloudspeaker@disroot.org>  Fri, 05 Feb 2021 18:39:36 +0530
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Tue, 12 Jul 2022 22:33:35 +0800
 
 libfm-qt (0.16.0-3) unstable; urgency=high
 
-  * Update symbols for armel, armhf, i386, mipsel and s390x to fit FTBFS.
+  * Update symbols for armel, armhf, i386, mipsel and s390x to fix FTBFS.
 
  -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sat, 09 Jan 2021 03:15:46 +0800
 
@@ -113,53 +34,6 @@ libfm-qt (0.16.0-1) unstable; urgency=medium
 
  -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 04:30:38 +0800
 
-libfm-qt (0.15.1-0ubuntu5) hirsute; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-15-2.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 27 Nov 2020 14:08:55 +0300
-
-libfm-qt (0.15.1-0ubuntu4) hirsute; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-15-1.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 30 Oct 2020 15:40:36 +0300
-
-libfm-qt (0.15.1-0ubuntu3) groovy; urgency=medium
-
-  * Update debian/libfm-qt7.symbols for GCC 10 (fixes FTBFS).
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Wed, 14 Oct 2020 21:39:52 +0300
-
-libfm-qt (0.15.1-0ubuntu2) groovy; urgency=medium
-
-  * Refresh symbol files for riscv64
-
- -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 04 Jun 2020 08:46:45 +0200
-
-libfm-qt (0.15.1-0ubuntu1) groovy; urgency=medium
-
-  [ apt-ghetto ]
-  * Remove patches applied upstream:
-    - Remove dont-ignore-crea-del-sequences.patch
-    - Remove fix-license-headers.patch
-    - Remove fix-smb-recursive-copy.patch
-    - Remove workaround-glib-recursive-moving-error.patch
-    - Remove workaround-missed-file-monitoring.patch
-  * Update symbols from buildlog
-
-  [ Simon Quigley ]
-  * New upstream release.
-    - Update upstream signing key.
-    - Bump LXQt build dependencies.
-    - Rename libfm-qt6 -> libfm-qt7 for SONAME bump.
-    - Update symbols from amd64 build logs.
-  * Bump Standards-version to 4.5.0, no changes needed.
-  * Run wrap-and-sort.
-  * Full copyright update.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 04 Jun 2020 00:03:35 -0500
-
 libfm-qt (0.14.1-12.2) unstable; urgency=medium
 
   * Non-maintainer upload.
@@ -173,40 +47,6 @@ libfm-qt (0.14.1-12.1) unstable; urgency=medium
   * Update symbols files for GCC 10 (closes: #957436).
 
  -- Dmitry Shachnev <mitya57@debian.org>  Sat, 17 Oct 2020 20:11:39 +0300
-
-libfm-qt (0.14.1-12ubuntu4) groovy; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-14-2.
-
- -- Rik Mills <rikmills@kde.org>  Sat, 16 May 2020 08:51:17 +0000
-
-libfm-qt (0.14.1-12ubuntu3) focal; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-12-8.
-
- -- Rik Mills <rikmills@kde.org>  Fri, 10 Apr 2020 20:02:47 +0100
-
-libfm-qt (0.14.1-12ubuntu2) focal; urgency=medium
-
-  * No-change rebuild for libgcc-s1 package name change.
-
- -- Matthias Klose <doko@ubuntu.com>  Sun, 22 Mar 2020 16:45:48 +0100
-
-libfm-qt (0.14.1-12ubuntu1) focal; urgency=medium
-
-  * Merge from Debian unstable. Remaining changes:
-    - debian/control:
-      + Update Vcs-* and maintainer for maintaining by Lubuntu.
-      + Additional Breaks/Replaces on old libfm-qt-l10n.
-    - debian/libfmqt-qt6.symbols
-      + Retain Lubuntu generated symbols file.
-    - debian/patches: fix-metadata-for-trusting-executables.patch
-      + Fix metadata for trusting executables. Use Ubuntu standard for
-        trusting executables.
-    - debian/patches: fix-dnd-mtp.patch
-      + Fix drag-and-drop from mtp:// mounted folders.
-  
- -- Rik Mills <rikmills@kde.org>  Sat, 01 Feb 2020 09:48:17 +0000
 
 libfm-qt (0.14.1-12) unstable; urgency=medium
 
@@ -228,39 +68,6 @@ libfm-qt (0.14.1-10) unstable; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Sat, 17 Aug 2019 13:00:08 +0200
 
-libfm-qt (0.14.1-9ubuntu4) focal; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-12-5.
-
- -- Rik Mills <rikmills@kde.org>  Sun, 27 Oct 2019 06:29:34 +0000
-
-libfm-qt (0.14.1-9ubuntu3) eoan; urgency=medium
-
-  * Fixed DND not working for mtp:// mounted folders
-
- -- Raman Sarda <theloudspeaker@lubuntu.me>  Sat, 17 Aug 2019 10:11:52 +0530
-
-libfm-qt (0.14.1-9ubuntu2) eoan; urgency=medium
-
-  * Rebuild against Qt 5.12.4.
-  * Update symbols files from the current build logs.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 12 Jul 2019 23:28:09 +0300
-
-libfm-qt (0.14.1-9ubuntu1) eoan; urgency=medium
-
-  * Merge from Debian unstable. Remaining changes:
-    - debian/control:
-      + Update Vcs-* and maintainer for maintaining by Lubuntu.
-      + Add Breaks/Replaces on old libfm-qt-l10n.
-    - debian/libfmqt-qt6.symbols
-      + Retain and update Lubuntu generated symbols file.
-    - debian/patches: fix-metadata-for-trusting-executables.patch
-      + Fix metadata for trusting executables. Use Ubuntu standard for
-        trusting executables. 
-
- -- Rik Mills <rikmills@kubuntu.org>  Sun, 09 Jun 2019 22:20:26 +0100
-
 libfm-qt (0.14.1-9) unstable; urgency=medium
 
   * Added upstream patch workaround-missed-file-monitoring.patch
@@ -268,20 +75,6 @@ libfm-qt (0.14.1-9) unstable; urgency=medium
   * Added two new symbols - internal use only
 
  -- Alf Gaida <agaida@siduction.org>  Sat, 08 Jun 2019 16:39:11 +0200
-
-libfm-qt (0.14.1-8ubuntu1) eoan; urgency=medium
-
-  * Merge from Debian unstable. Remaining changes:
-    - debian/control:
-      + Update Vcs-* and maintainer for maintaining by Lubuntu.
-      + Add Breaks/Replaces on old libfm-qt-l10n.
-    - debian/libfmqt-qt6.symbols
-      + Retain Lubuntu generated symbols file.
-    - debian/patches: fix-metadata-for-trusting-executables.patch
-      + Fix metadata for trusting executables. Use Ubuntu standard for
-        trusting executables.
-
- -- Rik Mills <rikmills@kubuntu.org>  Fri, 24 May 2019 10:16:20 +0100
 
 libfm-qt (0.14.1-8) unstable; urgency=medium
 
@@ -334,22 +127,6 @@ libfm-qt (0.14.1-1) unstable; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 24 Feb 2019 19:31:01 +0100
 
-libfm-qt (0.14.1-0ubuntu2) disco; urgency=medium
-
-  * Rebuild against qtbase-abi-5-12-2.
-  * Update symbols from build logs for all architectures.
-
- -- Rik Mills <rikmills@kubuntu.org>  Sun, 31 Mar 2019 10:52:00 +0100
-
-libfm-qt (0.14.1-0ubuntu1) disco; urgency=medium
-
-  * New upstream release.
-  * Update standard executable trusting patch to use the new upstream macro
-    instead of individual inline replacements.
-  * Update symbols from build logs.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 08 Mar 2019 11:28:38 -0600
-
 libfm-qt (0.14.0-3) unstable; urgency=medium
 
   * Switched to unstable
@@ -382,55 +159,6 @@ libfm-qt (0.14.0-1) experimental; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Wed, 30 Jan 2019 20:32:59 +0100
 
-libfm-qt (0.14.0-0ubuntu3) disco; urgency=medium
-
-  * Fix metadata for trusting executables.
-    - Use Ubuntu standard for trusting executables.
-
- -- Dan Simmons <monetaryabyss@protonmail.com>  Tue, 29 Jan 2019 20:32:19 -0500
-
-libfm-qt (0.14.0-0ubuntu2) disco; urgency=medium
-
-  * Add Breaks/Replaces on old libfm-qt-l10n.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 26 Jan 2019 10:15:13 -0600
-
-libfm-qt (0.14.0-0ubuntu1) disco; urgency=medium
-
-  * New upstream release.
-    - Remove reverse-applicable patches.
-    - Bump build dependencies.
-    - Install new files.
-  * Bump Standards-version to 4.3.0, no changes needed.
-  * Bump debhelper compat to 12, no changes needed.
-  * Add new binary package libfm-qt-l10n.
-  * libfm-qt5 -> libfm-qt6.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 25 Jan 2019 23:15:39 -0600
-
-libfm-qt (0.13.1-10ubuntu1) disco; urgency=medium
-
-  * Merge with Debian unstable, remaining changes:
-    - debian/control:
-      + Update Vcs-* and maintainer for maintaining by Lubuntu.
-    - debian/patches/add-lxqt-archiver-integration.patch:
-      + Add LXQt Archiver integration.
-    - debian/patches/add-metadata-for-trusting-executables.patch:
-      + Support adding metadata for trusting executables.
-    - debian/patches/fix-incorrect-file-info-handling-1.patch,
-      debian/patches/fix-incorrect-file-info-handling-2.patch:
-      + Fix failure to open smb:// caused by incorrect file info handling.
-    - debian/patches/fix-launching-desktop-files.patch:
-      + Fix launching desktop files.
-    - debian/patches/fix-places-font-color.patch:
-      + Use the window text color for the places pane.
-    - debian/patches/move-in-file-dialog.patch:
-      + Move in the file dialog from lxqt-qtplugin for better platform
-        integration.
-  * Update debian/libfm-qt5.symbols from the current build logs.
-
- -- Dmitry Shachnev <mitya57@ubuntu.com>  Fri, 04 Jan 2019 14:47:29 +0300
-
 libfm-qt (0.13.1-10) unstable; urgency=medium
 
   * Added Build-Depends-Package: libfm-qt-dev to libfm-qt-dev.symbols
@@ -462,66 +190,6 @@ libfm-qt (0.13.1-6) unstable; urgency=medium
   * Fixed a bunch of symbols
 
  -- Alf Gaida <agaida@siduction.org>  Tue, 31 Jul 2018 18:15:12 +0200
-
-libfm-qt (0.13.1-5ubuntu9) disco; urgency=medium
-
-  * Fix launching desktop files.
-
- -- Dan Simmons <monetaryabyss@protonmail.com>  Wed, 21 Nov 2018 23:40:15 -0500
-
-libfm-qt (0.13.1-5ubuntu8) disco; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-11-2.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 13 Nov 2018 17:29:45 -0600
-
-libfm-qt (0.13.1-5ubuntu7) cosmic; urgency=medium
-
-  * Check (and set) metadata::trusted instead of metadata::trust.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 15 Oct 2018 10:11:59 -0500
-
-libfm-qt (0.13.1-5ubuntu6) cosmic; urgency=medium
-
-  * Update symbols from build logs.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 09 Oct 2018 13:57:26 -0500
-
-libfm-qt (0.13.1-5ubuntu5) cosmic; urgency=medium
-
-  * Support adding metadata for trusting executables (LP: #1795537).
-
- -- Walter Lapchynski <wxl@ubuntu.com>  Sat, 06 Oct 2018 08:55:46 -0700
-
-libfm-qt (0.13.1-5ubuntu4) cosmic; urgency=medium
-
-  * Change Uploaders to Ubuntu uploaders.
-  * Change the debhelper dependency to 11.
-  * Move in the file dialog from lxqt-qtplugin for better platform
-    integration.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 30 Jul 2018 19:25:14 -0500
-
-libfm-qt (0.13.1-5ubuntu3) cosmic; urgency=medium
-
-  * Update symbols from build logs.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 18 Jul 2018 04:32:54 -0500
-
-libfm-qt (0.13.1-5ubuntu2) cosmic; urgency=medium
-
-  * No-change rebuild against qtbase-abi-5-11-0.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 18 Jul 2018 03:18:08 -0500
-
-libfm-qt (0.13.1-5ubuntu1) cosmic; urgency=medium
-
-  * Update Vcs-* and maintainer for maintaining by Lubuntu.
-  * Add LXQt Archiver integration.
-  * Fix failure to open smb:// caused by incorrect file info handling.
-  * Use the window text color for the places pane.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 14 Jul 2018 01:18:40 -0500
 
 libfm-qt (0.13.1-5) unstable; urgency=medium
 
@@ -800,4 +468,3 @@ libfm-qt (0.10.0+20151214-1) unstable; urgency=medium
   * Add Breaks for old library name libfm-qt5-2.
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 05 Nov 2015 00:28:39 +0100
-

@@ -1,36 +1,47 @@
 Source: libfm-qt
-Maintainer: Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
-XSBC-Original-Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
-Uploaders: Simon Quigley <tsimonq2@ubuntu.com>
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Uploaders: Alf Gaida <agaida@siduction.org>,
+           ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
+           Andrew Lee (李健秋) <ajqlee@debian.org>,
+           Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
 Section: x11
 Priority: optional
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 12),
                libexif-dev,
                libkf5windowsystem-dev,
                libmenu-cache-dev,
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev,
-               lxqt-build-tools (>= 0.11.0),
+               lxqt-build-tools (>= 0.11.0~),
                qtbase5-private-dev
-Standards-Version: 4.5.1
-Vcs-Browser: https://phab.lubuntu.me/source/libfm-qt/
-Vcs-Git: https://phab.lubuntu.me/source/libfm-qt.git
-XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/libfm-qt
-XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
+Standards-Version: 4.4.1
+Vcs-Browser: https://salsa.debian.org/lxqt-team/libfm-qt
+Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
 
 Package: libfm-qt11
-Replaces: libfm-qt9
-Breaks: libfm-qt9
+Provides: libfm-qt
+Conflicts: libfm-qt
+Replaces: libfm-qt8,
+          libfm-qt6,
+          libfm-qt5-2,
+          libfm-qt5,
+          libfm-qt3,
+          libfm-qt2
+Breaks: libfm-qt8,
+        libfm-qt6,
+        libfm-qt5-2,
+        libfm-qt5,
+        libfm-qt3,
+        libfm-qt2
 Architecture: any
 Multi-Arch: same
 Section: libs
-Depends: libfm-qt-common,
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
          libglib2.0-bin,
-         shared-mime-info,
-         ${misc:Depends},
-         ${shlibs:Depends}
+         shared-mime-info
 Recommends: libfm-qt-l10n
 Pre-Depends: ${misc:Pre-Depends}
 Description: file management support for pcmanfm-qt
@@ -39,26 +50,15 @@ Description: file management support for pcmanfm-qt
  .
  This package contains helper library libfm-qt for pcmanfm-qt.
 
-Package: libfm-qt-common
-Architecture: all
-Multi-Arch: foreign
-Section: libs
-Depends: ${misc:Depends}
-Breaks: libfm-qt11 (<< 1.1.0-0ubuntu4), libfm-qt9
-Replaces: libfm-qt11 (<< 1.1.0-0ubuntu4), libfm-qt9
-Description: Common files for libfm-qt
- Libfm-Qt is a companion library providing components to build desktop file
- managers.
- .
- This package contains common files for libfm-qt.
-
 Package: libfm-qt-dev
+Replaces: libfm-qt5-dev
+Breaks: libfm-qt5-dev
 Architecture: any
 Section: libdevel
-Depends: libexif-dev,
+Depends: ${misc:Depends},
+         libexif-dev,
          libfm-qt11 (= ${binary:Version}),
-         libmenu-cache-dev,
-         ${misc:Depends}
+         libmenu-cache-dev
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
@@ -69,7 +69,10 @@ Package: libfm-qt-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: qttranslations5-l10n, ${misc:Depends}
+Depends: ${misc:Depends},
+         qttranslations5-l10n
+Breaks: libfm-qt3 (<< 0.11.1)
+Replaces: libfm-qt3 (<< 0.11.1)
 Description: Language package for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
