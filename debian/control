@@ -26,9 +26,9 @@ XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
 Rules-Requires-Root: no
 
-Package: libfm-qt11
-Replaces: libfm-qt9
-Breaks: libfm-qt9
+Package: libfm-qt12
+Replaces: libfm-qt9, libfm-qt11
+Breaks: libfm-qt9, libfm-qt11
 Architecture: any
 Multi-Arch: same
 Section: libs
@@ -63,7 +63,7 @@ Architecture: any
 Section: libdevel
 Depends: ${misc:Depends},
          libexif-dev,
-         libfm-qt11 (= ${binary:Version}),
+         libfm-qt12 (= ${binary:Version}),
          libmenu-cache-dev
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file

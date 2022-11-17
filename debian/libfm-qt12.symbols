@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 1.1.0 amd64 i386 riscv64
-libfm-qt.so.11 libfm-qt11 #MINVER#
+libfm-qt.so.12 libfm-qt12 #MINVER#
 * Build-Depends-Package: libfm-qt-dev
  _ZN2Fm10DirListJob10filesFoundERNS_12FileInfoListE@Base 0.16.0
  _ZN2Fm10DirListJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0

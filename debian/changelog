@@ -5,6 +5,7 @@ libfm-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
   * Lubuntuify the package slightly, to make debhelper happy.
   * Remove reverse-applicable upstream patches.
   * Bump build dependencies to the latest upstream LXQt versions.
+  * Rename libfm-qt11 -> libfm-qt12 and add necessary Breaks/Replaces.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 18:39:37 -0600
 
