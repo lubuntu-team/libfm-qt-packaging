@@ -6,6 +6,7 @@ libfm-qt (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
   * Remove reverse-applicable upstream patches.
   * Bump build dependencies to the latest upstream LXQt versions.
   * Rename libfm-qt11 -> libfm-qt12 and add necessary Breaks/Replaces.
+  * Update symbols from amd64 build logs.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Nov 2022 18:39:37 -0600
 

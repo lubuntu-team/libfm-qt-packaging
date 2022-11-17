@@ -356,6 +356,7 @@ libfm-qt.so.12 libfm-qt12 #MINVER#
  _ZN2Fm12FileLauncher11launchFilesEP7QWidgetRKNS_12FileInfoListE@Base 0.16.0
  _ZN2Fm12FileLauncher11launchPathsEP7QWidgetRKSt6vectorINS_8FilePathESaIS4_EE@Base 0.16.0
  _ZN2Fm12FileLauncher13launchWithAppEP7QWidgetP9_GAppInfoRKSt6vectorINS_8FilePathESaIS6_EE@Base 1.1.0
+ _ZN2Fm12FileLauncher16resetExecActionsEv@Base 1.2.0
  _ZN2Fm12FileLauncher3askEPKcPKPci@Base 0.16.0
  _ZN2Fm12FileLauncher9chooseAppERKNS_12FileInfoListEPKcRNS_9GErrorPtrE@Base 0.16.0
  _ZN2Fm12FileLauncher9showErrorEP18_GAppLaunchContextRKNS_9GErrorPtrERKNS_8FilePathERKSt10shared_ptrIKNS_8FileInfoEE@Base 0.16.0
