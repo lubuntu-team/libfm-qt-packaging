@@ -3,7 +3,7 @@ Upstream-Name: libfm-qt
 Source: https://github.com/lxqt/libfm-qt
 
 Files: *
-Copyright: 2013-2022 LXQt team
+Copyright: 2013-2019 LXQt team
            2009-2019 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
            2009 Juergen Hoetzel <juergen@archlinux.org>
            2010 Shae Smittle <starfall87@gmail.com>
