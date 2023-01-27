@@ -3,7 +3,7 @@ Upstream-Name: libfm-qt
 Source: https://github.com/lxqt/libfm-qt
 
 Files: *
-Copyright: 2013-2019 LXQt team
+Copyright: 2013-2023 LXQt team
            2009-2019 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
            2009 Juergen Hoetzel <juergen@archlinux.org>
            2010 Shae Smittle <starfall87@gmail.com>
@@ -17,7 +17,7 @@ Copyright: 2015      Luís Pereira <luis.artur.pereira@gmail.com>
 License: BSD-3-Clause
 
 Files: debian/*
-Copyright: 2021-2022, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+Copyright: 2021-2023, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
            2014-2015 Wen Liao <wen.cf83@gmail.com>
            2014-2016 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
            2013-2019 Alf Gaida <agaida@siduction.org>
