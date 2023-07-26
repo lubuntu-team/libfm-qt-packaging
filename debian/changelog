@@ -1,6 +1,7 @@
 libfm-qt (1.3.0-0ubuntu1) mantic; urgency=medium
 
   * New upstream release.
+  * Rename binary package for SONAME change, update symbols accordingly.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 26 Jul 2023 16:25:53 -0500
 
