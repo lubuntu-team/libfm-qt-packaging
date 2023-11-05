@@ -17,6 +17,7 @@ Build-Depends: debhelper-compat (= 13),
                libqt5x11extras5-dev,
                libx11-dev,
                lxqt-build-tools (>= 0.13.0),
+               lxqt-menu-data (>= 1.4.0),
                qtbase5-private-dev
 Standards-Version: 4.6.2
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/libfm-qt-packaging
