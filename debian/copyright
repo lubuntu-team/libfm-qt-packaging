@@ -4,12 +4,12 @@ Source: https://github.com/lxqt/libfm-qt
 
 Files: *
 Copyright: 2013-2023 LXQt team
-           2009-2019 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
-           2009 Juergen Hoetzel <juergen@archlinux.org>
-           2010 Shae Smittle <starfall87@gmail.com>
-           2016 Mamoru TASAKA <mtasaka@fedoraproject.org>
+           2009      Juergen Hoetzel <juergen@archlinux.org>
+           2010      Shae Smittle <starfall87@gmail.com>
+           2014      Kuzma Shapran <kuzma.shapran@gmail.com>
+           2016      Mamoru TASAKA <mtasaka@fedoraproject.org>
            2012-2016 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
-           2014 Kuzma Shapran <kuzma.shapran@gmail.com>
+           2009-2019 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
 License: LGPL-2.1+
 
 Files: cmake/fm-qt-config.cmake.in
@@ -17,11 +17,18 @@ Copyright: 2015      Luís Pereira <luis.artur.pereira@gmail.com>
 License: BSD-3-Clause
 
 Files: debian/*
-Copyright: 2021-2023, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+Copyright: 2015      Andrew Lee (李健秋) <ajqlee@debian.org>
            2014-2015 Wen Liao <wen.cf83@gmail.com>
            2014-2016 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2019      Rik Mills <rikmills@kubuntu.org>
            2013-2019 Alf Gaida <agaida@siduction.org>
-           2015      Andrew Lee (李健秋) <ajqlee@debian.org>
+           2018-2019 Walter Lapchynski <wxl@ubuntu.com>
+           2018-2019 Dan Simmons <monetaryabyss@protonmail.com>
+           2020      Gianfranco Costamagna <locutusofborg@debian.org>
+           2019-2021 Raman Sarda <ramansarda2000@gmail.com>
+           2019-2021 apt-ghetto <apt-ghetto@protonmail.com>
+           2018-2023 Simon Quigley <tsimonq2@ubuntu.com>
+           2022-2023 Aaron Rainbolt <arraybolt3@gmail.com>
 License: LGPL-2.1+
 
 License: BSD-3-Clause

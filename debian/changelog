@@ -1,6 +1,7 @@
 libfm-qt (1.4.0-0ubuntu1) noble; urgency=medium
 
   * New upstream release.
+  * Reorganized and fixed copyright file.
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Sun, 05 Nov 2023 17:15:40 -0600
 
