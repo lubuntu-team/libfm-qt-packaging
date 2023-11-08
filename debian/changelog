@@ -4,6 +4,7 @@ libfm-qt (1.4.0-0ubuntu1) noble; urgency=medium
   * Reorganized and fixed copyright file.
   * Add lxqt-menu-data as a build dependency.
   * Bump soname to libfm-qt14.
+  * Updated symbols file.
 
  -- Aaron Rainbolt <arraybolt3@gmail.com>  Sun, 05 Nov 2023 17:15:40 -0600
 
