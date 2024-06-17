@@ -5,6 +5,7 @@ libfm-qt (2.0.2-0ubuntu1~ppa1) oracular; urgency=medium
   * Update copyright file.
   * Bump build deps.
   * Change binary package name to libfm-qt6.
+  * Update symbols file.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 17 Jun 2024 14:20:20 -0500
 
