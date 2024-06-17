@@ -19,7 +19,7 @@ Build-Depends: debhelper-compat (= 13),
                lxqt-build-tools (>= 0.13.0),
                lxqt-menu-data (>= 1.4.0),
                qtbase5-private-dev
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/libfm-qt-packaging
 Vcs-Git: https://git.lubuntu.me/Lubuntu/libfm-qt-packaging.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/libfm-qt
