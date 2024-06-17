@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 1.4.0 amd64 arm64 armhf ppc64el riscv64 s390x
-libfm-qt.so.14 libfm-qt14 #MINVER#
+libfm-qt.so.15 libfm-qt15 #MINVER#
 * Build-Depends-Package: libfm-qt-dev
  _ZN2Fm10DirListJob10filesFoundERNS_12FileInfoListE@Base 0.16.0
  _ZN2Fm10DirListJob11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0
