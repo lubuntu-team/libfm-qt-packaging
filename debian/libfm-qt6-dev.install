@@ -1,0 +1,8 @@
+usr/include/libfm-qt6/*.h
+usr/include/libfm-qt6/core/*.h
+usr/include/libfm-qt6/core/legacy/*.h
+usr/include/libfm-qt6/core/vfs/*.h
+usr/include/libfm-qt6/customactions/*.h
+usr/lib/*/*.so
+usr/lib/*/pkgconfig/*
+usr/share/cmake/fm-qt6/*.cmake

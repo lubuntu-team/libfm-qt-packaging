@@ -26,18 +26,18 @@ XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
 Rules-Requires-Root: no
 
-Package: libfm-qt15
+Package: libfm-qt6-14
 Replaces: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11, libfm-qt9
 Breaks: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11, libfm-qt9
 Architecture: any
 Multi-Arch: same
 Section: libs
-Depends: libfm-qt-common,
+Depends: libfm-qt6-common,
          libglib2.0-bin,
          shared-mime-info,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: libfm-qt-l10n
+Recommends: libfm-qt6-l10n
 Pre-Depends: ${misc:Pre-Depends}
 Description: file management support for pcmanfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
@@ -45,7 +45,7 @@ Description: file management support for pcmanfm-qt
  .
  This package contains helper library libfm-qt for pcmanfm-qt.
 
-Package: libfm-qt-common
+Package: libfm-qt6-common
 Architecture: all
 Multi-Arch: foreign
 Section: libs
@@ -58,11 +58,11 @@ Description: Common files for libfm-qt
  .
  This package contains common files for libfm-qt.
 
-Package: libfm-qt-dev
+Package: libfm-qt6-dev
 Architecture: any
 Section: libdevel
 Depends: libexif-dev,
-         libfm-qt15 (= ${binary:Version}),
+         libfm-qt6-14 (= ${binary:Version}),
          libmenu-cache-dev,
          ${misc:Depends}
 Description: file management support library for pcmanfm-qt (development files)
@@ -71,7 +71,7 @@ Description: file management support library for pcmanfm-qt (development files)
  .
  This package contains development files for helper library libfm-qt.
 
-Package: libfm-qt-l10n
+Package: libfm-qt6-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
