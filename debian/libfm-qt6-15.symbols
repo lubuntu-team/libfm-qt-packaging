@@ -1,5 +1,5 @@
-# SymbolsHelper-Confirmed: 2.0.2 amd64 arm64 armhf ppc64el riscv64 s390x
-libfm-qt6.so.14 libfm-qt6-14 #MINVER#
+# SymbolsHelper-Confirmed: 2.1.0 amd64
+libfm-qt6.so.15 libfm-qt6-15 #MINVER#
 * Build-Depends-Package: libfm-qt6-dev
  _ZGVZN9QMetaType21registerConverterImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Base 2.0.2
  _ZGVZN9QMetaType23registerMutableViewImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Base 2.0.2
@@ -435,8 +435,8 @@ libfm-qt6.so.14 libfm-qt6-14 #MINVER#
  _ZN2Fm12ThumbnailJob29maxExternalThumbnailFileSize_E@Base 0.17.1
  _ZN2Fm12ThumbnailJob31setMaxExternalThumbnailFileSizeEi@Base 0.17.1
  _ZN2Fm12ThumbnailJob4execEv@Base 0.16.0
- _ZN2Fm12ThumbnailJobC1ENS_12FileInfoListEi@Base 0.16.0
- _ZN2Fm12ThumbnailJobC2ENS_12FileInfoListEi@Base 0.16.0
+ _ZN2Fm12ThumbnailJobC1ENS_12FileInfoListEib@Base 2.1.0
+ _ZN2Fm12ThumbnailJobC2ENS_12FileInfoListEib@Base 2.1.0
  _ZN2Fm12ThumbnailJobD0Ev@Base 0.16.0
  _ZN2Fm12ThumbnailJobD1Ev@Base 0.16.0
  _ZN2Fm12ThumbnailJobD2Ev@Base 0.16.0
@@ -1072,6 +1072,7 @@ libfm-qt6.so.14 libfm-qt6-14 #MINVER#
  _ZN2Fm8PathEditD2Ev@Base 0.16.0
  _ZN2Fm8SidePane10modeByNameEPKc@Base 0.16.0
  _ZN2Fm8SidePane10setHomeDirEPKc@Base 0.16.0
+ _ZN2Fm8SidePane11eventFilterEP7QObjectP6QEvent@Base 2.1.0
  _ZN2Fm8SidePane11initDirTreeEv@Base 0.16.0
  _ZN2Fm8SidePane11modeChangedENS0_4ModeE@Base 0.16.0
  _ZN2Fm8SidePane11qt_metacallEN11QMetaObject4CallEiPPv@Base 0.16.0
@@ -1089,7 +1090,6 @@ libfm-qt6.so.14 libfm-qt6-14 #MINVER#
  _ZN2Fm8SidePane27openFolderInNewTabRequestedERKNS_8FilePathE@Base 0.16.0
  _ZN2Fm8SidePane29openFolderInTerminalRequestedERKNS_8FilePathE@Base 0.16.0
  _ZN2Fm8SidePane30openFolderInNewWindowRequestedERKNS_8FilePathE@Base 0.16.0
- _ZN2Fm8SidePane5eventEP6QEvent@Base 0.16.0
  _ZN2Fm8SidePane7setModeENS0_4ModeE@Base 0.16.0
  _ZN2Fm8SidePane8modeNameENS0_4ModeE@Base 0.16.0
  _ZN2Fm8SidePaneC1EP7QWidget@Base 0.16.0

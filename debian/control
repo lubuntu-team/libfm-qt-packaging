@@ -11,13 +11,12 @@ Section: x11
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
                libexif-dev,
-               libkf6windowsystem-dev,
                libmenu-cache-dev,
                libx11-dev,
-               lxqt-build-tools (>= 2.0.0),
-               lxqt-menu-data (>= 2.0.0),
-               qt6-base-private-dev,
-               qt6-svg-dev,
+               lxqt-build-tools (>= 2.1.0),
+               lxqt-menu-data (>= 2.1.0),
+               qt6-base-private-dev (>= 6.6.0),
+               qt6-svg-dev (>= 6.6.0),
 Standards-Version: 4.7.0
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/libfm-qt-packaging
 Vcs-Git: https://git.lubuntu.me/Lubuntu/libfm-qt-packaging.git
@@ -26,9 +25,9 @@ XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/libfm-qt.git
 Homepage: https://github.com/lxqt/libfm-qt
 Rules-Requires-Root: no
 
-Package: libfm-qt6-14
-Replaces: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11, libfm-qt9
-Breaks: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11, libfm-qt9
+Package: libfm-qt6-15
+Replaces: libfm-qt6-14, libfm-qt14
+Breaks: libfm-qt6-14, libfm-qt14
 Architecture: any
 Multi-Arch: same
 Section: libs
@@ -50,8 +49,8 @@ Architecture: all
 Multi-Arch: foreign
 Section: libs
 Depends: ${misc:Depends}
-Breaks: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11 (<< 1.1.0-3ubuntu1), libfm-qt9
-Replaces: libfm-qt14, libfm-qt13, libfm-qt12, libfm-qt11 (<< 1.1.0-3ubuntu1), libfm-qt9
+Breaks: libfm-qt14
+Replaces: libfm-qt14
 Description: Common files for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
@@ -62,7 +61,7 @@ Package: libfm-qt6-dev
 Architecture: any
 Section: libdevel
 Depends: libexif-dev,
-         libfm-qt6-14 (= ${binary:Version}),
+         libfm-qt6-15 (= ${binary:Version}),
          libmenu-cache-dev,
          ${misc:Depends}
 Description: file management support library for pcmanfm-qt (development files)
