@@ -4,6 +4,7 @@ libfm-qt (2.1.0-0ubuntu1) UNRELEASED; urgency=medium
     - Bump build dependencies.
     - Update symbols from amd64 build logs.
   * Add new build dependencies from the CMake output.
+  * Make the package Lintian-clean.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 05 Nov 2024 12:18:25 -0600
 
