@@ -1,3 +1,10 @@
+libfm-qt (2.1.0-0ubuntu6) plucky; urgency=medium
+
+  * Add a Provides: libfm-qt6 line, to make it easier to track and use in
+    reverse dependencies.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 16 Feb 2025 18:59:48 -0600
+
 libfm-qt (2.1.0-0ubuntu5) plucky; urgency=medium
 
   * No-change rebuild for Qt 6.8.2.
