@@ -1,5 +1,5 @@
 # SymbolsHelper-Confirmed: 2.1.0 amd64 arm64 armhf ppc64el s390x
-libfm-qt6.so.15 libfm-qt6-15 #MINVER#
+libfm-qt6.so.16 libfm-qt6-16 #MINVER#
 * Build-Depends-Package: libfm-qt6-dev
  _ZGVZN9QMetaType21registerConverterImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPKvPvEES_S_E10unregister@Base 2.0.2
  _ZGVZN9QMetaType23registerMutableViewImplI5QListI4QUrlE9QIterableI13QMetaSequenceEEEbSt8functionIFbPvS8_EES_S_E10unregister@Base 2.0.2
