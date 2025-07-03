@@ -3,6 +3,7 @@ libfm-qt (2.2.0-0ubuntu1) questing; urgency=medium
   * New upstream release.
     - Update build dependencies.
     - Bump soname.
+    - Update symbols.
   * Update copyright file.
   * Update Standards-Version to 4.7.2, no changes needed.
 
