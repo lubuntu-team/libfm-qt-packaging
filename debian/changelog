@@ -1,3 +1,9 @@
+libfm-qt (2.2.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release.
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 03 Jul 2025 15:45:39 -0500
+
 libfm-qt (2.1.0-0ubuntu7) plucky; urgency=medium
 
   * Update Standards-Version to 4.7.1, no changes needed.
