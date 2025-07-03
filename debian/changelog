@@ -1,6 +1,7 @@
 libfm-qt (2.2.0-0ubuntu1) questing; urgency=medium
 
   * New upstream release.
+  * Update copyright file.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 03 Jul 2025 15:45:39 -0500
 
