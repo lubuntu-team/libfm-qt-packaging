@@ -1,3 +1,9 @@
+libfm-qt (2.2.0-0ubuntu2) questing; urgency=medium
+
+  * Update symbols from Questing build logs."
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 15 Aug 2025 22:02:00 +0100
+
 libfm-qt (2.2.0-0ubuntu1) questing; urgency=medium
 
   * New upstream release.
