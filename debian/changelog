@@ -1,4 +1,4 @@
-libfm-qt (2.2.0-0ubuntu3) UNRELEASED; urgency=medium
+libfm-qt (2.2.0-0ubuntu3) questing; urgency=medium
 
   * debian/control: Drop for now unnecessary libfm-qt6-16
     Breaks/Replaces on libfm-qt6-15. There are no shared files, and this
