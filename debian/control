@@ -57,8 +57,8 @@ Rules-Requires-Root: no
 
 Package: libfm-qt6-16
 Provides: libfm-qt6 (= 15)
-Replaces: libfm-qt14, libfm-qt6-14, libfm-qt6-15
-Breaks: libfm-qt14, libfm-qt6-14, libfm-qt6-15
+Replaces: libfm-qt14, libfm-qt6-14,
+Breaks: libfm-qt14, libfm-qt6-14,
 Architecture: any
 Multi-Arch: same
 Section: libs

@@ -1,3 +1,12 @@
+libfm-qt (2.2.0-0ubuntu3) UNRELEASED; urgency=medium
+
+  * debian/control: Drop for now unnecessary libfm-qt6-16
+    Breaks/Replaces on libfm-qt6-15. There are no shared files, and this
+    is currently making proposed migration of other lxqt packages more
+    difficult.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 17 Aug 2025 07:36:50 +0100
+
 libfm-qt (2.2.0-0ubuntu2) questing; urgency=medium
 
   * Update symbols from Questing build logs."
