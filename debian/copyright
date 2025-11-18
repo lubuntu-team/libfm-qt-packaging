@@ -19,7 +19,6 @@ License: BSD-3-Clause
 Files: debian/*
 Copyright: 2015      Andrew Lee (李健秋) <ajqlee@debian.org>
            2014-2015 Wen Liao <wen.cf83@gmail.com>
-           2014-2016 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
            2019      Rik Mills <rikmills@kubuntu.org>
            2013-2019 Alf Gaida <agaida@siduction.org>
            2018-2019 Walter Lapchynski <wxl@ubuntu.com>
@@ -29,6 +28,7 @@ Copyright: 2015      Andrew Lee (李健秋) <ajqlee@debian.org>
            2019-2021 apt-ghetto <apt-ghetto@protonmail.com>
            2018-2025 Simon Quigley <tsimonq2@ubuntu.com>
            2022-2025 Aaron Rainbolt <arraybolt3@gmail.com>
+           2014-2025 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
 License: LGPL-2.1+
 
 License: BSD-3-Clause
