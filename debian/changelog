@@ -3,6 +3,7 @@ libfm-qt (2.3.1-0ubuntu1) resolute; urgency=medium
   * New upstream release.
     - Update build dependencies.
     - Bump soname.
+    - Update symbols.
   * Update copyright file.
   * Update Standards-Version to 4.7.3, no changes needed.
   * Remove redundant 'Rules-Requires-Root: no' control line.
