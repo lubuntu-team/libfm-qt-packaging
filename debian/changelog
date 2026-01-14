@@ -1,6 +1,7 @@
 libfm-qt (2.3.1-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Update copyright file.
 
  -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Wed, 14 Jan 2026 13:28:56 -0600
 
