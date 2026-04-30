@@ -42,8 +42,8 @@ Build-Depends: debhelper-compat (= 13),
                libxcb-xtest0-dev,
                libxcb-xv0-dev,
                libxcb-xvmc0-dev,
-               lxqt-build-tools (>= 2.3.0),
-               lxqt-menu-data (>= 2.3.0),
+               lxqt-build-tools (>= 2.4.0),
+               lxqt-menu-data (>= 2.4.0),
                qt6-base-private-dev (>= 6.6.0),
                qt6-svg-dev (>= 6.6.0)
 Standards-Version: 4.7.4
