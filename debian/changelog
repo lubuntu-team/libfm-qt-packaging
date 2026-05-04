@@ -1,12 +1,16 @@
 libfm-qt (2.4.0-0ubuntu1) stonking; urgency=medium
 
+  [ Simon Quigley ]
   * New upstream release.
     - Update build dependencies.
   * Update the upstream signing key.
   * Update Standards-Version to 4.7.4, dropping Priority: optional.
   * Update the copyright file.
 
- -- Simon Quigley <tsimonq2@debian.org>  Thu, 30 Apr 2026 13:07:54 -0500
+  [ Aaron Rainbolt ]
+  * Bump LXQt team copyright year.
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 04 May 2026 01:15:57 -0400
 
 libfm-qt (2.3.1-0ubuntu1) resolute; urgency=medium
 
