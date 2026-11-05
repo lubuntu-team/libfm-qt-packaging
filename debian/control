@@ -8,7 +8,7 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Simon Quigley <tsimonq2@debian.org>,
            Aaron Rainbolt <arraybolt3@gmail.com>
 Section: x11
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                libexif-dev,
                libmenu-cache-dev,
                libx11-dev,
@@ -60,13 +60,8 @@ Breaks: libfm-qt14, libfm-qt6-14, libfm-qt6-15, libfm-qt6-16
 Architecture: any
 Multi-Arch: same
 Section: libs
-Depends: libfm-qt6-common,
-         libglib2.0-bin,
-         shared-mime-info,
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: libfm-qt6-common, libglib2.0-bin, shared-mime-info
 Recommends: libfm-qt6-l10n
-Pre-Depends: ${misc:Pre-Depends}
 Description: file management support for pcmanfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
@@ -77,7 +72,6 @@ Package: libfm-qt6-common
 Architecture: all
 Multi-Arch: foreign
 Section: libs
-Depends: ${misc:Depends}
 Breaks: libfm-qt14
 Replaces: libfm-qt14
 Description: Common files for libfm-qt
@@ -89,10 +83,7 @@ Description: Common files for libfm-qt
 Package: libfm-qt6-dev
 Architecture: any
 Section: libdevel
-Depends: libexif-dev,
-         libfm-qt6-17 (= ${binary:Version}),
-         libmenu-cache-dev,
-         ${misc:Depends}
+Depends: libexif-dev, libfm-qt6-17 (= ${binary:Version}), libmenu-cache-dev
 Description: file management support library for pcmanfm-qt (development files)
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
@@ -103,7 +94,7 @@ Package: libfm-qt6-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: qt6-translations-l10n, ${misc:Depends}
+Depends: qt6-translations-l10n
 Description: Language package for libfm-qt
  Libfm-Qt is a companion library providing components to build desktop file
  managers.
