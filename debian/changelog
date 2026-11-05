@@ -1,6 +1,7 @@
 libfm-qt (2.5.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Update build dependencies.
 
  -- Simon Quigley <tsimonq2@debian.org>  Wed, 04 Nov 2026 20:23:13 -0600
 
