@@ -1,10 +1,10 @@
-libfm-qt (2.5.0-0ubuntu1) UNRELEASED; urgency=medium
+libfm-qt (2.5.0-0ubuntu1) tenacious; urgency=medium
 
   * New upstream release.
   * Update build dependencies.
   * Update to debhelper-compat 14.
 
- -- Simon Quigley <tsimonq2@debian.org>  Wed, 04 Nov 2026 20:23:13 -0600
+ -- Simon Quigley <tsimonq2@debian.org>  Wed, 04 Nov 2026 21:46:26 -0600
 
 libfm-qt (2.4.0-0ubuntu1) stonking; urgency=medium
 
