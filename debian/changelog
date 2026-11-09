@@ -1,8 +1,12 @@
 libfm-qt (2.5.0-0ubuntu1) tenacious; urgency=medium
 
+  [ Simon Quigley ]
   * New upstream release.
   * Update build dependencies.
   * Update to debhelper-compat 14.
+
+  [ Aaron Rainbolt ]
+  * Bump soname.
 
  -- Simon Quigley <tsimonq2@debian.org>  Wed, 04 Nov 2026 21:46:26 -0600
 
